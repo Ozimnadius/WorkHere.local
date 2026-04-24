@@ -1,0 +1,26 @@
+.interface-scroll {
+  height: calc(100vh + 600px);
+}
+
+.interface-section {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  overflow: hidden;
+  padding-bottom: 140px;
+
+  &__panel {
+    position: relative;
+    z-index: 2;
+    width: 1206.37px;
+    margin: 0 auto;
+    will-change: transform;
+    //transform: translateY(calc(200px * (1 - var(--progress, 0))));
+  }
+
+  &__screen {
+    margin: 0 auto;
+    will-change: transform;
+    //transform: translateY(calc(380px - 380px * var(--progress, 0)));
+  }
+}

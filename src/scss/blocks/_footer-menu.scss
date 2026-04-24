@@ -1,0 +1,22 @@
+.footer-menu {
+  display: grid;
+  gap: 26px;
+  align-content: start;
+
+  &__title {
+    margin-bottom: 6px;
+    font-size: 25px;
+    line-height: 1.05;
+  }
+
+  a {
+    color: rgba(16, 21, 37, 0.72);
+    font-size: 20px;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+}

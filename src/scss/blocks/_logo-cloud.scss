@@ -1,0 +1,19 @@
+.logo-cloud {
+  display: grid;
+  width: 1260px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin: 82px auto 0;
+
+  span {
+    display: grid;
+    height: 98px;
+    place-items: center;
+    border: 1px solid rgba(47, 109, 246, 0.1);
+    border-radius: 20px;
+    color: var(--color-blue);
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 24px;
+    font-weight: 900;
+  }
+}

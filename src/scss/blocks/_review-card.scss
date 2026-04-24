@@ -1,0 +1,18 @@
+.review-card {
+  border-radius: 28px;
+  padding: 42px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+
+  p {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  strong {
+    display: block;
+    margin-top: 22px;
+    color: var(--color-blue);
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  padding: 20px 20px 0;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/src/assets/figma/hero-bg.svg') center / contain no-repeat;
+  }
+
+  &::after {
+    content: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 1840px;
+    grid-template-columns: 893px 467px;
+    gap: 0;
+    margin-left: calc((100vw - 1840px) / 2 - 20px);
+    padding: 167px 240px 0;
+    padding-bottom: 200px;
+  }
+
+  &__content {
+    padding-top: 70px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    margin-bottom: 19px;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: #000;
+    background: #e0f0ff;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__title {
+    width: 962px;
+    font-family: var(--font-display);
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  &__star {
+    color: var(--color-blue);
+  }
+
+  &__lead {
+    max-width: 840px;
+    margin-top: 19px;
+    color: #000;
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 32.5px;
+
+    span {
+      color: var(--color-blue);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    width: max-content;
+    gap: 15.45px;
+    margin-top: 30px;
+  }
+
+  &__stats {
+    display: flex;
+    width: max-content;
+    gap: 37px;
+    margin-top: 30px;
+  }
+
+  &__stat {
+    &:nth-child(1) {
+      width: 80px;
+    }
+
+    &:nth-child(2) {
+      width: 162px;
+    }
+
+    &:nth-child(3) {
+      width: 128.32px;
+    }
+
+    dt {
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+
+    dd {
+      margin-top: 0;
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__mascot {
+    padding-top: 106px;
+  }
+}

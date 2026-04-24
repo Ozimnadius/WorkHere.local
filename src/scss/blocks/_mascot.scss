@@ -1,0 +1,81 @@
+.mascot {
+  position: relative;
+  width: 467px;
+  height: 428px;
+
+  &__bubble {
+    position: absolute;
+    left: 81.4px;
+    top: 2.93px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    width: 337.53px;
+    height: 69.42px;
+    padding: 0 26.77px;
+    border: 2.479px solid rgba(24, 144, 255, 0.2);
+    border-radius: 19.835px;
+    background: var(--color-white);
+    box-shadow: 0 12.397px 18.595px -3.719px rgba(0, 0, 0, 0.1),
+      0 4.959px 7.438px -4.959px rgba(0, 0, 0, 0.1);
+    color: #1e2939;
+    font-family: var(--font-main);
+    font-size: 22.315px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    transform: rotate(-1deg);
+  }
+
+  &__badge-ring {
+    position: absolute;
+    left: 6.07px;
+    top: 57.87px;
+    width: 93.932px;
+    height: 93.932px;
+    border: 2.479px solid rgba(24, 144, 255, 0.4);
+    border-radius: 19.835px;
+    opacity: 0.54;
+    transform: rotate(-7.99deg);
+  }
+
+  &__badge {
+    position: absolute;
+    left: 18.34px;
+    top: 70.13px;
+    z-index: 3;
+    display: grid;
+    width: 69.423px;
+    height: 69.423px;
+    place-items: center;
+    border-radius: 19.835px;
+    background: linear-gradient(135deg, #40a9ff 0%, #0d6edb 100%);
+    box-shadow: 0 12.397px 18.595px -3.719px rgba(0, 0, 0, 0.1),
+      0 4.959px 7.438px -4.959px rgba(0, 0, 0, 0.1);
+    color: var(--color-white);
+    font-size: 22.315px;
+    font-weight: 900;
+    text-shadow: 0 0 6.198px rgba(255, 255, 255, 0.5);
+    transform: rotate(-7.99deg);
+  }
+
+  &__lightning {
+    position: absolute;
+    left: 66.81px;
+    top: 57.13px;
+    z-index: 4;
+    font-size: 22.81px;
+    color: #171717;
+    transform: rotate(-17.59deg);
+  }
+
+  &__image {
+    position: absolute;
+    left: 33.6px;
+    top: 78.74px;
+    z-index: 1;
+    width: 433px;
+    height: 349px;
+    object-fit: contain;
+  }
+}

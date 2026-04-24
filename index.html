@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="WorkHere - система автоматизации рекрутмента с искусственным интеллектом."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <title>WorkHere</title>
+</head>
+<body>
+<div class="page">
+    <header class="page__header header" id="top">
+        <div class="header__container">
+            <a class="header__logo logo logo--figma" href="#top" aria-label="WorkHere">
+                <img class="logo__image" src="/src/assets/figma/hero-logo.png" alt="WorkHere"/>
+            </a>
+
+            <nav class="header__nav nav" aria-label="Основная навигация">
+                <a class="nav__link nav__link--dropdown" href="#features">Возможности</a>
+                <a class="nav__link" href="#business">Для бизнеса</a>
+                <a class="nav__link" href="#cases">Кейсы</a>
+                <a class="nav__link" href="#reviews">Отзывы</a>
+                <a class="nav__link" href="#security">Безопасность</a>
+            </nav>
+
+            <div class="header__actions">
+                <a class="header__login" href="#login">Войти</a>
+                <a class="button button--primary header__button" href="#demo">Оставить заявку на демо</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page__main">
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Система автоматизации рекрутмента №1</p>
+                    <h1 class="hero__title" id="hero-title">
+                        <span class="hero__star">*</span>Лучшая ATS<br/>система России
+                    </h1>
+                    <p class="hero__lead">
+                        WorkHere - система автоматизации<br/>
+                        рекрутмента <span>с искусственным интеллектом,</span><br/>
+                        которая помогает закрывать вакансии в срок
+                    </p>
+
+                    <div class="hero__actions">
+                        <a class="button button--primary button--lg" href="#demo">Оставить заявку на демо</a>
+                        <a class="button button--secondary button--lg" href="#features">Узнать больше</a>
+                    </div>
+
+                    <dl class="hero__stats">
+                        <div class="hero__stat">
+                            <dt>2500+</dt>
+                            <dd>компаний</dd>
+                        </div>
+                        <div class="hero__stat">
+                            <dt>ИИ помощник</dt>
+                            <dd>встроенный в систему</dd>
+                        </div>
+                        <div class="hero__stat">
+                            <dt>100K+</dt>
+                            <dd>закрытых позиций</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="hero__mascot" aria-hidden="true">
+                    <div class="mascot">
+                        <div class="mascot__bubble">Привет! Нажми на меня 👋</div>
+                        <div class="mascot__badge-ring"></div>
+                        <div class="mascot__badge">AI</div>
+                        <span class="mascot__lightning">⚡</span>
+                        <img class="mascot__image" src="/src/assets/figma/hero-mascot.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="interface-section" id="features" aria-labelledby="interface-title">
+            <div class="interface-section__panel product-panel" aria-label="Интерфейс WorkHere">
+                <div class="product-panel__tabs">
+                    <span class="product-panel__tab product-panel__tab--active">Комментарии</span>
+                    <span class="product-panel__tab">Информация</span>
+                    <span class="product-panel__tab">История</span>
+                </div>
+                <div class="product-panel__candidate">
+                    <img class="product-panel__checkbox" src="/src/assets/figma/hero-checkbox.svg" alt=""/>
+                    <span class="product-panel__avatar">
+                <img src="/src/assets/figma/hero-avatar.png" alt=""/>
+              </span>
+                    <span>
+                <strong>Алёна Ларионова</strong>
+                <small>SMM-менеджер</small>
+              </span>
+                </div>
+                <button class="product-panel__filter" type="button" aria-label="Фильтр"></button>
+                <div class="product-panel__menu">
+                    <strong>Шаблон сообщения <img src="/src/assets/figma/hero-arrow-up.svg" alt=""/></strong>
+                    <span>Приглашение</span>
+                    <span>Отказ</span>
+                </div>
+                <button class="product-panel__sign" type="button">Подписать КЭДО</button>
+                <span class="product-panel__ai"><img src="/src/assets/figma/hero-ai-ellipse.svg" alt=""/>AI</span>
+            </div>
+            <div class="interface-section__screen dashboard">
+
+                <aside class="dashboard__sidebar" aria-label="Меню продукта">
+                    <span class="dashboard__logo"><img src="/src/assets/figma/hero-logo.png" alt="WorkHere"/></span>
+                    <nav class="dashboard__menu">
+                        <a class="dashboard__item dashboard__item--active" href="#features">Собеседования</a>
+                        <a class="dashboard__item" href="#features">Пользователи</a>
+                        <a class="dashboard__item" href="#features">Все кандидаты</a>
+                        <a class="dashboard__item" href="#analytics">Отчёты</a>
+                        <a class="dashboard__item" href="#business">Компания</a>
+                        <a class="dashboard__item" href="#features">Настройки</a>
+                        <a class="dashboard__item" href="#business">Магазин</a>
+                        <a class="dashboard__item dashboard__item--chat" href="#journal">Чат</a>
+                    </nav>
+                    <button class="dashboard__add" type="button" aria-label="Добавить">+</button>
+                </aside>
+
+                <div class="dashboard__filters" aria-label="Статусы кандидатов">
+                    <span class="dashboard__filter dashboard__filter--active">Новые</span>
+                    <span class="dashboard__filter">Интервью</span>
+                    <span class="dashboard__filter">Тестирование</span>
+                    <span class="dashboard__filter">Оффер</span>
+                </div>
+
+                <div class="dashboard__search" aria-hidden="true"></div>
+
+                <div class="dashboard__list" aria-label="Список кандидатов">
+                    <article class="dashboard-person">
+                        <span class="dashboard-person__check"></span>
+                        <img class="dashboard-person__avatar" src="/src/assets/figma/candidate-1.png" alt=""/>
+                        <span>
+                  <strong>Кирилл Зорин</strong>
+                  <small>разработчик</small>
+                </span>
+                    </article>
+                    <article class="dashboard-person">
+                        <span class="dashboard-person__check"></span>
+                        <img class="dashboard-person__avatar" src="/src/assets/figma/hero-avatar.png" alt=""/>
+                        <span>
+                          <strong>Алёна Ларионова</strong>
+                          <small>SMM-менеджер</small>
+                        </span>
+                    </article>
+                    <article class="dashboard-person">
+                        <span class="dashboard-person__check"></span>
+                        <img class="dashboard-person__avatar" src="/src/assets/figma/candidate-2.png" alt=""/>
+                        <span>
+                  <strong>Артемий Буров</strong>
+                  <small>Аналитик</small>
+                </span>
+                    </article>
+                    <article class="dashboard-person">
+                        <span class="dashboard-person__check"></span>
+                        <img class="dashboard-person__avatar" src="/src/assets/figma/candidate-3.png" alt=""/>
+                        <span>
+                  <strong>Мария Соколова</strong>
+                  <small>HR</small>
+                </span>
+                    </article>
+                </div>
+
+                <section class="dashboard__detail" aria-labelledby="interface-title">
+                    <div class="dashboard__info">
+                        <h2 id="interface-title">Любимова Мария</h2>
+                        <dl>
+                            <div>
+                                <dt>Должность:</dt>
+                                <dd>Разработчик</dd>
+                            </div>
+                            <div>
+                                <dt>Зарплата:</dt>
+                                <dd>200 000 ₽</dd>
+                            </div>
+                            <div>
+                                <dt>Стаж:</dt>
+                                <dd>5 лет</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <span class="dashboard__photo">
+                <img src="/src/assets/figma/dashboard-photo-1.png" alt=""/>
+              </span>
+                    <div class="dashboard__tabs">
+                        <span>Информация</span>
+                        <span>История</span>
+                    </div>
+                    <div class="dashboard__comments">
+                        <article class="comment">
+                            <span class="comment__avatar">ПД</span>
+                            <div class="comment__body">
+                                <strong>Петров Дмитрий</strong>
+                                <small>19.12.2025 / 14:22</small>
+                                <p>Отличный кандидат! Продемонстрировал глубокие знания в React и TypeScript. Рекомендую
+                                    к найму 👍</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="section section--blue" id="business" aria-labelledby="clients-title">
+            <div class="section__intro">
+                <p class="section__kicker">Нам доверяют</p>
+                <h2 class="section__title" id="clients-title">Более 2500 компаний закрывают вакансии с WorkHere</h2>
+            </div>
+            <div class="logo-cloud" aria-label="Клиенты WorkHere">
+                <span>Альфа</span>
+                <span>Магнит</span>
+                <span>Почта</span>
+                <span>Сбер</span>
+                <span>МТС</span>
+                <span>Точка</span>
+            </div>
+        </section>
+
+        <section class="section section--white" id="cases" aria-labelledby="experience-title">
+            <div class="metrics">
+                <article class="metrics__hero-card">
+                    <h2 id="experience-title">Уникальный опыт и экспертиза WorkHere</h2>
+                </article>
+                <article class="metrics__card">
+                    <strong>+2000</strong>
+                    <span>клиентов</span>
+                </article>
+                <article class="metrics__card">
+                    <strong>10 000</strong>
+                    <span>рекрутеров</span>
+                </article>
+                <article class="metrics__card">
+                    <strong>10 лет</strong>
+                    <span>опыта в hr-tech</span>
+                </article>
+                <article class="metrics__card metrics__card--wide">
+                    <strong>1 000 000</strong>
+                    <span>кандидатов</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--mint" id="automation" aria-labelledby="automation-title">
+            <div class="feature feature--reverse">
+                <div class="feature__content">
+                    <p class="section__kicker">Автоматизация</p>
+                    <h2 class="section__title" id="automation-title">Закрывайте рутину и держите подбор под
+                        контролем</h2>
+                    <p class="section__text">
+                        Воронки, коммуникации, шаблоны сообщений и статусы кандидатов помогают рекрутерам
+                        работать быстрее без потери качества.
+                    </p>
+                </div>
+                <div class="feature__visual automation-visual" aria-hidden="true">
+                    <span class="automation-visual__node automation-visual__node--one">AI</span>
+                    <span class="automation-visual__node automation-visual__node--two">HR</span>
+                    <span class="automation-visual__node automation-visual__node--three">ATS</span>
+                    <span class="automation-visual__line"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--violet" id="analytics" aria-labelledby="analytics-title">
+            <div class="feature">
+                <div class="feature__content">
+                    <p class="section__kicker">Аналитика</p>
+                    <h2 class="section__title" id="analytics-title">Принимайте решения на основе данных</h2>
+                    <p class="section__text">
+                        WorkHere показывает эффективность каналов, скорость закрытия вакансий и узкие места
+                        в процессе найма.
+                    </p>
+                </div>
+                <div class="feature__visual chart-card" aria-hidden="true">
+                    <div class="chart-card__bar chart-card__bar--one"></div>
+                    <div class="chart-card__bar chart-card__bar--two"></div>
+                    <div class="chart-card__bar chart-card__bar--three"></div>
+                    <div class="chart-card__bar chart-card__bar--four"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--reviews" id="reviews" aria-labelledby="reviews-title">
+            <div class="reviews">
+                <div class="reviews__content">
+                    <p class="section__kicker">Отзывы</p>
+                    <h2 class="section__title" id="reviews-title">Команды отмечают скорость внедрения и удобство</h2>
+                </div>
+                <div class="reviews__cards">
+                    <article class="review-card">
+                        <p>Собрали подбор в одном окне и сократили ручные действия рекрутеров.</p>
+                        <strong>HR-директор, retail</strong>
+                    </article>
+                    <article class="review-card">
+                        <p>ИИ-помощник быстрее находит подходящих кандидатов в базе.</p>
+                        <strong>Руководитель подбора, IT</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--security" id="security" aria-labelledby="security-title">
+            <div class="section__intro">
+                <p class="section__kicker">Безопасность</p>
+                <h2 class="section__title" id="security-title">Надежная работа и защита ваших данных</h2>
+                <p class="section__text">Покажите нам предложение конкурента - мы предложим лучшие условия.</p>
+            </div>
+            <div class="price-grid">
+                <article class="price-card">
+                    <div class="price-card__icon"></div>
+                    <h3>Демо-версия</h3>
+                    <p>базовый функционал</p>
+                    <ul>
+                        <li>календарь собеседований</li>
+                        <li>базовые отчеты</li>
+                        <li>интеграции с мессенджерами</li>
+                        <li>интеграции с Job-сайтами</li>
+                    </ul>
+                    <a class="button button--accent" href="#demo">Попробовать бесплатно</a>
+                </article>
+                <article class="price-card price-card--featured">
+                    <div class="price-card__icon"></div>
+                    <h3>Стандарт</h3>
+                    <p>для растущих команд</p>
+                    <ul>
+                        <li>базовый функционал</li>
+                        <li>ИИ поиск по базе</li>
+                        <li>IP телефония</li>
+                        <li>конструктор отчетов</li>
+                    </ul>
+                    <a class="button button--primary" href="#demo">Попробовать бесплатно</a>
+                </article>
+                <article class="price-card">
+                    <div class="price-card__icon"></div>
+                    <h3>Профи</h3>
+                    <p>для крупных клиентов</p>
+                    <ul>
+                        <li>все из тарифа Стандарт</li>
+                        <li>ИИ агрегатор работных сайтов</li>
+                        <li>API</li>
+                        <li>КЭДО</li>
+                    </ul>
+                    <a class="button button--accent" href="#demo">Попробовать бесплатно</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="demo-section" id="demo" aria-labelledby="demo-title">
+            <div class="demo-section__inner">
+                <h2 id="demo-title">Закажите персональное демо</h2>
+                <p>Оставьте заявку - мы покажем, как WorkHere поможет улучшить ваш подбор</p>
+                <form class="lead-form" data-form novalidate>
+                    <label class="lead-form__label">
+                        <span class="visually-hidden">Ваша эл. почта</span>
+                        <input class="lead-form__input" type="email" name="email" placeholder="Ваша эл. почта"
+                               required/>
+                    </label>
+                    <button class="button button--primary lead-form__button" type="submit">Оставить заявку</button>
+                    <p class="lead-form__message" data-form-message aria-live="polite"></p>
+                </form>
+                <ul class="demo-section__checks">
+                    <li>Бесплатная консультация</li>
+                    <li>Ответим за 24 часа</li>
+                    <li>Без обязательств</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="journal" id="journal" aria-labelledby="journal-title">
+            <div class="journal__intro">
+                <h2 id="journal-title">Журнал WorkHere</h2>
+                <p>Более 500 экспертных материалов обо всем, что связано с наймом</p>
+                <a class="button button--secondary" href="#journal">Все материалы</a>
+            </div>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-card__image article-card__image--one"></div>
+                    <span class="article-card__tag">Кейсы</span>
+                    <h3>Как ускорить закрытие вакансий в автоматизации</h3>
+                    <p>Опыт крупных компаний</p>
+                </article>
+                <article class="article-card">
+                    <div class="article-card__image article-card__image--two"></div>
+                    <span class="article-card__tag">Найм</span>
+                    <h3>Что меняется в работе рекрутера с ИИ</h3>
+                    <p>Практические сценарии</p>
+                </article>
+                <article class="article-card">
+                    <div class="article-card__image article-card__image--three"></div>
+                    <span class="article-card__tag">HR-tech</span>
+                    <h3>Какие метрики помогают управлять подбором</h3>
+                    <p>Гайд для руководителей</p>
+                </article>
+                <article class="article-card">
+                    <div class="article-card__image article-card__image--four"></div>
+                    <span class="article-card__tag">ATS</span>
+                    <h3>Как выбрать систему автоматизации рекрутмента</h3>
+                    <p>Чек-лист внедрения</p>
+                </article>
+            </div>
+
+            <div class="subscribe">
+                <div>
+                    <h3>Подпишитесь на рассылку</h3>
+                    <p>Наши письма читают уже более 55 000 HR-специалистов</p>
+                </div>
+                <form class="lead-form lead-form--compact" data-form novalidate>
+                    <label class="lead-form__label">
+                        <span class="visually-hidden">Ваша эл. почта</span>
+                        <input class="lead-form__input" type="email" name="email" placeholder="Ваша эл. почта"
+                               required/>
+                    </label>
+                    <button class="button button--primary lead-form__button" type="submit">Подписаться</button>
+                    <p class="lead-form__message" data-form-message aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <a class="footer__logo logo" href="#top" aria-label="WorkHere">
+                    <span class="logo__mark" aria-hidden="true"></span>
+                    <span class="logo__text">WorkHere</span>
+                </a>
+                <div class="footer__contacts">
+                    <a href="mailto:hello@workhere.ru">hello@workhere.ru</a>
+                    <a class="footer__phone" href="tel:88001234567">8 800 123-45-67</a>
+                </div>
+            </div>
+
+            <div class="footer__menus">
+                <nav class="footer-menu" aria-label="Продукт">
+                    <h2 class="footer-menu__title">Продукт</h2>
+                    <a href="#features">Что такое WorkHere</a>
+                    <a href="#security">Тарифы</a>
+                    <a href="#automation">Внедрение</a>
+                    <a href="#security">Безопасность</a>
+                    <a href="#demo">API</a>
+                </nav>
+                <nav class="footer-menu" aria-label="Возможности">
+                    <h2 class="footer-menu__title">Возможности</h2>
+                    <a href="#automation">Автоматизация</a>
+                    <a href="#features">Интеграции</a>
+                    <a href="#analytics">Аналитика</a>
+                    <a href="#business">Для крупных клиентов</a>
+                </nav>
+                <nav class="footer-menu" aria-label="Ресурсы">
+                    <h2 class="footer-menu__title">Ресурсы</h2>
+                    <a href="#journal">Журнал WorkHere</a>
+                    <a href="#journal">Руководства</a>
+                    <a href="#cases">Кейсы</a>
+                    <a href="#journal">Рассылка</a>
+                </nav>
+                <nav class="footer-menu" aria-label="Компания">
+                    <h2 class="footer-menu__title">Компания</h2>
+                    <a href="#business">О компании</a>
+                    <a href="#demo">Карьера</a>
+                    <a href="#demo">Контакты</a>
+                </nav>
+                <nav class="footer-menu" aria-label="Официальное">
+                    <h2 class="footer-menu__title">Официальное</h2>
+                    <a href="#top">Пользовательское соглашение</a>
+                    <a href="#top">Политика конфиденциальности</a>
+                    <a href="#top">Документы</a>
+                </nav>
+                <nav class="footer-menu" aria-label="Социальные сети">
+                    <h2 class="footer-menu__title">Социальные сети</h2>
+                    <a href="#top">Telegram</a>
+                    <a href="#top">VK</a>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <span>© ООО «WorkHere», 2020 - 2026</span>
+                <a href="#top">Политика конфиденциальности</a>
+            </div>
+            <p class="footer__note">
+                * Утверждение "Лучшая" основано на внутреннем исследовании и сравнении количества отзывов с оценкой 4 и
+                5 звезд
+                в сервисе Яндекс среди систем, представленных на российском рынке, по состоянию на 31 января 2026 г.
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

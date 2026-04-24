@@ -1,0 +1,21 @@
+.reviews {
+  display: grid;
+  width: 1348px;
+  grid-template-columns: 1fr 650px;
+  gap: 96px;
+  margin: 0 auto;
+
+  &__content {
+    align-self: center;
+
+    .section__title {
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    gap: 24px;
+  }
+}

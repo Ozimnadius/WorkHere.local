@@ -1,0 +1,54 @@
+.demo-section {
+  padding: 40px;
+  background: var(--color-white);
+
+  &__inner {
+    min-height: 476px;
+    border-radius: 34px;
+    padding: 118px 0 40px;
+    background:
+      radial-gradient(circle at 85% 0%, rgba(255, 233, 106, 0.72), transparent 28%),
+      var(--color-deep-blue);
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 70px;
+    line-height: 1.05;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .lead-form {
+    margin: 20px auto 0;
+  }
+
+  &__checks {
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+    margin-top: 90px;
+
+    li {
+      position: relative;
+      padding-left: 29px;
+      font-size: 16px;
+      font-weight: 800;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 5px;
+        background: var(--color-green);
+      }
+    }
+  }
+}

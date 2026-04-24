@@ -1,0 +1,69 @@
+.footer {
+  padding: 0 40px 40px;
+  background: #f8fbff;
+
+  &__container {
+    border-radius: 34px;
+    padding: 112px 130px 0;
+    background: var(--color-white);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 106px;
+    font-size: 20px;
+    font-weight: 700;
+
+    a {
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  &__phone {
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+
+  &__menus {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 52px;
+    margin-top: 124px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 116px;
+    padding-bottom: 100px;
+    color: rgba(16, 21, 37, 0.72);
+    font-size: 20px;
+
+    a {
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  &__note {
+    margin: 0 -130px;
+    padding: 0 130px 0;
+    color: rgba(16, 21, 37, 0.58);
+    font-size: 18px;
+    line-height: 1.35;
+  }
+}
