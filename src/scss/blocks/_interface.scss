@@ -1,0 +1,102 @@
+.interface {
+  position: relative;
+
+  &__img {
+    aspect-ratio: 1260/683;
+
+    img {
+      position: absolute;
+      top: calc(45% - 45% * var(--progress));
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__animated-blocks {
+    position: absolute;
+    inset: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__animated-block-1 {
+    position: absolute;
+    width: 10.79%;
+    top: calc(0% + 74.4% * var(--progress));
+    left: calc(4% + 50.1% * var(--progress));
+    scale: calc(1.4 - 0.4 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+  &__animated-block-2 {
+    position: absolute;
+    width: 4.29%;
+
+    top: calc(23% + 0% * var(--progress));
+    left: calc(17% + 28.8% * var(--progress));
+    scale: calc(1.6 - 0.6 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+  &__animated-block-3 {
+    position: absolute;
+    width: 27.22%;
+    border-radius: 16px;
+    overflow: hidden;
+
+    top: calc(1% + 52.4% * var(--progress));
+    left: calc(28% - 5.2% * var(--progress));
+    scale: calc(1.1 - 0.1 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+  &__animated-block-4 {
+    position: absolute;
+    width: 3.81%;
+
+    top: calc(0% + 10% * var(--progress));
+    left: calc(65% + 27.5% * var(--progress));
+    scale: calc(1.6 - 0.6 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+  &__animated-block-5 {
+    position: absolute;
+    width: 14.29%;
+
+    top: calc(24% + 24.8% * var(--progress));
+    left: calc(61% - 7% * var(--progress));
+    scale: calc(1.4 - 0.4 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+  &__animated-block-6 {
+    position: absolute;
+    width: 16.67%;
+
+    top: calc(3% + 59% * var(--progress));
+    left: calc(80% - 26% * var(--progress));
+    scale: calc(1.2 - 0.2 * var(--progress));
+    filter: drop-shadow(
+      0 calc(6.896px * (1 - var(--progress))) calc(39.4px * (1 - var(--progress))) rgba(0, 55, 131, calc(0.6 * (1 - var(--progress))))
+    );
+  }
+
+}

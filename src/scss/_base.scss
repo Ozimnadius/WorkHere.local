@@ -59,9 +59,8 @@ ol {
   list-style: none;
 }
 
-.page {
-  min-height: 100vh;
-  overflow-x: hidden;
+.container {
+  margin-inline: 40px;
 }
 
 .visually-hidden {

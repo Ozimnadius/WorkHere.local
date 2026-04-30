@@ -1,17 +1,22 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite';
 
 export default defineConfig({
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith('.css')) {
-            return 'css/style[extname]'
+          const name = assetInfo.name ?? '';
+
+          if (name.endsWith('.css')) {
+            return 'assets/css/[name]-[hash][extname]';
           }
-          return 'assets/[name][extname]'
-        }
-      }
-    }
-  }
-})
+
+          return 'assets/[name]-[hash][extname]';
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+      },
+    },
+  },
+});

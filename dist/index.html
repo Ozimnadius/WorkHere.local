@@ -1,472 +1,1701 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="WorkHere - система автоматизации рекрутмента с искусственным интеллектом." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>WorkHere</title>
-    <script type="module" crossorigin src="/assets/index-XIbJchuE.js"></script>
-    <link rel="stylesheet" crossorigin href="/css/style.css">
-  </head>
-  <body>
-    <div class="page">
-      <header class="page__header header" id="top">
-        <div class="header__container">
-          <a class="header__logo logo logo--figma" href="#top" aria-label="WorkHere">
-            <img class="logo__image" src="data:image/png;base64,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" alt="WorkHere" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"
+  />
+  <meta name="description"
+        content="WorkHere - система автоматизации рекрутмента с искусственным интеллектом."
+  />
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com"
+  />
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+  />
+  <link rel="icon"
+        type="image/svg+xml"
+        href="/favicon.svg"
+  />
+  <title>WorkHere</title>
+  <script type="module" crossorigin src="/assets/js/index-CzxkDd2T.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/index-BeIhhzIi.css">
+</head>
+<body>
+<div class="page">
+  <div class="page__header"
+       id="top"
+  >
+    <div class="container">
+      <header class="header">
+
+        <div class="header__logo">
+          <a class="logo logo--figma"
+             href="#top"
+             aria-label="WorkHere"
+          >
+            <img class="logo__image"
+                 src="data:image/webp;base64,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"
+                 width="154"
+                 height="44"
+                 alt="WorkHere"
+                 loading="lazy"
+            />
           </a>
+        </div>
 
-          <nav class="header__nav nav" aria-label="Основная навигация">
-            <a class="nav__link nav__link--dropdown" href="#features">Возможности</a>
-            <a class="nav__link" href="#business">Для бизнеса</a>
-            <a class="nav__link" href="#cases">Кейсы</a>
-            <a class="nav__link" href="#reviews">Отзывы</a>
-            <a class="nav__link" href="#security">Безопасность</a>
+        <div class="header__nav">
+          <nav class="nav"
+               aria-label="Основная навигация"
+          >
+            <a class="nav__link nav__link--dropdown"
+               href="#top"
+            >Возможности
+            </a>
+            <a class="nav__link"
+               href="#top"
+            >Для бизнеса
+            </a>
+            <a class="nav__link"
+               href="#top"
+            >Кейсы
+            </a>
+            <a
+              class="nav__link"
+              href="#top"
+            >Отзывы
+            </a>
+            <a
+              class="nav__link"
+              href="#top"
+            >Безопасность
+            </a>
           </nav>
+        </div>
 
-          <div class="header__actions">
-            <a class="header__login" href="#login">Войти</a>
-            <a class="button button--primary header__button" href="#demo">Оставить заявку на демо</a>
+        <div class="header__actions">
+          <a
+            class="header__login"
+            href="#top"
+          >Войти
+          </a>
+          <div class="header__button">
+            <a
+              class="button button--primary"
+              href="#top"
+            >Оставить заявку на демо
+            </a>
           </div>
         </div>
+
       </header>
+    </div>
+  </div>
 
-      <main class="page__main">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero__inner">
-            <div class="hero__content">
-              <p class="hero__eyebrow">Система автоматизации рекрутмента №1</p>
-              <h1 class="hero__title" id="hero-title">
-                <span class="hero__star">*</span>Лучшая ATS<br />система России
-              </h1>
-              <p class="hero__lead">
-                WorkHere - система автоматизации<br />
-                рекрутмента <span>с искусственным интеллектом,</span><br />
-                которая помогает закрывать вакансии в срок
-              </p>
+  <main class="page__main">
 
-              <div class="hero__actions">
-                <a class="button button--primary button--lg" href="#demo">Оставить заявку на демо</a>
-                <a class="button button--secondary button--lg" href="#features">Узнать больше</a>
+    <section class="page__hero">
+      <div class="page__hero-container">
+        <div
+          class="hero"
+          aria-labelledby="hero-title"
+        >
+
+          <div class="hero__content">
+            <p class="hero__eyebrow">Система автоматизации рекрутмента №1</p>
+
+            <h1
+              class="hero__title"
+              id="hero-title"
+            >
+              <span class="hero__star">*</span>
+              Лучшая ATS<br />
+              система России
+            </h1>
+
+            <p class="hero__lead">
+              WorkHere - система автоматизации<br />
+              рекрутмента
+              <span>с искусственным интеллектом,</span>
+              <br />
+              которая помогает закрывать вакансии в срок
+            </p>
+
+            <div class="hero__actions">
+              <div class="hero__action">
+                <a
+                  class="button button--primary button--lg"
+                  href="#top"
+                >Оставить заявку на демо
+                </a>
               </div>
-
-              <dl class="hero__stats">
-                <div class="hero__stat">
-                  <dt>2500+</dt>
-                  <dd>компаний</dd>
-                </div>
-                <div class="hero__stat">
-                  <dt>ИИ помощник</dt>
-                  <dd>встроенный в систему</dd>
-                </div>
-                <div class="hero__stat">
-                  <dt>100K+</dt>
-                  <dd>закрытых позиций</dd>
-                </div>
-              </dl>
-            </div>
-
-            <div class="hero__mascot" aria-hidden="true">
-              <div class="mascot">
-                <div class="mascot__bubble">Привет! Нажми на меня</div>
-                <div class="mascot__badge">AI</div>
-                <img class="mascot__image" src="/assets/hero-mascot.png" alt="" />
+              <div class="hero__action">
+                <a
+                  class="button button--secondary button--lg"
+                  href="#footer"
+                >Узнать больше
+                </a>
               </div>
             </div>
-          </div>
 
-          <div class="hero__panel product-panel" aria-label="Интерфейс WorkHere">
-            <div class="product-panel__tabs">
-              <span class="product-panel__tab product-panel__tab--active">Комментарии</span>
-              <span class="product-panel__tab">Информация</span>
-              <span class="product-panel__tab">История</span>
-            </div>
-            <div class="product-panel__candidate">
-              <img class="product-panel__checkbox" src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2021.5804%2021.5804'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Checkbox'%3e%3cg%20id='Checked%20Box'%3e%3cpath%20d='M15.4732%208.73028C15.8243%208.37912%2015.8243%207.80979%2015.4732%207.45864C15.122%207.10749%2014.5527%207.10749%2014.2015%207.45864L8.99266%2012.6675L6.93093%2010.6058C6.57978%2010.2546%206.01045%2010.2546%205.6593%2010.6058C5.30814%2010.9569%205.30814%2011.5263%205.6593%2011.8774L8.03894%2014.2571C8.56567%2014.7838%209.41966%2014.7838%209.94639%2014.2571L15.4732%208.73028Z'%20fill='var(--fill-0,%20%23ECECEE)'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5.39593%201.35059C3.16121%201.35059%201.34961%203.16219%201.34961%205.39691V16.1871C1.34961%2018.4218%203.16121%2020.2334%205.39593%2020.2334H16.1861C18.4208%2020.2334%2020.2325%2018.4218%2020.2325%2016.1871V5.39691C20.2325%203.16219%2018.4208%201.35059%2016.1861%201.35059H5.39593ZM2.24879%205.39691C2.24879%203.65879%203.65782%202.24977%205.39593%202.24977H16.1861C17.9242%202.24977%2019.3333%203.65879%2019.3333%205.39691V16.1871C19.3333%2017.9252%2017.9242%2019.3342%2016.1861%2019.3342H5.39593C3.65781%2019.3342%202.24879%2017.9252%202.24879%2016.1871V5.39691Z'%20fill='var(--fill-0,%20%23ECECEE)'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5.39593%202.24977C3.65782%202.24977%202.24879%203.65879%202.24879%205.39691V16.1871C2.24879%2017.9252%203.65781%2019.3342%205.39593%2019.3342H16.1861C17.9242%2019.3342%2019.3333%2017.9252%2019.3333%2016.1871V5.39691C19.3333%203.65879%2017.9242%202.24977%2016.1861%202.24977H5.39593ZM15.4732%208.73028C15.8243%208.37912%2015.8243%207.80979%2015.4732%207.45864C15.122%207.10749%2014.5527%207.10749%2014.2015%207.45864L8.99266%2012.6675L6.93093%2010.6058C6.57978%2010.2546%206.01045%2010.2546%205.6593%2010.6058C5.30814%2010.9569%205.30814%2011.5263%205.6593%2011.8774L8.03894%2014.2571C8.56567%2014.7838%209.41966%2014.7838%209.94639%2014.2571L15.4732%208.73028Z'%20fill='var(--fill-0,%20%23ECECEE)'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="" />
-              <span class="product-panel__avatar">
-                <img src="/assets/hero-avatar.png" alt="" />
-              </span>
-              <span>
-                <strong>Алёна Ларионова</strong>
-                <small>SMM-менеджер</small>
-              </span>
-            </div>
-            <button class="product-panel__filter" type="button" aria-label="Фильтр"></button>
-            <div class="product-panel__menu">
-              <strong>Шаблон сообщения <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2032.6995%2032.6995'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='iconamoon:arrow-up-2-duotone'%3e%3cpath%20id='Vector'%20opacity='0.4'%20d='M23.1619%2019.0752L16.3495%2012.2628L9.53708%2019.0752'%20stroke='var(--stroke-0,%20%231D1D1F)'%20stroke-width='1.36248'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e" alt="" /></strong>
-              <span>Приглашение</span>
-              <span>Отказ</span>
-            </div>
-            <button class="product-panel__sign" type="button">Подписать КЭДО</button>
-            <span class="product-panel__ai"><img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2074.6221%2074.6221'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20id='Ellipse%202134'%20cx='37.311'%20cy='37.311'%20r='37.311'%20fill='var(--fill-0,%20%23F7F7FC)'/%3e%3c/svg%3e" alt="" />AI</span>
-          </div>
-        </section>
-
-        <section class="interface-section" id="features" aria-labelledby="interface-title">
-          <div class="interface-section__screen dashboard">
-            <aside class="dashboard__sidebar" aria-label="Меню продукта">
-              <span class="dashboard__logo"><img src="data:image/png;base64,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" alt="WorkHere" /></span>
-              <nav class="dashboard__menu">
-                <a class="dashboard__item dashboard__item--active" href="#features">Собеседования</a>
-                <a class="dashboard__item" href="#features">Пользователи</a>
-                <a class="dashboard__item" href="#features">Все кандидаты</a>
-                <a class="dashboard__item" href="#analytics">Отчёты</a>
-                <a class="dashboard__item" href="#business">Компания</a>
-                <a class="dashboard__item" href="#features">Настройки</a>
-                <a class="dashboard__item" href="#business">Магазин</a>
-                <a class="dashboard__item dashboard__item--chat" href="#journal">Чат</a>
-              </nav>
-              <button class="dashboard__add" type="button" aria-label="Добавить">+</button>
-            </aside>
-
-            <div class="dashboard__filters" aria-label="Статусы кандидатов">
-              <span class="dashboard__filter dashboard__filter--active">Новые</span>
-              <span class="dashboard__filter">Интервью</span>
-              <span class="dashboard__filter">Тестирование</span>
-              <span class="dashboard__filter">Оффер</span>
-            </div>
-
-            <div class="dashboard__search" aria-hidden="true"></div>
-
-            <div class="dashboard__list" aria-label="Список кандидатов">
-              <article class="dashboard-person dashboard-person--active">
-                <span class="dashboard-person__check"></span>
-                <img class="dashboard-person__avatar" src="/assets/candidate-1.png" alt="" />
-                <span>
-                  <strong>Кирилл Зорин</strong>
-                  <small>разработчик</small>
-                </span>
-              </article>
-              <article class="dashboard-person">
-                <span class="dashboard-person__check"></span>
-                <img class="dashboard-person__avatar" src="/assets/candidate-2.png" alt="" />
-                <span>
-                  <strong>Артемий Буров</strong>
-                  <small>Аналитик</small>
-                </span>
-              </article>
-              <article class="dashboard-person">
-                <span class="dashboard-person__check"></span>
-                <img class="dashboard-person__avatar" src="/assets/candidate-3.png" alt="" />
-                <span>
-                  <strong>Мария Соколова</strong>
-                  <small>HR</small>
-                </span>
-              </article>
-            </div>
-
-            <section class="dashboard__detail" aria-labelledby="interface-title">
-              <div class="dashboard__info">
-                <h2 id="interface-title">Любимова Мария</h2>
-                <dl>
-                  <div><dt>Должность:</dt><dd>Разработчик</dd></div>
-                  <div><dt>Зарплата:</dt><dd>200 000 ₽</dd></div>
-                  <div><dt>Стаж:</dt><dd>5 лет</dd></div>
-                </dl>
+            <dl class="hero__stats">
+              <div class="hero__stat">
+                <dt>2500+</dt>
+                <dd>компаний</dd>
               </div>
-              <span class="dashboard__photo">
-                <img src="/assets/dashboard-photo-1.png" alt="" />
-              </span>
-              <div class="dashboard__tabs">
-                <span>Информация</span>
-                <span>История</span>
+              <div class="hero__stat">
+                <dt>ИИ помощник</dt>
+                <dd>встроенный в систему</dd>
               </div>
-              <div class="dashboard__comments">
-                <article class="comment">
-                  <span class="comment__avatar">ПД</span>
-                  <div class="comment__body">
-                    <strong>Петров Дмитрий</strong>
-                    <small>19.12.2025 / 14:22</small>
-                    <p>Отличный кандидат! Продемонстрировал глубокие знания в React и TypeScript. Рекомендую к найму 👍</p>
-                  </div>
-                </article>
+              <div class="hero__stat">
+                <dt>100K+</dt>
+                <dd>закрытых позиций</dd>
               </div>
-            </section>
+            </dl>
           </div>
-        </section>
 
-        <section class="section section--blue" id="business" aria-labelledby="clients-title">
-          <div class="section__intro">
-            <p class="section__kicker">Нам доверяют</p>
-            <h2 class="section__title" id="clients-title">Более 2500 компаний закрывают вакансии с WorkHere</h2>
-          </div>
-          <div class="logo-cloud" aria-label="Клиенты WorkHere">
-            <span>Альфа</span>
-            <span>Магнит</span>
-            <span>Почта</span>
-            <span>Сбер</span>
-            <span>МТС</span>
-            <span>Точка</span>
-          </div>
-        </section>
-
-        <section class="section section--white" id="cases" aria-labelledby="experience-title">
-          <div class="metrics">
-            <article class="metrics__hero-card">
-              <h2 id="experience-title">Уникальный опыт и экспертиза WorkHere</h2>
-            </article>
-            <article class="metrics__card">
-              <strong>+2000</strong>
-              <span>клиентов</span>
-            </article>
-            <article class="metrics__card">
-              <strong>10 000</strong>
-              <span>рекрутеров</span>
-            </article>
-            <article class="metrics__card">
-              <strong>10 лет</strong>
-              <span>опыта в hr-tech</span>
-            </article>
-            <article class="metrics__card metrics__card--wide">
-              <strong>1 000 000</strong>
-              <span>кандидатов</span>
-            </article>
-          </div>
-        </section>
-
-        <section class="section section--mint" id="automation" aria-labelledby="automation-title">
-          <div class="feature feature--reverse">
-            <div class="feature__content">
-              <p class="section__kicker">Автоматизация</p>
-              <h2 class="section__title" id="automation-title">Закрывайте рутину и держите подбор под контролем</h2>
-              <p class="section__text">
-                Воронки, коммуникации, шаблоны сообщений и статусы кандидатов помогают рекрутерам
-                работать быстрее без потери качества.
-              </p>
-            </div>
-            <div class="feature__visual automation-visual" aria-hidden="true">
-              <span class="automation-visual__node automation-visual__node--one">AI</span>
-              <span class="automation-visual__node automation-visual__node--two">HR</span>
-              <span class="automation-visual__node automation-visual__node--three">ATS</span>
-              <span class="automation-visual__line"></span>
+          <div class="hero__mascot"
+               aria-hidden="true"
+          >
+            <div class="mascot">
+              <div class="mascot__bubble">Привет! Нажми на меня 👋</div>
+              <div class="mascot__badge-ring"></div>
+              <div class="mascot__badge">AI</div>
+              <span class="mascot__lightning">⚡</span>
+              <img
+                class="mascot__image"
+                src="/assets/hero-mascot-Bs7QXEG6.webp"
+                width="863"
+                height="614"
+                alt=""
+              />
             </div>
           </div>
-        </section>
 
-        <section class="section section--violet" id="analytics" aria-labelledby="analytics-title">
-          <div class="feature">
-            <div class="feature__content">
-              <p class="section__kicker">Аналитика</p>
-              <h2 class="section__title" id="analytics-title">Принимайте решения на основе данных</h2>
-              <p class="section__text">
-                WorkHere показывает эффективность каналов, скорость закрытия вакансий и узкие места
-                в процессе найма.
-              </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__interface">
+      <div class="page__interface-container">
+        <div
+          class="interface"
+          data-progress
+          data-progress-start="0.3"
+          data-progress-smooth="0.12"
+        >
+          <div class="interface__img">
+            <img
+              src="/assets/interface-CfoAMqvy.webp"
+              alt="Interface"
+              width="1260"
+              height="683"
+              loading="lazy"
+            >
+          </div>
+          <div class="interface__animated-blocks">
+            <div class="interface__animated-block-1">
+              <img
+                src="data:image/webp;base64,UklGRnIFAABXRUJQVlA4WAoAAAAQAAAAhwAAKQAAQUxQSGEAAAABX2CQbeTkHcEX4RHe4CMicl5nAUxqbXvysi0Rfk8EIlBgjzKo7YnwOzZ88X75fZoT0f8JAKC6j9jq1IapbmK9WsZBzGMALbH3gZ1fgpAEtBcJgk2C6JSgeCToPwk0/ToEAFZQOCDqBAAA8BsAnQEqiAAqAD4xFolDIiEhFCyWACADBLIBJgF68fJ8z/EDWX+sXmdsM1l/wvYd+QN5f5h/4B/av2X9qb1AdC5/cvYA/WD2APNX/1P7ffA5/a/9v+4XwFfs///7yA+s89P5M9i9AD+H/Xf6lnE/6X+R2WxfUfuA8nr90/IDyAeZB/cfzK2R7+m/337ZPg9/y/ux9nfzX/t/cI/mX8//1frGexn0QD08Y/N2zmS5d4lYAGIVimJOHhMSz5gkay7XEirbQQ1eWVL//bO2p5hV9KqoGQIfkK1XBV+kkPUBKgJUAVOaLUJmAAD+/sf25zI0XiVnfMyq6M65jfbJABUOg1Mm9VCmI//xHkYbCx0UgDKAP4NLIzswKgSfRdAnrbhQqRhZYnyGVBLTmnH90z11j/C6sGv8wEDgekwohgjGG5m52UwWOT0xC+1SfpTZ04zp2rcrQe+Kl7a9kTiMQ9yXOxrQ7rAP9601SYUprRIlMGxAgzkq3zPx1+R6beBlU1TocWa/dRu+pJml5pkX4ObtTNlYgXlPl7mZB4gH976J9YkyMEYAsHYUKP3mD18f2teUwWyGOlG/csic0/tZt9w7DlFsf7jVtjHMiCeLq8eNQk0bCS2eEIXmh6ahEp7dcNw9GIfZDL5oVKEG/mnf2WTJ1Vku7fnTv+pbXLULcKbPbcgOlLXw73/aNnt6/n78M25FwqYm8AW3d1nFl9w71mxuYlbk3bboiZa6X8ojfQNOB1lsGXQZBdufax6CvDkEu1q458r1mjAjPdf/zxYF/4mPeBzHpQzil+qp9+dYC73srDRS7j4rYyP+q/7HS/HpsCpGZnfGBzRwczKSFG6GkYlXidn0aCaIEbHj+z88d16+sBfilQE4A9M+c/tdEDJeVdAQ7yofEntOz8qivLlU2CpWcUMTFsLKpKWbXc5wCXiD6jFzguuMB9mnZpThPjXMLQdRj0c0FCPphossjl9ldtGR1MEnPzc+E3uTErsQkaidRF01SysgoOoOSa5z0n+4Oc6J/FrFLybphyoeDN70r7XeGWNUpFmiO1EKO2Heuzv7957yvKrZ4+USLWBkkPsjyptuKMiZF/4EL//x6FOa+gOd+bqc/c6bKbH2dOUZi/A+s8dl/YlQH4YP+nNjbetg4yVO4/ZosLsXu1EiorXwBSPsqWlDq0KOE1lZ8iPSo/wqt0JR1Tp2PSFsyn0I5mOtdUsqGctQECKmRfg16D07JUvfMrblqMiz7fHMnZt7PiKk6Qd+z9zpaX9xtahCJkJyibu/NPActd3nueW8arGtPJIk1iMUq7+2NGVb+2d4A8U7Il2Vf9Cm7sUq5gSdH8EAFVJ3Np4RyKKNaerzfo8BGsKbTc4+mdnwaE6CWyJdo10W8jH1x9YZumOcsb++WizizHd2/6mbYTdE2IgNYSGC3GFW6M4YiGGdLbHMCV1mtSElHOgm5vnXl9AzCMTOwwWmjGkUqnpu0niMPMTd3Cs5dtgEOVvVVzPel3sMy1H1bpLLngPhADYobjtPwSB9oP3OntEnfqViOZ/NdT7uz8Fb88S//kIkSKCmCt1plkvL/v8ypujL0+7Pxi8oApX/+zh//tGsJbMgrV7j2PQvH0N/dGBRPBiOAmRlDgH0a2wTD5xw9o0xM0JQlu3KwTvqkMU6fqsx5LoVCcp7XuAAAA=="
+                alt=""
+                width="136"
+                height="42"
+                loading="lazy"
+              >
             </div>
-            <div class="feature__visual chart-card" aria-hidden="true">
-              <div class="chart-card__bar chart-card__bar--one"></div>
-              <div class="chart-card__bar chart-card__bar--two"></div>
-              <div class="chart-card__bar chart-card__bar--three"></div>
-              <div class="chart-card__bar chart-card__bar--four"></div>
+            <div class="interface__animated-block-2">
+              <img
+                src="data:image/webp;base64,UklGRnwCAABXRUJQVlA4WAoAAAAQAAAANQAANQAAQUxQSGIAAAABV0AgQJlkgSZ4YIqICEHveBRMa21b8mLdV9DuCTawxghExvhH+KOgk35fJ0T0fwKA9f0oRQpg/Khj+A+ZsIaP3lUM/c2wPQzy+218GcTJsGuGcmLw/IdMWJjJEgDHQyIrAFZQOCD0AQAA0AoAnQEqNgA2AD4xGIlDoiGJhVacEAGCWMAdwXyB8gFwzcAB+t3paewj+0vo0XNw2Ontl6pn+4IpS3dDo5kt/znl/fSXIxfpDndYMZC3ALKn1YMLCJC2U5eRYmMnnmAA/v/kBfI0pa6LZS1vt8LY2AfSHzMI/hSgr2nZJ1jGlGdGjceIJ0aDAXyUaRP9+yf0x2M57f7mP4a+0T99mEFMCvzzfZx2jynJfyr2iftO//+4IlUa1DRNX1C+KKtTQPjJaKAWUrqYM40oPqf+Cu7f5KScpeQEe/dUq8MV09UI/nv/66Jv/4CZ86t1fyn2/6e78vMn//6jLj2/f0QxSU5f1BNjtAXzKPB3Pdg4uvPj99/rv53lw1q/wmv//wxW6HCdaIycP7TUKjBwahPWHmd+L+M00W4IWbxWPX57L8SQ0ahGB1eEMvzH1c6yPgqWsVte1Rae2t+fsCh3JYU/JhWNin62+W959/68a/9HEMrC/6i246ydRFIst3yNKBpX/eq3s3DuEDi6rf/RM/heypGjUR788jFOaH8xruA9YR9zpheP+cdmU+voFcs8RB7/YXa8/9rRznoP4fOxASxa+4/+Y1ajAojyXhfu8FiP+cRf3V4UDSzsv1r0W+tc13jXKWNCPb8qqGMKCYgOkX11knxpGMdAAAA="
+                alt=""
+                width="54"
+                height="54"
+                loading="lazy"
+              >
+            </div>
+            <div class="interface__animated-block-3">
+              <img
+                src="/assets/3-CqZ9iD3h.webp"
+                alt=""
+                width="343"
+                height="106"
+                loading="lazy"
+              >
+            </div>
+            <div class="interface__animated-block-4">
+              <img
+                src="data:image/webp;base64,UklGRngCAABXRUJQVlA4WAoAAAAQAAAALwAALwAAQUxQSOcAAAABgFBrb93mhyAIgjAIgjAGCYOGQcJgYeAwKARBMARBMATtkYf9nwGIiAnAc3uVGpnZ6nszDLe95f1WbIh59oypm3r2rtpnajlw7bHm2K9nJUdXeVByfJVbazKWO3NyLlcaJPlxcSSrn1nyTidOFH80mQ3AQeUAgioFltwzFrIdb7IKJ2sIspRk1/8v2KSSNRxkjoWswMgmoHEpsFM5AKOaAMCJAn+NaDqB0wTOtbHYBRaSDTcPioq7UglCb0HqsFA8lGNQVTzfhuzoqtEtDL3n6NI2wcDZH/lLMFg+d28nrZZZwKqqgs4AVlA4IGoBAACQBwCdASowADAAPjEYiUOiIaERxYAgAwSxAGXEsu0d6TWWZ4uP8YHkzZDVoRS3LaDTbfjcYOp353wi5YiRCI9P8cy+IAAA/v7CFfwzNgWfv1dCF9wsUiZy9rq9jooCwxB3dsLp7kB1te+2068Z4j9i++P8Q15hH4xtco7f/qCe9/idrAfxfs47/da2l/mluJqH/2LyMKo6vq3GWlt0XD7C4fjUHx+HuAfOYlXn/b3q/XJP9/+ctolO1NDVcDWWP3CiSbfNJjRfI++Yv9BNFfjD+q6ZkKKBU0z+BSb4er0DSWZVZSnEaGB0x5ddkxNsuCVfagLYMYXWkTDrjkeQmf/+Qwf2M/8/9f/YkbJ5F/yrPP7oAyuo230k/DmNdcUrLH8/79GeTMz/vaFp7GO+hv+xuN8U166vfe8ue8Gv1OeenTfzbk4qH/kUtYRQIhZpq+wc0MyiBgPknc/CWrhBxKfAAI2xLFE1igAAAA=="
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              >
+            </div>
+            <div class="interface__animated-block-5">
+              <img
+                src="data:image/webp;base64,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"
+                alt=""
+                width="180"
+                height="69"
+                loading="lazy"
+              >
+            </div>
+            <div class="interface__animated-block-6">
+              <img
+                src="data:image/webp;base64,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"
+                alt=""
+                width="210"
+                height="43"
+                loading="lazy"
+              >
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        <section class="section section--reviews" id="reviews" aria-labelledby="reviews-title">
-          <div class="reviews">
-            <div class="reviews__content">
-              <p class="section__kicker">Отзывы</p>
-              <h2 class="section__title" id="reviews-title">Команды отмечают скорость внедрения и удобство</h2>
-            </div>
-            <div class="reviews__cards">
-              <article class="review-card">
-                <p>Собрали подбор в одном окне и сократили ручные действия рекрутеров.</p>
-                <strong>HR-директор, retail</strong>
-              </article>
-              <article class="review-card">
-                <p>ИИ-помощник быстрее находит подходящих кандидатов в базе.</p>
-                <strong>Руководитель подбора, IT</strong>
-              </article>
-            </div>
-          </div>
-        </section>
+    </section>
 
-        <section class="section section--security" id="security" aria-labelledby="security-title">
-          <div class="section__intro">
-            <p class="section__kicker">Безопасность</p>
-            <h2 class="section__title" id="security-title">Надежная работа и защита ваших данных</h2>
-            <p class="section__text">Покажите нам предложение конкурента - мы предложим лучшие условия.</p>
-          </div>
-          <div class="price-grid">
-            <article class="price-card">
-              <div class="price-card__icon"></div>
-              <h3>Демо-версия</h3>
-              <p>базовый функционал</p>
-              <ul>
-                <li>календарь собеседований</li>
-                <li>базовые отчеты</li>
-                <li>интеграции с мессенджерами</li>
-                <li>интеграции с Job-сайтами</li>
-              </ul>
-              <a class="button button--accent" href="#demo">Попробовать бесплатно</a>
-            </article>
-            <article class="price-card price-card--featured">
-              <div class="price-card__icon"></div>
-              <h3>Стандарт</h3>
-              <p>для растущих команд</p>
-              <ul>
-                <li>базовый функционал</li>
-                <li>ИИ поиск по базе</li>
-                <li>IP телефония</li>
-                <li>конструктор отчетов</li>
-              </ul>
-              <a class="button button--primary" href="#demo">Попробовать бесплатно</a>
-            </article>
-            <article class="price-card">
-              <div class="price-card__icon"></div>
-              <h3>Профи</h3>
-              <p>для крупных клиентов</p>
-              <ul>
-                <li>все из тарифа Стандарт</li>
-                <li>ИИ агрегатор работных сайтов</li>
-                <li>API</li>
-                <li>КЭДО</li>
-              </ul>
-              <a class="button button--accent" href="#demo">Попробовать бесплатно</a>
-            </article>
-          </div>
-        </section>
+    <section class="page__trusted">
+      <div class="page__trusted-container">
+        <div class="trusted"
+             data-progress
+             data-progress-smooth="0.12"
+        >
 
-        <section class="demo-section" id="demo" aria-labelledby="demo-title">
-          <div class="demo-section__inner">
-            <h2 id="demo-title">Закажите персональное демо</h2>
-            <p>Оставьте заявку - мы покажем, как WorkHere поможет улучшить ваш подбор</p>
-            <form class="lead-form" data-form novalidate>
-              <label class="lead-form__label">
-                <span class="visually-hidden">Ваша эл. почта</span>
-                <input class="lead-form__input" type="email" name="email" placeholder="Ваша эл. почта" required />
-              </label>
-              <button class="button button--primary lead-form__button" type="submit">Оставить заявку</button>
-              <p class="lead-form__message" data-form-message aria-live="polite"></p>
-            </form>
-            <ul class="demo-section__checks">
-              <li>Бесплатная консультация</li>
-              <li>Ответим за 24 часа</li>
-              <li>Без обязательств</li>
+          <div class="trusted__clouds"
+               aria-hidden="true"
+          >
+            <img class="trusted__clouds-img"
+                 src="/assets/clouds-DOXfxBj-.webp"
+                 alt=""
+                 width="2378"
+                 height="1000"
+                 loading="lazy"
+            >
+          </div>
+
+          <div class="trusted__companies">
+            <h2
+              class="trusted__title ui-animation ui-animation--fade"
+              data-progress-activate
+              data-progress-activate-start="0.8"
+            >Нам доверяют 2500+ компаний
+            </h2>
+
+            <ul class="trusted__logos ui-animation ui-animation--fade"
+                aria-label="Компании, которые доверяют WorkHere"
+                data-progress-activate
+                data-progress-activate-start="0.5"
+            >
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Сбер"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Т-Банк"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="МТС"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Яндекс"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Ozon"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Альфа-Банк"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="ВТБ"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,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"
+                  alt="Магнит"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
+              <li class="trusted__logo">
+                <img
+                  class="trusted__logo-img"
+                  src="data:image/webp;base64,UklGRqAOAABXRUJQVlA4WAoAAAAQAAAA+QAAhgAAQUxQSNsAAAABgFXbVuToSngOqhwkDoiEOKAdIIFyQBwgAQlIoB2Agyeh5uHvfhIRE4CbxqWqM6Vakjd4XrzO5NY4PCNhpjgODzidSa72VpiJDtckz1QXufI/k50vhJnucGJnwt3B2BhT2cWZ8gBgnEkXILI2AY01hZlpN543l3hLhbeqvOnc/d/93/3f/d/933utvGnlrUTekuPNvXl7obJWAc+aBURJGwB4ziYAkMZYlR0MYx8ce74mnAe2frjqufrhumfK4e7YWKofPGgbQ+rxsM3sZCd4fvyGlCulJYU/wU0AVlA4IJ4NAABQPgCdASr6AIcAPjEYikOiIaESCxy0IAMEpu4XX72k+Afjdr9fJ/yt9iepf0L73/zr3AfoB0fcweRj4h+Yf5j+ufuH/l/dX/ZvYZ+Zv5L7gH6W/37+o/vB/Xu4B/SP9J/gPYB/H/6N/gP6J+//wwf5n/He4D9bf99/n/gA/XfrB/QF/bj//+yn/qf/P/o/gd/aP/2f4//kfIH/PP8V/8fYA///tg/wDqj+iH8z/CvwE/v3hX4o/PnuByhedPMz+RfZL8L+Y3rH3t+pf1AvxX+X/4j8wuB4sJ/mfUC9rfqf+98JHUXyAP5D/UP9rxwlAD+c/2L9c/dW/lv/P/nvyq9qf53/j/+z/jfgJ/ln9m/6frgex70Rv20Wyoymm+WVGOOlYz/WCnDodlNN8sqMppvllRlJaxt80RrVlWmozGsslT5uNIfOWUyLGpZBYn/JVUxBuDXpjMATHa0m6vH9sUOiTOmgmxNpEUCyedtqiZrETPJu9qVUok6KGozFjFIIKIPFuLW29cswRLOqMS7OBfO8VucQcJY2LHw9Zs8NoKcd03TkDTdorbeTMRcWLKBHJ2zwnWWx4ZHPLaLDGDSHahoMVLBqzZCZfTUrm8gci6uVSJ7D7sT2oKJmiPazrqW7RdEMy86e5NP4+CnDodlNN8sqMppvllRlNJGS8gAA/v/0kxr/+mNgALaoRzrv4YIqPZVWjbirueV8IDH0Y/wp4L94CpmHHHp6E1FjHJ371LKt/Z0lpmDTfYmxP29genRu4HI47zT1A9U9M+WyIz8Evk+OHha76cXdooCf0N3EKPugWyHT01UZCvESjCv/MrefYR/A3Bb4rHke26cAv8guP8VdoXlWs08/uNI6ImrwOj4bFpDuh6jmLNyp79jyZDX29g4hiY81AGn5o0iIRbQ0emydyRft9WF7Kd9KNU0gxPPZAWT/xe9+Ujkl/Lrct/Il+G7JlEr+KCEXP4UnWe/ObwKtTJHdb4omdNef2wW5rG16D+P1yuPJPYeTQ8jk2uCdjyhby9n0RaxfHQOq+o8k9h4awvrjaqkX2oxV55MfAAkcnk+q8qcgGkog8oOLr3I457laS3Qah29Iazxk2v27EPKAAbCzhELoLdCQDTnc0c98fXuDn4Xm/RZeAjzYu7Pi13qItkggJlHqGA+03xz8LzfogFrvf+u/lw+RjwcgMMEoWBnreqLyffUKNY9vMtwMR0B6npVrU7Zxa4t+vOW8PB/o60Hq/qAmixxjk5Dms/MhlZB/w+0t3bBRJ+WttGOYgHMn2iMj6DpPWMfn9XLvs/a/Z5Pbkuix1piRsMlfp4jF2Lz3nmqdjbCkI4Nb0g2xoPrJamPpyZJ6F7X6OCjceS8rC4dOc1DnvhWz6ro+bTjLjjDm1PUB5cH1iht0PKJ4JEB7i0wViKGpCn4XFBvZbmZILVrC0pZH7xE+CjZP7nj5FHPXX572M3QlXbJl1UVjxRUZD/5d8mTdEwAJhT8zZXWtnzLssR+SjdqqssXTt2/MHfE8E74CnNk2pxxDbAcgWz6U1AZ/+CyyNfFllXV5efABY85t/ofzgnmsl2f/u6kTlvG6msAjhWhz4nXuBuQBCdcvBTqx4Wz2voOcgqzzn7A85Sryf6HDn/BieMxqQivx8wECIx2MXt4+Vm+fp94jTP8melHV0JTXz2vMpPw7H6YXT8kPERJql0RatzluBAbccW1JyBPE6t24Z8mvstUzfQ/A37SjRArDODo18OAngyboxQmNt64eeoDXm4mtj02tnnJ7Amcr+E9oRdevhjC7dQ7FAu18Wenu1NIUesvkIbeXec0hXmU18LwW1IiE0ssS2BWOAV0aK+vmmxfqiWYd9T+5zACIloXDnRWUu5xtfCLNzm0cxHV3cofRSf5AdGdq5dJBI5op3N+zqK0fZNi6/xpg6Fo+v0JvDf02GPkN+9e+4YpHYs9HmR58o7BRYW3hrlFIFOVDxRIF+OQIS23/xqmPZN3aITcHJq2YX7YH3GRNPeHg3or5Dx6zTiAE+tNxBED86UD1ZSlKO9wJPVuMsn3D6dAUV8BR46g3/mtVcjiCFj7Qx0ju2tJLLvVRjkrAs8c8cMQ+5QFdrF4/8VnM3qcfaERGBMkh95ZJs8X8VPLD1qEkeUcCU3p/qVdgKYfNf1mTrwSTSvqqhEAocB/nb68o/FqZdofYh5ZEHUAcF2SoUTUolwDv9xqn8m7ZSemtH5NDamEtJhU/KbNzPaVFD7lRwQAAf/sdbeYVp/4chfQC0XJgbZow9QvKpht3xvF8t9x9AQ3dJ3Ete8X/NmFmsjqroCkPBk2BFaNgThJRw7brR6zB6CMYZ3wnv/aG0PCBDy2lCHwuL4eOGNhVH/Y5GQM6lOOkdMNOAjVbiMZ3xHT9BzGNHAGSHJjOMTB8D43pzi4pyY/V/j4nM0uImDqGAqQPNuVztvybiXbST5pIBIvY9sH2+EdEEO4vjn2QSgV+LGbnf6coPxY2oUsysEmso1UHqn79/PnwsuHFdZGF/6qWwDBeMivGrE1bx9goxfsdkAsAZ0WaetEANE41Nc8ZW5aNvv3NUvnqqB2ydOVvCiU4/HTAYBHX/K3pdzqwDb0D0OOSNFV9su/TEPn15Y4DE6i/5yaLBEchbF8NbWZgkEQfOEBR0VImDIra6WQTQg7/RXZTXSSdtnm+HGnRg5uXiqya+K3OtMzofDZuiEpfbgXVxK9yy+7Y8p1PEF/EB3Eb56qC8Acj2P1aFCzOQxeaYdcEC3dVtOb1F/d6w7+0s0pbGmNmavzQlJRYcwGtE6MVNuEwn+hP8ZqPP7QgQajGnXKissSJuA2xZslhf78tjKPHAj/IZIEw9Tc0V0tK73bcAHlUZlFRUr3Wp58Y2wJIEiClDhR5tEqhY62QtONATAOPc7ABRUJRltNBjmDAQdo1uDjEqbUDzRoIPrz0pEHKw0Tn47+WrO1oxEb2wOERb6LSOX/DakmVpSvPSauKwC8Paw/Xl/8z0R0oYcJL8cmucqlNs+VKVqGXYMih8RZ1IhFDPZagUUMZk0dRhOLheyELlJvs7+ChpAFVLJbjilcrSPyjFwengtM7rNbI+VoVwVMWbXvigsWSX8fDUDa2ff6P9qDEm141yR5e4K6G7f4I9f6zxlYGzChIIiA7NXq3rA0M5sy5qEjlXaN5ML1Op5qB44hu7iUvkSBYHAnMVgkiDilJNcJRZpOkuykfDbKw7VDOHIJyzwhc9/CC3mEhGupgxtf+ode89MaXr4XSwUaPG2JjQ8DJ4jh7DqLJrNl73Ynz+kv6cGH+hTySL5uwP1a8mCBdqSioyLxsRk6qTg3s2xxv88wSve9We3zbFMb2MrljeaBI0pWRpUhS7S6CQnILwoxZfa7BGS/2LCaPqOwpuGjbzZrGx7ek4d3srJyPyr2N2/l6RkrHZKmh3EbJXd9YZr+TVDKO25usa3OCuE1ZhQTMOOHHV7QE1S8qBgmUbVsGYZRUWU2BrYVRedSPQygjwjaWydksDtY+E1Pvs7mUR7GaZH7Ift7b74lt92QNYqnsZBHnzKA9WAHsa7dDETFYECiDPhod5v3UxMT941O8R/AiWtpUCILUA43Et2Ss5lUFzQJDt/9esXOO+iko5s2jav/SP/z3o2MIZIVv1RZN4yPG7own+6hJs4LjR6lrTR//JBf9Al/tdc0kvuUoGtz5MoQbqzI2R41gfmg+QUD2Tl7UkmxXzndiqC0UWSO8xSz9bFyQSplsUi/4Yv+CGt9JJaEVg3rt+lBv0h0wElVYFhsGe2TqmeA27fioj9OC8AEuFH1/5GGxKgBAADV3Wwj1RfkiM7qukUFenbzfzZ7vq+5ShZC8/lrSRzaX5h6A8hpjlZgSCkDuApmZaCfH6h2Aa3Lka0hyTrwcf/gQKgMseWGvFGJtxiG+TujlqxYRIfNingUtVaJTppz4MBEBnuBFvi8198DDGhOGfHjMu0JAYulO+BSvk2dyO1SSciumCOR2dYQDhS8p8aCho5K1LlE+yVrtLXmaZpfcSWpOT9GZNss98TFsqvL8wokkT9Obcm6GkcgmT13jk/ZFaWA5TR9vn74MhB3kC/cac9N0j7yTgpCO698omb+QHjZRLHCxhh+hUwU4XtPPtLpgVO+e+DgLo7aHyoog053kgYEEISDhLy85TXEYk39b37/XLfCkqK04l9EpH1xVzMQ11TgEkMBEVRQlVgcseEHNEq0gid4olrzAcsKhhc2Ep6NEYUPMs19Nlozp/bOKYcvcX6Hetn+JpOjQIa64F+InIWxOEWab+Fe787Y4m7lY/qgyRpObXAvw1t9GrSrz4MC4aVHrgLjQRGPY21CaLE/jP81txP5N/5ifb+IwCavLyRd5F9MUZktpswKOz5EuIpwqumoSeZlL9eCUd5a1/uuyPjWrfAnKWUfjn9JVvXWiV8P7pneib0rDdK3BU4aWcLdoZ6Er/63eNAKumBZAHvqd1Q/KGfXMI0vCW6PW2w0Nwt+VyPs00iDqaH19e+61m2/m7EQ5UYsO88CGbjVKMrAOPgf8/N0Eg0njhZsWkHTziCUpMvC1hUPu3t+tuw1nSPUa3GWwg0AHmw4jzkMXwx997+uvekusLe5VM/edht7L82yZF1A569Anke48XgAAvP/nAQAAAAA="
+                  alt="Wildberries"
+                  width="250"
+                  height="135"
+                  loading="lazy"
+                >
+              </li>
             </ul>
           </div>
-        </section>
 
-        <section class="journal" id="journal" aria-labelledby="journal-title">
-          <div class="journal__intro">
-            <h2 id="journal-title">Журнал WorkHere</h2>
-            <p>Более 500 экспертных материалов обо всем, что связано с наймом</p>
-            <a class="button button--secondary" href="#journal">Все материалы</a>
-          </div>
-          <div class="article-grid">
-            <article class="article-card">
-              <div class="article-card__image article-card__image--one"></div>
-              <span class="article-card__tag">Кейсы</span>
-              <h3>Как ускорить закрытие вакансий в автоматизации</h3>
-              <p>Опыт крупных компаний</p>
-            </article>
-            <article class="article-card">
-              <div class="article-card__image article-card__image--two"></div>
-              <span class="article-card__tag">Найм</span>
-              <h3>Что меняется в работе рекрутера с ИИ</h3>
-              <p>Практические сценарии</p>
-            </article>
-            <article class="article-card">
-              <div class="article-card__image article-card__image--three"></div>
-              <span class="article-card__tag">HR-tech</span>
-              <h3>Какие метрики помогают управлять подбором</h3>
-              <p>Гайд для руководителей</p>
-            </article>
-            <article class="article-card">
-              <div class="article-card__image article-card__image--four"></div>
-              <span class="article-card__tag">ATS</span>
-              <h3>Как выбрать систему автоматизации рекрутмента</h3>
-              <p>Чек-лист внедрения</p>
-            </article>
+          <div class="trusted__future">
+            <p class="trusted__future-text">
+              <span
+                class="trusted__future-text-part ui-animation ui-animation--fade"
+                data-progress-activate
+                data-progress-activate-start="0.5"
+              >
+                Представьте<br>
+                будущее,
+              </span>
+              <span
+                class="trusted__future-text-part ui-animation ui-animation--fade"
+                data-progress-activate
+                data-progress-activate-start="0.5"
+              >
+                где вакансии<br>
+                закрываются
+              </span>
+              <span
+                class="trusted__future-text-part ui-animation ui-animation--fade"
+                data-progress-activate
+                data-progress-activate-start="0.5"
+              >
+                быстрее<br>
+                сами собой...
+              </span>
+            </p>
           </div>
 
-          <div class="subscribe">
-            <div>
-              <h3>Подпишитесь на рассылку</h3>
-              <p>Наши письма читают уже более 55 000 HR-специалистов</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__ai-stage">
+      <div class="ai-stage"
+           data-progress
+           data-progress-smooth="0.12"
+      >
+        <div class="ai-stage__sticky">
+          <div class="ai-stage__scene">
+            <div class="ai-stage__cards"
+                 aria-hidden="true"
+            >
+              <div class="ai-stage__ai">
+                <svg
+                  class="ai-stage__ai-img"
+                  width="398"
+                  height="350"
+                  viewBox="0 0 398 350"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <g class="ai-stage__ai-petals">
+                    <circle cx="202.404"
+                            cy="154.487"
+                            r="116.799"
+                            fill="url(#paint0_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                    <circle cx="160.873"
+                            cy="160.873"
+                            r="116.799"
+                            transform="rotate(-31.8893 160.873 160.873)"
+                            fill="url(#paint1_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                    <circle cx="164.133"
+                            cy="206.954"
+                            r="116.799"
+                            transform="rotate(-75 164.133 206.954)"
+                            fill="url(#paint2_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                    <circle cx="250.224"
+                            cy="202.307"
+                            r="102.191"
+                            transform="rotate(115.678 250.224 202.307)"
+                            fill="url(#paint3_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                    <circle cx="210.627"
+                            cy="206.954"
+                            r="116.799"
+                            transform="rotate(173.604 210.627 206.954)"
+                            fill="url(#paint4_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                    <circle cx="239.327"
+                            cy="169.985"
+                            r="116.799"
+                            transform="rotate(62.207 239.327 169.985)"
+                            fill="url(#paint5_linear_131_1367)"
+                            fill-opacity="0.5"
+                    />
+                  </g>
+                  <circle cx="194.827"
+                          cy="180.202"
+                          r="107.325"
+                          fill="url(#paint6_radial_131_1367)"
+                  />
+                  <g filter="url(#filter0_f_131_1367)">
+                    <circle cx="219.485"
+                            cy="141.55"
+                            r="28.0182"
+                            fill="#14FF37"
+                    />
+                  </g>
+                  <g filter="url(#filter1_f_131_1367)">
+                    <circle cx="163.45"
+                            cy="224.507"
+                            r="28.0182"
+                            fill="#14FF37"
+                    />
+                  </g>
+                  <path d="M184.468 142.552C185.465 142.552 186.337 142.833 187.085 143.394C187.833 143.954 188.362 144.702 188.674 145.637L208.208 207.043H196.245L181.477 157.32C181.228 156.323 180.979 155.326 180.729 154.329C180.48 153.332 180.262 152.366 180.075 151.432H177.458C177.271 152.366 177.053 153.332 176.804 154.329C176.555 155.326 176.274 156.323 175.963 157.32L161.289 207.043H149.325L168.859 145.637C169.109 144.702 169.607 143.954 170.355 143.394C171.165 142.833 172.068 142.552 173.065 142.552H184.468ZM195.31 179.471V188.631H162.13V179.471H195.31ZM227.523 142.552V207.043H215.839V142.552H227.523Z"
+                        fill="white"
+                  />
+                  <defs>
+                    <filter id="filter0_f_131_1367"
+                            x="116.865"
+                            y="38.93"
+                            width="205.242"
+                            height="205.241"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0"
+                               result="BackgroundImageFix"
+                      />
+                      <feBlend mode="normal"
+                               in="SourceGraphic"
+                               in2="BackgroundImageFix"
+                               result="shape"
+                      />
+                      <feGaussianBlur stdDeviation="37.3011"
+                                      result="effect1_foregroundBlur_131_1367"
+                      />
+                    </filter>
+                    <filter id="filter1_f_131_1367"
+                            x="60.8294"
+                            y="121.887"
+                            width="205.242"
+                            height="205.241"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0"
+                               result="BackgroundImageFix"
+                      />
+                      <feBlend mode="normal"
+                               in="SourceGraphic"
+                               in2="BackgroundImageFix"
+                               result="shape"
+                      />
+                      <feGaussianBlur stdDeviation="37.3011"
+                                      result="effect1_foregroundBlur_131_1367"
+                      />
+                    </filter>
+                    <linearGradient id="paint0_linear_131_1367"
+                                    x1="102.315"
+                                    y1="93.0759"
+                                    x2="308.971"
+                                    y2="93.0759"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_131_1367"
+                                    x1="60.7838"
+                                    y1="99.4616"
+                                    x2="267.439"
+                                    y2="99.4616"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_131_1367"
+                                    x1="64.0437"
+                                    y1="145.542"
+                                    x2="270.699"
+                                    y2="145.542"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_131_1367"
+                                    x1="162.652"
+                                    y1="148.576"
+                                    x2="343.462"
+                                    y2="148.576"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_131_1367"
+                                    x1="110.538"
+                                    y1="145.542"
+                                    x2="317.193"
+                                    y2="145.542"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_131_1367"
+                                    x1="139.238"
+                                    y1="108.573"
+                                    x2="345.894"
+                                    y2="108.573"
+                                    gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#5BB1FF"
+                            stop-opacity="0.6"
+                      />
+                      <stop offset="1"
+                            stop-color="#AED8FF"
+                            stop-opacity="0"
+                      />
+                    </linearGradient>
+                    <radialGradient id="paint6_radial_131_1367"
+                                    cx="0"
+                                    cy="0"
+                                    r="1"
+                                    gradientUnits="userSpaceOnUse"
+                                    gradientTransform="translate(194.827 180.202) rotate(90) scale(107.325)"
+                    >
+                      <stop offset="0.734952"
+                            stop-color="#148EFF"
+                      />
+                      <stop offset="1"
+                            stop-color="#9FCFFB"
+                            stop-opacity="0"
+                      />
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <div class="ai-stage__card ai-stage__card--expertise">
+                <img
+                  src="/assets/Card0-Buck3vkx.png"
+                  width="988"
+                  height="429"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+              <div
+                class="ai-stage__card ai-stage__card--clients"
+              >
+                <img
+                  src="/assets/Card1-D9KvxzT1.png"
+                  width="577"
+                  height="315"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+              <div
+                class="ai-stage__card ai-stage__card--recruiters"
+              >
+                <img
+                  src="/assets/Card2-2XRg5jPg.png"
+                  width="596"
+                  height="311"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+              <div
+                class="ai-stage__card ai-stage__card--years"
+              >
+                <img
+                  src="/assets/Card3-DTRZxn3X.png"
+                  width="565"
+                  height="298"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
+              <div
+                class="ai-stage__card ai-stage__card--candidates"
+              >
+                <img
+                  src="/assets/Card4-BfdXutbC.png"
+                  width="790"
+                  height="311"
+                  alt=""
+                  loading="lazy"
+                >
+              </div>
             </div>
-            <form class="lead-form lead-form--compact" data-form novalidate>
-              <label class="lead-form__label">
-                <span class="visually-hidden">Ваша эл. почта</span>
-                <input class="lead-form__input" type="email" name="email" placeholder="Ваша эл. почта" required />
-              </label>
-              <button class="button button--primary lead-form__button" type="submit">Подписаться</button>
-              <p class="lead-form__message" data-form-message aria-live="polite"></p>
-            </form>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
+    </section>
 
-      <footer class="footer">
-        <div class="footer__container">
-          <div class="footer__top">
-            <a class="footer__logo logo" href="#top" aria-label="WorkHere">
-              <span class="logo__mark" aria-hidden="true"></span>
+    <section class="page__workhere-ai">
+      <div class="page__workhere-ai-container">
+        <div class="workhere-ai">
+          <h2
+            class="workhere-ai__title ui-animation ui-animation--fade-up"
+            data-progress-activate
+            data-progress-activate-start="0.05"
+          >
+            Мы создали<br>
+            искусственный интеллект<br>
+            WorkHere AI
+          </h2>
+
+          <p
+            class="workhere-ai__lead ui-animation ui-animation--fade-up"
+            data-progress-activate
+            data-progress-activate-start="0.12"
+          >
+            Он непрерывно анализирует работу рекрутера над вакансией и рекомендует подходящих кандидатов из вашей базы
+            резюме
+          </p>
+
+          <div
+            class="workhere-ai__media-stage"
+            data-progress
+            data-progress-mode="workhere-ai-media"
+            data-progress-smooth="0.12"
+          >
+            <div class="workhere-ai__media-sticky">
+              <div class="workhere-ai__media">
+                <img
+                  class="workhere-ai__image"
+                  src="/assets/workhere-ai-board-Cumtt5bN.webp"
+                  width="1168"
+                  height="857"
+                  alt=""
+                  loading="lazy"
+                >
+                <div class="workhere-ai__cards">
+                  <img
+                    class="workhere-ai__details active"
+                    src="/assets/workhere-ai-card-Ca2AOfpc.webp"
+                    width="723"
+                    height="715"
+                    alt=""
+                    loading="lazy"
+                  >
+                  <img
+                    class="workhere-ai__details"
+                    src="/assets/workhere-ai-card2-0WCNSLTn.webp"
+                    width="723"
+                    height="715"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+                <img
+                  class="workhere-ai__hand"
+                  src="data:image/png;base64,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"
+                  width="64"
+                  height="64"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            </div>
+          </div>
+
+          <p
+            class="workhere-ai__text ui-animation ui-animation--fade-up"
+            data-progress-activate
+            data-progress-activate-start="0.58"
+          >
+            Искусственный интеллект WorkHere AI превращает накопленную базу резюме в активный источник «теплых»
+            кандидатов
+          </p>
+
+          <a
+            class="button button--primary button--xlg workhere-ai__button ui-animation ui-animation--fade-up"
+            href="#footer"
+            data-progress-activate
+            data-progress-activate-start="0.66"
+          >
+            Оставить заявку на демо
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__feature-section">
+      <div class="feature-section">
+        <div class="feature-section__badge"
+             data-progress
+             data-progress-mode="key-features-badge"
+             data-progress-smooth="0.25"
+        >
+          <div class="feature-section__badge-inner">
+            <div
+              class="feature-section__badge-label"
+              data-content="Работа с заказчиками"
+            ></div>
+          </div>
+        </div>
+
+        <div class="feature-section__content">
+
+          <h2 class="feature-section__title">
+            Работайте в одной<br>
+            команде с заказчиками
+          </h2>
+
+          <p class="feature-section__lead">
+            Ответственность за успешное закрытие вакансии лежит и на рекрутере, и на нанимающих менеджерах.<br>
+            WorkHere помогает выстроить процесс работы на всех этапах подбора и сделать работу рекрутмента прозрачной
+          </p>
+
+          <div class="feature-section__metric">
+            <div class="feature-section__metric-value">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="189"
+                   height="104"
+                   viewBox="0 0 189 104"
+                   fill="none"
+              >
+                <path d="M15.0155 29.3116L116.101 15.5381L175.397 17.6816L91.6487 42.4683L3.35938 62.0703L62.9827 74.3401L172.899 42.4683V71.3667L144.22 68.4127L114.143 81.5713L15.0155 88.2299"
+                      stroke="#FDC700"
+                      stroke-width="31"
+                />
+              </svg>
+              <span>92%</span>
+            </div>
+            <div class="feature-section__metric-text">
+              средняя<br>
+              вовлеченность<br>
+              заказчиков
+            </div>
+          </div>
+
+          <div class="feature-section__tabs"
+               role="tablist"
+               aria-label="Работа с заказчиками"
+          >
+            <button class="feature-section__tab active"
+                    type="button"
+                    role="tab"
+                    id="feature-customers-tab-0"
+                    aria-selected="true"
+                    aria-controls="feature-customers-panel-0"
+            >Заявки на подбор
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-customers-tab-1"
+                    aria-selected="false"
+                    aria-controls="feature-customers-panel-1"
+                    tabindex="-1"
+            >Обратная связь по кандидатам
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-customers-tab-2"
+                    aria-selected="false"
+                    aria-controls="feature-customers-panel-2"
+                    tabindex="-1"
+            >Контроль сроков
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-customers-tab-3"
+                    aria-selected="false"
+                    aria-controls="feature-customers-panel-3"
+                    tabindex="-1"
+            >Доступ к статистике
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-customers-tab-4"
+                    aria-selected="false"
+                    aria-controls="feature-customers-panel-4"
+                    tabindex="-1"
+            >Оценка найма
+            </button>
+          </div>
+
+          <div class="feature-section__body">
+            <article class="feature-section__panel active"
+                     id="feature-customers-panel-0"
+                     role="tabpanel"
+                     aria-labelledby="feature-customers-tab-0"
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Работа с <br> заявками</h3>
+                      <p>С помощью заявок вы сразу фиксируете требования к кандидатам и дату старта по вакансии. Все поля настраиваются под ваш процесс — без лишних ограничений.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/1-_fLZmKZz.webp"
+                           width="850"
+                           height="530"
+                           title="Работа с заявками"
+                           alt="Работа с заявками"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-customers-panel-1"
+                     role="tabpanel"
+                     aria-labelledby="feature-customers-tab-1"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Обратная связь <br> по соискателям</h3>
+                      <p>Настраиваемые формы позволяют заказчикам давать понятную и структурированную обратную связь без долгих обсуждений, созвонов и переписок.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/2-Brth_eR4.webp"
+                           width="645"
+                           height="562"
+                           title="Обратная связь по соискателям"
+                           alt="Обратная связь по соискателям"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-customers-panel-2"
+                     role="tabpanel"
+                     aria-labelledby="feature-customers-tab-2"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Контроль этапов <br> и сроков</h3>
+                      <p>План вакансии перед глазами у всех, кто за нее отвечает. WorkHere не дает срокам выпадать — этапы на каждом шаге фиксируются и контролируются.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/3-qV5qLBb-.webp"
+                           width="529"
+                           height="471"
+                           title="Контроль этапов и сроков"
+                           alt="Контроль этапов и сроков"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-customers-panel-3"
+                     role="tabpanel"
+                     aria-labelledby="feature-customers-tab-3"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Доступ <br> к статистике</h3>
+                      <p>WorkHere открывает заказчикам доступ к статистике по вакансиям, дает работать с рекрутерами напрямую и помогает совместно управлять результатом.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/4-4_ncpDYg.webp"
+                           width="549"
+                           height="405"
+                           title="Доступ к статистике"
+                           alt="Доступ к статистике"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-customers-panel-4"
+                     role="tabpanel"
+                     aria-labelledby="feature-customers-tab-4"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Общая оценка <br> найма</h3>
+                      <p>Выявляйте слабые места в работе с заказчиками и улучшайте эффективность рекрутеров через регулярную оценку удовлетворенности нанимающих менеджеров — по аналогии с NPS.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/5-DVQF9ZT_.webp"
+                           width="649"
+                           height="554"
+                           title="Общая оценка найма"
+                           alt="Общая оценка найма"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          <div class="feature-section__pagination"
+               aria-label="Переключение вкладок: Работа с заказчиками"
+          >
+            <button class="feature-section__dot active"
+                    type="button"
+                    aria-label="Показать вкладку 1"
+                    aria-current="true"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 2"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 3"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 4"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 5"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__feature-section">
+      <div class="feature-section feature-section--automation">
+        <div class="feature-section__badge"
+             data-progress
+             data-progress-mode="key-features-badge"
+             data-progress-smooth="0.25"
+        >
+          <div class="feature-section__badge-inner">
+            <div
+              class="feature-section__badge-label"
+              data-content="Автоматизация"
+            ></div>
+          </div>
+        </div>
+
+        <div class="feature-section__content">
+          <h2 class="feature-section__title">
+            Ускорьте работу рекрутеров
+          </h2>
+
+          <p class="feature-section__lead">
+            Чтобы конкурировать за кандидатов, нужно действовать быстро. WorkHere автоматизирует всю рутину<br>
+            и фокусирует рекрутеров на действительно важных задачах
+          </p>
+
+          <div class="feature-section__metric">
+            <div class="feature-section__metric-value">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="189"
+                   height="104"
+                   viewBox="0 0 189 104"
+                   fill="none"
+              >
+                <path d="M15.0155 29.3116L116.101 15.5381L175.397 17.6816L91.6487 42.4683L3.35938 62.0703L62.9827 74.3401L172.899 42.4683V71.3667L144.22 68.4127L114.143 81.5713L15.0155 88.2299"
+                      stroke="#FDC700"
+                      stroke-width="31"
+                />
+              </svg>
+              <span>1,5</span>
+            </div>
+            <div class="feature-section__metric-text">
+              часа рабочего времени<br>
+              рекрутера экономит<br>
+              WorkHere каждый день
+            </div>
+          </div>
+
+          <div class="feature-section__tabs"
+               role="tablist"
+               aria-label="Автоматизация"
+          >
+            <button class="feature-section__tab active"
+                    type="button"
+                    role="tab"
+                    id="feature-automation-tab-0"
+                    aria-selected="true"
+                    aria-controls="feature-automation-panel-0"
+            >Сохранение резюме
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-automation-tab-1"
+                    aria-selected="false"
+                    aria-controls="feature-automation-panel-1"
+                    tabindex="-1"
+            >Публикация вакансий
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-automation-tab-2"
+                    aria-selected="false"
+                    aria-controls="feature-automation-panel-2"
+                    tabindex="-1"
+            >Дубликаты
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-automation-tab-3"
+                    aria-selected="false"
+                    aria-controls="feature-automation-panel-3"
+                    tabindex="-1"
+            >Назначение интервью
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-automation-tab-4"
+                    aria-selected="false"
+                    aria-controls="feature-automation-panel-4"
+                    tabindex="-1"
+            >Почта и мессенджеры
+            </button>
+          </div>
+
+          <div class="feature-section__body">
+            <article class="feature-section__panel active"
+                     id="feature-automation-panel-0"
+                     role="tabpanel"
+                     aria-labelledby="feature-automation-tab-0"
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Сохранение <br> резюме с 20+ <br> источников</h3>
+                      <p>Одним кликом сохраняйте резюме и мгновенно берите кандидата в работу по вакансии. Работает во всех современных браузерах на компьютере и ноутбуке.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/1-CPGGaRtD.webp"
+                           width="863"
+                           height="696"
+                           title="Сохранение резюме с 20+ источников"
+                           alt="Сохранение резюме с 20+ источников"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-automation-panel-1"
+                     role="tabpanel"
+                     aria-labelledby="feature-automation-tab-1"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Публикация <br> вакансий</h3>
+                      <p>Размещайте вакансии на HeadHunter, Superjob, Авито и Работа.ру прямо из WorkHere. Автоматическая загрузка откликов в режиме реального времени помогает быстрее обрабатывать кандидатов.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/2-DGMve-0g.webp"
+                           width="661"
+                           height="565"
+                           title="Публикация вакансий"
+                           alt="Публикация вакансий"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-automation-panel-2"
+                     role="tabpanel"
+                     aria-labelledby="feature-automation-tab-2"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Работа с дублями <br> резюме</h3>
+                      <p>WorkHere автоматически проверяет дубликаты на всех этапах воронки. После объединения карточек система сохранит предыдущие версии и историю коммуникаций.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/3-RS0L4TyK.webp"
+                           width="615"
+                           height="581"
+                           title="Работа с дублями резюме"
+                           alt="Работа с дублями резюме"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-automation-panel-3"
+                     role="tabpanel"
+                     aria-labelledby="feature-automation-tab-3"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Назначение <br> интервью</h3>
+                      <p>Все собеседования, встречи и звонки можно планировать прямо из WorkHere. Участники получают уведомления, а рекрутер видит расписание и статус коммуникации в одном месте.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/4-BOFqi5-m.webp"
+                           width="699"
+                           height="564"
+                           title="Назначение интервью"
+                           alt="Назначение интервью"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-automation-panel-4"
+                     role="tabpanel"
+                     aria-labelledby="feature-automation-tab-4"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Интеграции с почтой <br> и мессенджерами</h3>
+                      <p>Общайтесь с кандидатами в любом мессенджере напрямую из WorkHere, отправляйте офферы на почту и получайте ответы в системе без переключения между сервисами.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/5-DM0OrzI2.webp"
+                           width="665"
+                           height="427"
+                           title="Интеграции с почтой и мессенджерами"
+                           alt="Интеграции с почтой и мессенджерами"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="feature-section__pagination"
+               aria-label="Переключение вкладок: Автоматизация"
+          >
+            <button class="feature-section__dot active"
+                    type="button"
+                    aria-label="Показать вкладку 1"
+                    aria-current="true"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 2"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 3"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 4"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 5"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__feature-section">
+      <div class="feature-section feature-section--analytics">
+
+        <div class="feature-section__badge"
+             data-progress
+             data-progress-mode="key-features-badge"
+             data-progress-smooth="0.25"
+        >
+          <div class="feature-section__badge-inner">
+            <div
+              class="feature-section__badge-label"
+              data-content="Аналитика"
+            ></div>
+          </div>
+        </div>
+
+        <div class="feature-section__content">
+          <h2 class="feature-section__title">
+            Найдите и исправьте<br>
+            узкие места в подборе
+          </h2>
+
+          <p class="feature-section__lead">
+            Нельзя улучшить процессы без точных метрик. 16+ готовых отчетов WorkHere позволяют найти и исправить<br>
+            проблемы с закрытием каждой вакансии и системно улучшить показатели подбора
+          </p>
+
+          <div class="feature-section__metric">
+            <div class="feature-section__metric-value">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="189"
+                   height="104"
+                   viewBox="0 0 189 104"
+                   fill="none"
+              >
+                <path d="M15.0155 29.3116L116.101 15.5381L175.397 17.6816L91.6487 42.4683L3.35938 62.0703L62.9827 74.3401L172.899 42.4683V71.3667L144.22 68.4127L114.143 81.5713L15.0155 88.2299"
+                      stroke="#FDC700"
+                      stroke-width="31"
+                />
+              </svg>
+              <span>80%</span>
+            </div>
+            <div class="feature-section__metric-text">
+              клиентов ускоряют<br>
+              закрытие вакансий<br>
+              на треть за квартал
+            </div>
+          </div>
+
+          <div class="feature-section__tabs"
+               role="tablist"
+               aria-label="Аналитика"
+          >
+            <button class="feature-section__tab active"
+                    type="button"
+                    role="tab"
+                    id="feature-analytics-tab-0"
+                    aria-selected="true"
+                    aria-controls="feature-analytics-panel-0"
+            >Воронка
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-analytics-tab-1"
+                    aria-selected="false"
+                    aria-controls="feature-analytics-panel-1"
+                    tabindex="-1"
+            >Срок закрытия позиции
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-analytics-tab-2"
+                    aria-selected="false"
+                    aria-controls="feature-analytics-panel-2"
+                    tabindex="-1"
+            >Эффективность рекрутеров
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-analytics-tab-3"
+                    aria-selected="false"
+                    aria-controls="feature-analytics-panel-3"
+                    tabindex="-1"
+            >Скорость воронки
+            </button>
+            <button class="feature-section__tab"
+                    type="button"
+                    role="tab"
+                    id="feature-analytics-tab-4"
+                    aria-selected="false"
+                    aria-controls="feature-analytics-panel-4"
+                    tabindex="-1"
+            >Аналитика писем
+            </button>
+          </div>
+
+          <div class="feature-section__body">
+            <article class="feature-section__panel active"
+                     id="feature-analytics-panel-0"
+                     role="tabpanel"
+                     aria-labelledby="feature-analytics-tab-0"
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Глубокая <br> аналитика</h3>
+                      <p>С какого этапа чаще всего отсеиваются кандидаты? Какие источники релевантны? WorkHere переводит аналитику на совершенно новый уровень детализации.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/1-Dfsn0vUH.webp"
+                           width="621"
+                           height="453"
+                           title="Глубокая аналитика"
+                           alt="Глубокая аналитика"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-analytics-panel-1"
+                     role="tabpanel"
+                     aria-labelledby="feature-analytics-tab-1"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Статистика по срокам <br> закрытия вакансий</h3>
+                      <p>Контролируйте средний срок найма и находите этапы, на которых вакансии начинают задерживаться. Отчеты помогают быстрее принимать управленческие решения.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/2-C2hJ3tZ5.webp"
+                           width="572"
+                           height="370"
+                           title="Статистика по срокам закрытия вакансий"
+                           alt="Статистика по срокам закрытия вакансий"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-analytics-panel-2"
+                     role="tabpanel"
+                     aria-labelledby="feature-analytics-tab-2"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Эффективность <br> рекрутеров</h3>
+                      <p>Сравнивайте нагрузку, скорость и результативность рекрутеров без ручного подсчета. WorkHere показывает зоны роста каждого участника команды.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/3-DoxjgMDJ.webp"
+                           width="615"
+                           height="635"
+                           title="Эффективность рекрутеров"
+                           alt="Эффективность рекрутеров"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-analytics-panel-3"
+                     role="tabpanel"
+                     aria-labelledby="feature-analytics-tab-3"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Динамика движения <br> по воронке</h3>
+                      <p>Отслеживайте, как кандидаты проходят этапы подбора, сколько времени занимает каждый шаг и где команда теряет скорость.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/4-BKlni5Qa.webp"
+                           width="610"
+                           height="448"
+                           title="Динамика движения по воронке"
+                           alt="Динамика движения по воронке"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="feature-section__panel"
+                     id="feature-analytics-panel-4"
+                     role="tabpanel"
+                     aria-labelledby="feature-analytics-tab-4"
+                     hidden
+            >
+              <div class="feature-panel">
+                <div class="feature-panel__body">
+                  <div class="feature-panel__grid">
+                    <div class="feature-panel__content">
+                      <h3>Письма под <br> контролем</h3>
+                      <p>Оценивайте конверсию в ответы, эффективность заголовков и долю непрочитанных писем. Отслеживайте открытия и ответы, чтобы улучшать результат холодных писем.</p>
+                    </div>
+                    <div class="feature-panel__img">
+                      <img src="/assets/5-Bc1nNq3i.webp"
+                           width="762"
+                           height="630"
+                           title="Письма под контролем"
+                           alt="Письма под контролем"
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="feature-section__pagination"
+               aria-label="Переключение вкладок: Аналитика"
+          >
+            <button class="feature-section__dot active"
+                    type="button"
+                    aria-label="Показать вкладку 1"
+                    aria-current="true"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 2"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 3"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 4"
+            ></button>
+            <button class="feature-section__dot"
+                    type="button"
+                    aria-label="Показать вкладку 5"
+            ></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="page__footer"
+       id="footer"
+  >
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__logo">
+            <a
+              class="logo"
+              href="#top"
+              aria-label="WorkHere"
+            >
+              <span
+                class="logo__mark"
+                aria-hidden="true"
+              ></span>
               <span class="logo__text">WorkHere</span>
             </a>
-            <div class="footer__contacts">
-              <a href="mailto:hello@workhere.ru">hello@workhere.ru</a>
-              <a class="footer__phone" href="tel:88001234567">8 800 123-45-67</a>
-            </div>
           </div>
+          <div class="footer__contacts">
+            <a href="mailto:hello@workhere.ru">hello@workhere.ru</a>
+            <a
+              class="footer__phone"
+              href="tel:88001234567"
+            >8 800 123-45-67
+            </a>
+          </div>
+        </div>
 
-          <div class="footer__menus">
-            <nav class="footer-menu" aria-label="Продукт">
+        <div class="footer__menus">
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Продукт"
+            >
               <h2 class="footer-menu__title">Продукт</h2>
-              <a href="#features">Что такое WorkHere</a>
-              <a href="#security">Тарифы</a>
-              <a href="#automation">Внедрение</a>
-              <a href="#security">Безопасность</a>
-              <a href="#demo">API</a>
+              <a href="#top">Что такое WorkHere</a>
+              <a href="#top">Тарифы</a>
+              <a href="#top">Внедрение</a>
+              <a href="#top">Безопасность</a>
+              <a href="#top">API</a>
             </nav>
-            <nav class="footer-menu" aria-label="Возможности">
+          </div>
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Возможности"
+            >
               <h2 class="footer-menu__title">Возможности</h2>
-              <a href="#automation">Автоматизация</a>
-              <a href="#features">Интеграции</a>
-              <a href="#analytics">Аналитика</a>
-              <a href="#business">Для крупных клиентов</a>
+              <a href="#top">Автоматизация</a>
+              <a href="#top">Интеграции</a>
+              <a href="#top">Аналитика</a>
+              <a href="#top">Для крупных клиентов</a>
             </nav>
-            <nav class="footer-menu" aria-label="Ресурсы">
+          </div>
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Ресурсы"
+            >
               <h2 class="footer-menu__title">Ресурсы</h2>
-              <a href="#journal">Журнал WorkHere</a>
-              <a href="#journal">Руководства</a>
-              <a href="#cases">Кейсы</a>
-              <a href="#journal">Рассылка</a>
+              <a href="#top">Журнал WorkHere</a>
+              <a href="#top">Руководства</a>
+              <a href="#top">Кейсы</a>
+              <a href="#top">Рассылка</a>
             </nav>
-            <nav class="footer-menu" aria-label="Компания">
+          </div>
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Компания"
+            >
               <h2 class="footer-menu__title">Компания</h2>
-              <a href="#business">О компании</a>
-              <a href="#demo">Карьера</a>
-              <a href="#demo">Контакты</a>
+              <a href="#top">О компании</a>
+              <a href="#top">Карьера</a>
+              <a href="#top">Контакты</a>
             </nav>
-            <nav class="footer-menu" aria-label="Официальное">
+          </div>
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Официальное"
+            >
               <h2 class="footer-menu__title">Официальное</h2>
               <a href="#top">Пользовательское соглашение</a>
               <a href="#top">Политика конфиденциальности</a>
               <a href="#top">Документы</a>
             </nav>
-            <nav class="footer-menu" aria-label="Социальные сети">
+          </div>
+          <div class="footer__menu">
+            <nav
+              class="footer-menu"
+              aria-label="Социальные сети"
+            >
               <h2 class="footer-menu__title">Социальные сети</h2>
               <a href="#top">Telegram</a>
               <a href="#top">VK</a>
             </nav>
           </div>
-
-          <div class="footer__bottom">
-            <span>© ООО «WorkHere», 2020 - 2026</span>
-            <a href="#top">Политика конфиденциальности</a>
-          </div>
-          <p class="footer__note">
-            * Утверждение "Лучшая" основано на внутреннем исследовании и сравнении количества отзывов с оценкой 4 и 5 звезд
-            в сервисе Яндекс среди систем, представленных на российском рынке, по состоянию на 31 января 2026 г.
-          </p>
         </div>
-      </footer>
-    </div>
 
-  </body>
+        <div class="footer__bottom">
+          <span>© ООО «WorkHere», 2020 - 2026</span>
+          <a href="#top">Политика конфиденциальности</a>
+        </div>
+        <p class="footer__note">
+          * Утверждение "Лучшая" основано на внутреннем исследовании и сравнении количества отзывов с оценкой
+          4 и 5 звезд в сервисе Яндекс среди систем, представленных на российском рынке, по состоянию на
+          31 января 2026 г.
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+</body>
 </html>

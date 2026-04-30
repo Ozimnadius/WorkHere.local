@@ -1,24 +1,13 @@
 .header {
-  position: absolute;
-  top: 40px;
-  left: 50vw;
-  z-index: 10;
-  width: 1840px;
-  transform: translateX(-50%);
-
   border-radius: 21px;
   background: #F6F9FD;
+  display: flex;
+  min-height: 77px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  backdrop-filter: blur(18px);
 
-  &__container {
-    display: flex;
-    min-height: 77px;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 22px;
-    padding: 0 20px;
-    background: #f6f9fd;
-    backdrop-filter: blur(18px);
-  }
 
   &__nav {
     width: 700px;
@@ -46,6 +35,6 @@
   }
 
   &__button {
-    width: auto;
+
   }
 }

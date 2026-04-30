@@ -1,33 +1,23 @@
 @use 'tokens';
 @use 'base';
 
-// Blocks
+@use 'ui/animations';
+
+@use 'blocks/page';
+@use 'blocks/header';
 @use 'blocks/logo';
+
+@use 'blocks/hero';
 @use 'blocks/nav';
 @use 'blocks/button';
 @use 'blocks/mascot';
-@use 'blocks/product-panel';
-@use 'blocks/dashboard';
-@use 'blocks/dashboard-person';
-@use 'blocks/comment';
-@use 'blocks/lead-form';
-@use 'blocks/article-card';
-@use 'blocks/price-card';
-@use 'blocks/footer-menu';
-@use 'blocks/header';
-@use 'blocks/hero';
-@use 'blocks/interface-section';
-@use 'blocks/section';
-@use 'blocks/logo-cloud';
-@use 'blocks/metrics';
-@use 'blocks/feature';
-@use 'blocks/automation-visual';
-@use 'blocks/chart-card';
-@use 'blocks/reviews';
-@use 'blocks/review-card';
-@use 'blocks/price-grid';
-@use 'blocks/demo-section';
-@use 'blocks/journal';
-@use 'blocks/article-grid';
-@use 'blocks/subscribe';
+
+@use 'blocks/interface';
+@use 'blocks/trusted';
+@use 'blocks/ai-stage';
+@use 'blocks/workhere-ai';
+@use 'blocks/feature-section';
+@use 'blocks/feature-panel';
+
 @use 'blocks/footer';
+@use 'blocks/footer-menu';
