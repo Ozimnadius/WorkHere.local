@@ -1,0 +1,85 @@
+.page {
+  min-height: 100vh;
+
+  &__header {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+  }
+
+  &__main {
+
+  }
+
+  &__hero {
+    width: 100%;
+    padding-top: 190px;
+    padding-bottom: 100px;
+    padding-inline: 20px;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/src/assets/figma/hero-bg.svg') center center no-repeat;
+      background-size: cover;
+      pointer-events: none;
+    }
+
+  }
+
+  &__hero-container {
+    max-width: 1400px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__interface {
+    background: linear-gradient(180deg, #F0F2F8 76.27%, #BEDCF9 100%);
+    padding-bottom: 60px;
+  }
+
+  &__interface-container {
+    max-width: 1300px;
+    width: calc(100% + 40px);
+    padding-inline: 20px;
+    margin-inline: auto;
+  }
+
+  &__trusted {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    background: #BEDCF9;
+    overflow: hidden;
+  }
+
+  &__trusted-container {
+    max-width: 1480px;
+    width: 100%;
+    padding-inline: 20px;
+    margin-inline: auto;
+  }
+
+  &__ai-stage {
+    background: #BEDCF9;
+  }
+
+  &__workhere-ai {
+//    background: #BEDCF9;
+    background: #BEDCF9 linear-gradient(180deg, #BEDCF9  76.27%, #F0F2F8 100%);
+    padding: 0 20px 80px;
+  }
+
+  &__workhere-ai-container {
+    max-width: 1480px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__feature-section {
+    margin-top: 80px;
+  }
+
+}

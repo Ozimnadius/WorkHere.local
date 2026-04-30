@@ -1,0 +1,25 @@
+.ui-animation {
+  transition-duration: 0.7s;
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+  will-change: opacity, transform;
+
+  &--fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  &--fade {
+    opacity: 0;
+  }
+
+  &--scale-in {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

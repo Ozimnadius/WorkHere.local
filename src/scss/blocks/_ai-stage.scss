@@ -1,0 +1,107 @@
+.ai-stage {
+  --progress: 0;
+  --scene-progress: 0;
+
+  position: relative;
+  width: 100%;
+  min-height: 300vh;
+
+  &__sticky {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1200px;
+  }
+
+  &__scene {
+    position: relative;
+    width: 1px;
+    height: 1px;
+    transform-style: preserve-3d;
+  }
+
+  &__ai {
+    --ai-x: 0px;
+    --ai-y: 113.6px;
+    --ai-z: 0px;
+    --ai-facing-rotate-y: 0deg;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 398px;
+    pointer-events: none;
+    transform:
+      translate3d(calc(var(--ai-x) - 50%), calc(var(--ai-y) - 50%), var(--ai-z))
+      rotateY(var(--ai-facing-rotate-y));
+    transform-style: preserve-3d;
+  }
+
+  &__ai-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  &__card {
+    --card-x: 0px;
+    --card-y: 0px;
+    --card-z: 0px;
+    --card-scale: 1;
+    --card-opacity: 0;
+    --card-facing-rotate-y: 0deg;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: var(--card-opacity);
+    transform:
+      translate3d(calc(var(--card-x) - 50%), calc(var(--card-y) - 50%), var(--card-z))
+      rotateY(var(--card-facing-rotate-y))
+      scale(var(--card-scale));
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__card--expertise {
+    width: 988px;
+  }
+
+  &__card--clients {
+    width: 577px;
+  }
+
+  &__card--recruiters {
+    width: 596px;
+  }
+
+  &__card--years {
+    width: 565px;
+  }
+
+  &__card--candidates {
+    width: 790px;
+  }
+}
