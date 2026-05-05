@@ -1,8 +1,12 @@
+@use "../helpers/index" as *;
+
 .interface {
   position: relative;
 
+
   &__img {
     aspect-ratio: 1260/683;
+
 
     img {
       position: absolute;
@@ -12,6 +16,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 24.406px;
+      background: #D9E5FF;
+      box-shadow: 0 35px 80px -21px rgba(22, 115, 158, 0.70);
+      overflow: hidden;
     }
   }
 

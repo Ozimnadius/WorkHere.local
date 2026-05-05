@@ -5,6 +5,7 @@ const SCENE_START_Y = 715;
 const SCENE_END_Y = 407;
 const SCENE_SCALE = 1.08;
 const SCENE_ROTATION_SPEED = 80;
+const LAPTOP_MEDIA_QUERY = '(max-width: 1799.98px)';
 const ORBIT_X_SCALE = 0.9;
 const ORBIT_DEPTH_SCALE = 0.5;
 const LOGO_PULSE_DURATION = 11.9666666666667;
@@ -29,6 +30,11 @@ const cardsConfig = [
     xScale: 0.9,
     depthScale: 0.5,
     rotateY: 0,
+    xlg: {
+      scale: 0.46,
+      xScale: 0.72,
+      depthScale: 0.42,
+    },
     opacity: [
       [-0.0667, 0],
       [0.5667, 1],
@@ -43,6 +49,11 @@ const cardsConfig = [
     xScale: 0.9,
     depthScale: 0.5,
     rotateY: 0,
+    xlg: {
+      scale: 0.5,
+      xScale: 0.78,
+      depthScale: 0.42,
+    },
     opacity: [
       [0.3, 0],
       [0.7667, 1],
@@ -57,6 +68,11 @@ const cardsConfig = [
     xScale: 0.9,
     depthScale: 0.42,
     rotateY: 0,
+    xlg: {
+      scale: 0.49,
+      xScale: 0.72,
+      depthScale: 0.36,
+    },
     opacity: [
       [0.9333, 0],
       [1.3333, 1],
@@ -71,6 +87,11 @@ const cardsConfig = [
     xScale: 1.5,
     depthScale: 0.8,
     rotateY: 0,
+    xlg: {
+      scale: 0.46,
+      xScale: 1,
+      depthScale: 0.55,
+    },
     opacity: [
       [2.1667, 0],
       [3.6667, 1],
@@ -85,6 +106,11 @@ const cardsConfig = [
     xScale: 0.75,
     depthScale: 0.45,
     rotateY: 5.4518,
+    xlg: {
+      scale: 0.43,
+      xScale: 0.62,
+      depthScale: 0.38,
+    },
     opacity: [
       [3.3, 0],
       [4.0667, 1],
@@ -131,17 +157,29 @@ const getSceneY = (time) => {
   return y - SCENE_CENTER_Y;
 };
 
-const setCardStyles = (element, config, time, sceneRotateY) => {
-  const [x, y, z] = config.position;
-  const opacity = getTimelineValue(time, config.opacity);
-  const facingRotateY = config.rotateY - sceneRotateY;
-  const xScale = config.xScale ?? ORBIT_X_SCALE;
-  const depthScale = config.depthScale ?? ORBIT_DEPTH_SCALE;
+const getResponsiveCardConfig = (config, isLaptop) => {
+  if (!isLaptop || !config.xlg) {
+    return config;
+  }
+
+  return {
+    ...config,
+    ...config.xlg,
+  };
+};
+
+const setCardStyles = (element, config, time, sceneRotateY, isLaptop) => {
+  const responsiveConfig = getResponsiveCardConfig(config, isLaptop);
+  const [x, y, z] = responsiveConfig.position;
+  const opacity = getTimelineValue(time, responsiveConfig.opacity);
+  const facingRotateY = responsiveConfig.rotateY - sceneRotateY;
+  const xScale = responsiveConfig.xScale ?? ORBIT_X_SCALE;
+  const depthScale = responsiveConfig.depthScale ?? ORBIT_DEPTH_SCALE;
 
   element.style.setProperty('--card-x', `${(x * xScale).toFixed(2)}px`);
   element.style.setProperty('--card-y', `${y.toFixed(2)}px`);
   element.style.setProperty('--card-z', `${(-z * depthScale).toFixed(2)}px`);
-  element.style.setProperty('--card-scale', config.scale.toFixed(4));
+  element.style.setProperty('--card-scale', responsiveConfig.scale.toFixed(4));
   element.style.setProperty('--card-opacity', opacity.toFixed(4));
   element.style.setProperty('--card-facing-rotate-y', `${facingRotateY.toFixed(4)}deg`);
 };
@@ -199,12 +237,14 @@ export function initAiStageWhirl() {
   }
 
   let animationFrame = null;
+  const laptopMedia = window.matchMedia(LAPTOP_MEDIA_QUERY);
 
   const render = () => {
     const progress = readProgress(stage);
     const time = progress * SCENE_DURATION;
     const rotateY = SCENE_ROTATION_SPEED * time;
     const sceneY = getSceneY(time);
+    const isLaptop = laptopMedia.matches;
 
     cardsContainer.style.transform = `
       translate3d(-50%, calc(-50% + ${sceneY.toFixed(2)}px), 0)
@@ -219,7 +259,7 @@ export function initAiStageWhirl() {
     }
 
     cards.forEach(({element, config}) => {
-      setCardStyles(element, config, time, rotateY);
+      setCardStyles(element, config, time, rotateY, isLaptop);
     });
 
     animationFrame = window.requestAnimationFrame(render);

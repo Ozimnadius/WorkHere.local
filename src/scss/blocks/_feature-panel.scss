@@ -1,3 +1,5 @@
+@use "../helpers/index" as *;
+
 .feature-panel {
   position: relative;
   width: 100%;
@@ -37,6 +39,11 @@
     grid-template-columns: 1fr 623px;
     align-items: center;
     gap: 40px;
+    @include xlg-block{
+      grid-template-columns: 3fr 4fr;
+      max-width: 72vw;
+      gap: 20px;
+    }
   }
 
   &__content{
@@ -47,16 +54,20 @@
     font-family: var(--font-display);
 
     h3{
-
-
       font-size: 53px;
       font-weight: 600;
       line-height: 1.02; /* 54.06px */
+      @include xlg-block{
+        font-size: 34px;
+      }
     }
 
     p{
       font-size: 27px;
       line-height: 1.42; /* 38.34px */
+      @include xlg-block{
+        font-size: 18px;
+      }
     }
   }
 

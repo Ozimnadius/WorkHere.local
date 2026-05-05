@@ -1,3 +1,5 @@
+@use "../helpers/index" as *;
+
 .ai-stage {
   --progress: 0;
   --scene-progress: 0;
@@ -87,21 +89,41 @@
 
   &__card--expertise {
     width: 988px;
+
+    @include xlg-block() {
+      width: 760px;
+    }
   }
 
   &__card--clients {
     width: 577px;
+
+    @include xlg-block() {
+      width: 445px;
+    }
   }
 
   &__card--recruiters {
     width: 596px;
+
+    @include xlg-block() {
+      width: 460px;
+    }
   }
 
   &__card--years {
     width: 565px;
+
+    @include xlg-block() {
+      width: 435px;
+    }
   }
 
   &__card--candidates {
     width: 790px;
+
+    @include xlg-block() {
+      width: 610px;
+    }
   }
 }

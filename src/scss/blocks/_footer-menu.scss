@@ -1,3 +1,5 @@
+@use "../helpers/index" as *;
+
 .footer-menu {
   display: grid;
   gap: 26px;
@@ -15,7 +17,7 @@
     line-height: 1.2;
     transition: color 0.2s ease;
 
-    &:hover {
+    @include hover {
       color: var(--color-blue);
     }
   }

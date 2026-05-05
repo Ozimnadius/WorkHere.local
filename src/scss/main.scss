@@ -2,14 +2,15 @@
 @use 'base';
 
 @use 'ui/animations';
+@use 'blocks/button';
 
 @use 'blocks/page';
 @use 'blocks/header';
 @use 'blocks/logo';
+@use 'blocks/nav';
 
 @use 'blocks/hero';
-@use 'blocks/nav';
-@use 'blocks/button';
+
 @use 'blocks/mascot';
 
 @use 'blocks/interface';
@@ -18,6 +19,14 @@
 @use 'blocks/workhere-ai';
 @use 'blocks/feature-section';
 @use 'blocks/feature-panel';
+@use 'blocks/reviews';
+@use 'blocks/cases';
+@use 'blocks/premier';
+@use 'blocks/api-power';
+@use 'blocks/security';
+@use 'blocks/pricing';
+@use 'blocks/demo-request';
+@use 'blocks/journal';
 
 @use 'blocks/footer';
 @use 'blocks/footer-menu';

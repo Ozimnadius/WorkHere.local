@@ -1,0 +1,345 @@
+@use "../helpers/index" as *;
+
+.journal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 60px;
+  background: #CFE8FF;
+  padding-block: 160px;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    max-width: 1348px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  &__header,
+  &__grid,
+  &__subscribe {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 79.2px;
+    color: #000;
+    text-align: center;
+    transition-delay: 0s;
+  }
+
+  &__lead {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #000;
+    white-space: nowrap;
+    transition-delay: 0.08s;
+  }
+
+  &__all-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-width: 193.94px;
+    min-height: 48px;
+    padding: 12px 24px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #339f61;
+    border-radius: 999px;
+    transition: background-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.7s ease,
+    transform 0.7s ease;
+    transition-delay: 0.16s;
+
+    @include hover {
+      background-color: #45c67c;
+      color: #fff;
+      transition-delay: 0s;
+    }
+  }
+
+  &__all-link-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 320px);
+    gap: 20px;
+    width: 100%;
+    align-items: start;
+  }
+
+  &__card {
+    display: flex;
+    width: 320px;
+    height: 432.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background-color: #fff;
+    border-radius: 24px;
+    transition: border-color 0.2s ease,
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+    @include hover {
+      border-color: #3f77f5;
+      transition-delay: 0s;
+
+      .journal__tag {
+        color: #3f77f5;
+        border-color: #3f77f5;
+      }
+    }
+
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{0.04s * $i + 0.12s};
+      }
+    }
+  }
+
+  &__image-wrap {
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 252.016px;
+    object-fit: cover;
+    background-color: #d9d9d9;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__card-body {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #339f61;
+    border: 1px solid #339f61;
+    border-radius: 999px;
+    transition: border-color 0.2s ease,
+    color 0.2s ease;
+  }
+
+  &__card-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+    color: #000;
+  }
+
+  &__card-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.24;
+    color: #000;
+  }
+
+  &__card-desc {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #000;
+  }
+
+  &__read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  &__read-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    flex: 0 0 auto;
+  }
+
+  &__subscribe {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 50px;
+    background-color: #fff;
+    border-radius: 24px;
+    transition-delay: 0.48s;
+  }
+
+  &__subscribe-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #000;
+  }
+
+  &__subscribe-title {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #000;
+  }
+
+  &__subscribe-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__input {
+    width: 268px;
+    min-height: 52px;
+    padding: 15px 21px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #339f61;
+    background-color: transparent;
+    border: 1px solid #339f61;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: #339f61;
+      opacity: 1;
+    }
+
+    &:focus {
+      border-color: #2963e9;
+    }
+  }
+
+  &__form.is-invalid &__input {
+    border-color: #fcc467;
+  }
+
+  &__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 15px 24px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background-color: #339f61;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+    @include hover {
+      background-color: #45c67c;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fcc467;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+
+    &[hidden] {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

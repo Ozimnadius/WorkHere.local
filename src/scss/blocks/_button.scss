@@ -1,3 +1,5 @@
+@use "../helpers/index" as *;
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -19,13 +21,25 @@
   box-shadow 0.2s ease,
   transform 0.2s ease;
 
-  &:hover {
+  @include hover {
     transform: translateY(-1px);
+  }
+
+  @include xlg-block() {
+    min-height: 49px;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 21px;
   }
 
   &--lg {
     min-height: 48px;
     font-size: 18px;
+
+    @include xlg-block() {
+      min-height: 48px;
+      font-size: 18px;
+    }
   }
 
   &--xlg{
@@ -38,7 +52,7 @@
     background: var(--color-green);
     box-shadow: none;
 
-    &:hover {
+    @include hover {
       background: var(--color-green-hover);
       box-shadow: 0 14px 30px rgba(54, 195, 107, 0.3);
     }
@@ -49,7 +63,7 @@
     border-color: var(--color-blue);
     background: var(--color-white);
 
-    &:hover {
+    @include hover {
       color: var(--color-white);
       border-color: var(--color-blue);
       background: var(--color-blue);
@@ -60,7 +74,7 @@
     color: var(--color-text);
     background: #ffc35a;
 
-    &:hover {
+    @include hover {
       color: var(--color-white);
       background: var(--color-green);
     }

@@ -1,0 +1,267 @@
+@use "../helpers/index" as *;
+
+.pricing {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: 110px;
+  border-radius: 60px;
+  background: #CFE8FF;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1289px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    color: #101828;
+    background-color: #f1effe;
+    border-radius: 10px;
+  }
+
+  &__label.is-active {
+    transition-delay: 0s;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 1;
+    color: #101828;
+    text-align: center;
+  }
+
+  &__title.is-active {
+    transition-delay: 0.1s;
+  }
+
+  &__subtitle {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.103px;
+    color: #101828;
+    text-align: center;
+  }
+
+  &__subtitle.is-active {
+    transition-delay: 0.2s;
+  }
+
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 32px;
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 32px;
+    transition:
+      border-color 0.2s ease,
+      opacity 0.7s ease,
+      transform 0.7s ease;
+
+    @include hover {
+      border-color: #3f77f5;
+    }
+
+    &:nth-child(1).is-active {
+      transition-delay: 0s;
+    }
+
+    &:nth-child(2).is-active {
+      transition-delay: 0.12s;
+    }
+
+    &:nth-child(3).is-active {
+      transition-delay: 0.24s;
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  &__card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #333;
+  }
+
+  &__card-title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.123px;
+    color: #333;
+  }
+
+  &__card-subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.103px;
+    color: #333;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    min-height: 24px;
+    padding-left: 32px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.103px;
+    color: #333;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-image: url("check-circle.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    margin-top: 32px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  &__price-value {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.13px;
+  }
+
+  &__price-period {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.123px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 51px;
+    padding: 16px 32px;
+    font-family: var(--font-display), sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 21px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #339f61;
+    border-radius: 8px;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    @include hover {
+      background-color: #45c67c;
+    }
+
+    &--demo {
+      color: #232323;
+      background-color: #fcc467;
+
+      @include hover {
+        color: #fff;
+        background-color: #45c67c;
+      }
+    }
+  }
+}

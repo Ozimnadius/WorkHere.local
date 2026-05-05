@@ -5,6 +5,9 @@ const DEFAULT_ACTIVATE_START = 0;
 const SNAP_THRESHOLD = 0.0005;
 const MODE_KEY_FEATURES_BADGE = 'key-features-badge';
 const MODE_WORKHERE_AI_MEDIA = 'workhere-ai-media';
+const BADGE_TARGET_TOP_IN_CONTENT = 120;
+const BADGE_TARGET_HEIGHT = 62;
+const BADGE_FINAL_OFFSET = 220;
 
 const clamp = (value) => Math.min(1, Math.max(0, value));
 
@@ -84,7 +87,12 @@ class ScrollProgress {
       ? stickyCenterY + labelStartHeight / 2
       : rect.top + viewportHeight;
     const start = currentScrollY + labelStartBottom - viewportHeight;
-    const contentTargetTop = 320;
+    const contentTargetTop = (
+      viewportHeight / 2
+      - BADGE_TARGET_TOP_IN_CONTENT
+      - BADGE_TARGET_HEIGHT / 2
+      + BADGE_FINAL_OFFSET
+    );
     const end = content
       ? currentScrollY + content.getBoundingClientRect().top - contentTargetTop
       : start + viewportHeight / 1.66;

@@ -5,6 +5,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0"
   />
+  <title>WorkHere</title>
   <meta name="description"
         content="WorkHere - система автоматизации рекрутмента с искусственным интеллектом."
   />
@@ -22,7 +23,7 @@
         type="image/svg+xml"
         href="/favicon.svg"
   />
-  <title>WorkHere</title>
+
 </head>
 <body>
 <div class="page">
@@ -51,26 +52,44 @@
           <nav class="nav"
                aria-label="Основная навигация"
           >
-            <a class="nav__link nav__link--dropdown"
-               href="#top"
-            >Возможности
-            </a>
+            <div class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown"
+                 href="#feature-customers"
+              >Возможности
+              </a>
+              <div class="nav__dropdown"
+                   aria-label="Возможности"
+              >
+                <a class="nav__dropdown-link"
+                   href="#feature-customers"
+                >Работа с заказчиками
+                </a>
+                <a class="nav__dropdown-link"
+                   href="#feature-automation"
+                >Автоматизация
+                </a>
+                <a class="nav__dropdown-link"
+                   href="#feature-analytics"
+                >Аналитика
+                </a>
+              </div>
+            </div>
             <a class="nav__link"
-               href="#top"
+               href="#"
             >Для бизнеса
             </a>
             <a class="nav__link"
-               href="#top"
+               href="#cases"
             >Кейсы
             </a>
             <a
               class="nav__link"
-              href="#top"
+              href="#reviews"
             >Отзывы
             </a>
             <a
               class="nav__link"
-              href="#top"
+              href="#security"
             >Безопасность
             </a>
           </nav>
@@ -79,13 +98,13 @@
         <div class="header__actions">
           <a
             class="header__login"
-            href="#top"
+            href="#"
           >Войти
           </a>
           <div class="header__button">
             <a
               class="button button--primary"
-              href="#top"
+              href="#demo-request"
             >Оставить заявку на демо
             </a>
           </div>
@@ -128,14 +147,14 @@
               <div class="hero__action">
                 <a
                   class="button button--primary button--lg"
-                  href="#top"
+                  href="#demo-request"
                 >Оставить заявку на демо
                 </a>
               </div>
               <div class="hero__action">
                 <a
                   class="button button--secondary button--lg"
-                  href="#footer"
+                  href="#interface"
                 >Узнать больше
                 </a>
               </div>
@@ -157,21 +176,51 @@
             </dl>
           </div>
 
-          <div class="hero__mascot"
-               aria-hidden="true"
-          >
-            <div class="mascot">
-              <div class="mascot__bubble">Привет! Нажми на меня 👋</div>
-              <div class="mascot__badge-ring"></div>
-              <div class="mascot__badge">AI</div>
-              <span class="mascot__lightning">⚡</span>
-              <img
-                class="mascot__image"
-                src="/src/assets/figma/hero-mascot.webp"
-                width="863"
-                height="614"
-                alt=""
-              />
+          <div class="hero__mascot">
+            <div class="hero__mascot-bg"
+                 aria-hidden="true"
+            ></div>
+            <div class="mascot"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Интерактивный маскот, нажмите меня!"
+            >
+              <div class="mascot__bubble">
+                <span class="mascot__bubble-text">Привет! Нажми на меня 👋</span>
+                <span class="mascot__bubble-sparkle"
+                      aria-hidden="true"
+                >✨</span>
+                <div class="mascot__bubble-pointer"
+                     aria-hidden="true"
+                ></div>
+              </div>
+              <div class="mascot__inner-glow"
+                   aria-hidden="true"
+              ></div>
+              <div class="mascot__badge-ring"
+                   aria-hidden="true"
+              ></div>
+              <div class="mascot__badge-area"
+                   aria-hidden="true"
+              >
+                <div class="mascot__badge-pulse"></div>
+                <div class="mascot__badge-pulse mascot__badge-pulse--delayed"></div>
+                <div class="mascot__badge">AI</div>
+              </div>
+              <span class="mascot__lightning"
+                    aria-hidden="true"
+              >⚡</span>
+              <div class="mascot__image-wrapper"
+                   aria-hidden="true"
+              >
+                <img
+                  class="mascot__image"
+                  src="/src/assets/figma/hero-mascot.webp"
+                  width="863"
+                  height="614"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 
@@ -179,7 +228,9 @@
       </div>
     </section>
 
-    <section class="page__interface">
+    <section class="page__interface"
+             id="interface"
+    >
       <div class="page__interface-container">
         <div
           class="interface"
@@ -791,7 +842,7 @@
 
           <a
             class="button button--primary button--xlg workhere-ai__button ui-animation ui-animation--fade-up"
-            href="#footer"
+            href="#demo-request"
             data-progress-activate
             data-progress-activate-start="0.66"
           >
@@ -801,7 +852,9 @@
       </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-customers"
+    >
       <div class="feature-section">
         <div class="feature-section__badge"
              data-progress
@@ -911,7 +964,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Работа с <br> заявками</h3>
-                      <p>С помощью заявок вы сразу фиксируете требования к кандидатам и дату старта по вакансии. Все поля настраиваются под ваш процесс — без лишних ограничений.</p>
+                      <p>С помощью заявок вы сразу фиксируете требования к кандидатам и дату старта по вакансии. Все
+                        поля настраиваются под ваш процесс — без лишних ограничений.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/work/1.webp"
@@ -937,7 +992,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Обратная связь <br> по соискателям</h3>
-                      <p>Настраиваемые формы позволяют заказчикам давать понятную и структурированную обратную связь без долгих обсуждений, созвонов и переписок.</p>
+                      <p>Настраиваемые формы позволяют заказчикам давать понятную и структурированную обратную связь без
+                        долгих обсуждений, созвонов и переписок.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/work/2.webp"
@@ -963,7 +1020,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Контроль этапов <br> и сроков</h3>
-                      <p>План вакансии перед глазами у всех, кто за нее отвечает. WorkHere не дает срокам выпадать — этапы на каждом шаге фиксируются и контролируются.</p>
+                      <p>План вакансии перед глазами у всех, кто за нее отвечает. WorkHere не дает срокам выпадать —
+                        этапы на каждом шаге фиксируются и контролируются.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/work/3.webp"
@@ -989,7 +1048,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Доступ <br> к статистике</h3>
-                      <p>WorkHere открывает заказчикам доступ к статистике по вакансиям, дает работать с рекрутерами напрямую и помогает совместно управлять результатом.</p>
+                      <p>WorkHere открывает заказчикам доступ к статистике по вакансиям, дает работать с рекрутерами
+                        напрямую и помогает совместно управлять результатом.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/work/4.webp"
@@ -1015,7 +1076,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Общая оценка <br> найма</h3>
-                      <p>Выявляйте слабые места в работе с заказчиками и улучшайте эффективность рекрутеров через регулярную оценку удовлетворенности нанимающих менеджеров — по аналогии с NPS.</p>
+                      <p>Выявляйте слабые места в работе с заказчиками и улучшайте эффективность рекрутеров через
+                        регулярную оценку удовлетворенности нанимающих менеджеров — по аналогии с NPS.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/work/5.webp"
@@ -1030,36 +1093,38 @@
                 </div>
               </div>
             </article>
-          <div class="feature-section__pagination"
-               aria-label="Переключение вкладок: Работа с заказчиками"
-          >
-            <button class="feature-section__dot active"
-                    type="button"
-                    aria-label="Показать вкладку 1"
-                    aria-current="true"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 2"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 3"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 4"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 5"
-            ></button>
+            <div class="feature-section__pagination"
+                 aria-label="Переключение вкладок: Работа с заказчиками"
+            >
+              <button class="feature-section__dot active"
+                      type="button"
+                      aria-label="Показать вкладку 1"
+                      aria-current="true"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 2"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 3"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 4"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 5"
+              ></button>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-automation"
+    >
       <div class="feature-section feature-section--automation">
         <div class="feature-section__badge"
              data-progress
@@ -1167,7 +1232,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Сохранение <br> резюме с 20+ <br> источников</h3>
-                      <p>Одним кликом сохраняйте резюме и мгновенно берите кандидата в работу по вакансии. Работает во всех современных браузерах на компьютере и ноутбуке.</p>
+                      <p>Одним кликом сохраняйте резюме и мгновенно берите кандидата в работу по вакансии. Работает во
+                        всех современных браузерах на компьютере и ноутбуке.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/automation/1.webp"
@@ -1193,7 +1260,10 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Публикация <br> вакансий</h3>
-                      <p>Размещайте вакансии на HeadHunter, Superjob, Авито и Работа.ру прямо из WorkHere. Автоматическая загрузка откликов в режиме реального времени помогает быстрее обрабатывать кандидатов.</p>
+                      <p>Размещайте вакансии на HeadHunter, Superjob, Авито и Работа.ру прямо из WorkHere.
+                        Автоматическая загрузка откликов в режиме реального времени помогает быстрее обрабатывать
+                        кандидатов.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/automation/2.webp"
@@ -1219,7 +1289,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Работа с дублями <br> резюме</h3>
-                      <p>WorkHere автоматически проверяет дубликаты на всех этапах воронки. После объединения карточек система сохранит предыдущие версии и историю коммуникаций.</p>
+                      <p>WorkHere автоматически проверяет дубликаты на всех этапах воронки. После объединения карточек
+                        система сохранит предыдущие версии и историю коммуникаций.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/automation/3.webp"
@@ -1245,7 +1317,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Назначение <br> интервью</h3>
-                      <p>Все собеседования, встречи и звонки можно планировать прямо из WorkHere. Участники получают уведомления, а рекрутер видит расписание и статус коммуникации в одном месте.</p>
+                      <p>Все собеседования, встречи и звонки можно планировать прямо из WorkHere. Участники получают
+                        уведомления, а рекрутер видит расписание и статус коммуникации в одном месте.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/automation/4.webp"
@@ -1271,7 +1345,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Интеграции с почтой <br> и мессенджерами</h3>
-                      <p>Общайтесь с кандидатами в любом мессенджере напрямую из WorkHere, отправляйте офферы на почту и получайте ответы в системе без переключения между сервисами.</p>
+                      <p>Общайтесь с кандидатами в любом мессенджере напрямую из WorkHere, отправляйте офферы на почту и
+                        получайте ответы в системе без переключения между сервисами.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/automation/5.webp"
@@ -1317,7 +1393,9 @@
       </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-analytics"
+    >
       <div class="feature-section feature-section--analytics">
 
         <div class="feature-section__badge"
@@ -1427,7 +1505,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Глубокая <br> аналитика</h3>
-                      <p>С какого этапа чаще всего отсеиваются кандидаты? Какие источники релевантны? WorkHere переводит аналитику на совершенно новый уровень детализации.</p>
+                      <p>С какого этапа чаще всего отсеиваются кандидаты? Какие источники релевантны? WorkHere переводит
+                        аналитику на совершенно новый уровень детализации.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/analytics/1.webp"
@@ -1453,7 +1533,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Статистика по срокам <br> закрытия вакансий</h3>
-                      <p>Контролируйте средний срок найма и находите этапы, на которых вакансии начинают задерживаться. Отчеты помогают быстрее принимать управленческие решения.</p>
+                      <p>Контролируйте средний срок найма и находите этапы, на которых вакансии начинают задерживаться.
+                        Отчеты помогают быстрее принимать управленческие решения.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/analytics/2.webp"
@@ -1479,7 +1561,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Эффективность <br> рекрутеров</h3>
-                      <p>Сравнивайте нагрузку, скорость и результативность рекрутеров без ручного подсчета. WorkHere показывает зоны роста каждого участника команды.</p>
+                      <p>Сравнивайте нагрузку, скорость и результативность рекрутеров без ручного подсчета. WorkHere
+                        показывает зоны роста каждого участника команды.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/analytics/3.webp"
@@ -1505,7 +1589,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Динамика движения <br> по воронке</h3>
-                      <p>Отслеживайте, как кандидаты проходят этапы подбора, сколько времени занимает каждый шаг и где команда теряет скорость.</p>
+                      <p>Отслеживайте, как кандидаты проходят этапы подбора, сколько времени занимает каждый шаг и где
+                        команда теряет скорость.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/analytics/4.webp"
@@ -1531,7 +1617,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Письма под <br> контролем</h3>
-                      <p>Оценивайте конверсию в ответы, эффективность заголовков и долю непрочитанных писем. Отслеживайте открытия и ответы, чтобы улучшать результат холодных писем.</p>
+                      <p>Оценивайте конверсию в ответы, эффективность заголовков и долю непрочитанных писем.
+                        Отслеживайте открытия и ответы, чтобы улучшать результат холодных писем.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/src/assets/figma/feature-panel/analytics/5.webp"
@@ -1578,120 +1666,2073 @@
       </div>
     </section>
 
+    <section class="page__reviews"
+             id="reviews"
+    >
+      <div class="reviews"
+           aria-label="Отзывы клиентов"
+      >
+        <div class="reviews__inner">
+          <div class="reviews__slider swiper"
+               data-reviews-slider
+          >
+            <div class="reviews__wrapper swiper-wrapper">
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/src/assets/figma/reviews/avatar.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="/src/assets/figma/reviews/quote.svg"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/src/assets/figma/reviews/avatar.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="/src/assets/figma/reviews/quote.svg"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/src/assets/figma/reviews/avatar.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="/src/assets/figma/reviews/quote.svg"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/src/assets/figma/reviews/avatar.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="/src/assets/figma/reviews/quote.svg"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <button class="reviews__button reviews__button--prev"
+                  type="button"
+                  aria-label="Предыдущий отзыв"
+          >
+            <img class="reviews__button-icon"
+                 src="/src/assets/figma/ui/arrow-prev.svg"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+          <button class="reviews__button reviews__button--next"
+                  type="button"
+                  aria-label="Следующий отзыв"
+          >
+            <img class="reviews__button-icon"
+                 src="/src/assets/figma/ui/arrow-next.svg"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+
+          <div class="reviews__pagination"
+               aria-label="Переключение отзывов"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__cases"
+             id="cases"
+    >
+      <div class="container">
+        <div class="cases"
+             aria-labelledby="cases-title"
+        >
+          <img class="cases__bg"
+               src="/src/assets/figma/cases/brush.svg"
+               width="1840"
+               height="1437"
+               alt=""
+               aria-hidden="true"
+          >
+          <div class="cases__inner">
+            <div class="cases__header">
+              <div class="cases__text">
+                <h2 class="cases__title"
+                    id="cases-title"
+                >Кейсы клиентов
+                </h2>
+                <p class="cases__lead">Клиенты рассказали о результатах, которых они достигли после внедрения WorkHere
+                </p>
+              </div>
+              <a class="cases__link"
+                 href="#"
+              >
+                Все кейсы
+                <img class="cases__link-icon"
+                     src="/src/assets/figma/ui/arrow-next.svg"
+                     width="16"
+                     height="16"
+                     alt=""
+                     aria-hidden="true"
+                >
+              </a>
+            </div>
+
+            <div class="cases__slider-wrap">
+              <div class="cases__slider swiper"
+                   data-cases-slider
+              >
+                <div class="cases__wrapper swiper-wrapper">
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-2.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-2.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-2.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-2.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-2.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/src/assets/figma/cases/case-1.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="/src/assets/figma/ui/arrow-next.svg"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cases__pagination"
+                 aria-label="Переключение кейсов"
+            ></div>
+          </div>
+
+          <button class="cases__button cases__button--prev"
+                  type="button"
+                  aria-label="Предыдущие кейсы"
+          >
+            <img class="cases__button-icon"
+                 src="/src/assets/figma/ui/arrow-prev.svg"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+          <button class="cases__button cases__button--next"
+                  type="button"
+                  aria-label="Следующие кейсы"
+          >
+            <img class="cases__button-icon"
+                 src="/src/assets/figma/ui/arrow-next.svg"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="page__premier"
+             id="premier"
+    >
+      <div class="container">
+        <section class="premier"
+                 aria-labelledby="premier-title"
+        >
+          <img class="premier__bg"
+               src="/src/assets/figma/premier/bg.svg"
+               width="2926"
+               height="1215"
+               alt=""
+               aria-hidden="true"
+          >
+          <div class="premier__content">
+            <p class="premier__badge ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >WorkHere Премьер
+            </p>
+            <h2 class="premier__title ui-animation ui-animation--fade-up"
+                id="premier-title"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >Автоматизация рекрутмента в крупных компаниях
+            </h2>
+            <p class="premier__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Готовое решение для трансформации, систематизации и масштабирования бизнес-процесса
+              рекрутмента
+            </p>
+            <a class="premier__button ui-animation ui-animation--fade-up"
+               href="#"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >
+              Узнать подробнее
+              <img class="premier__button-icon"
+                   src="/src/assets/figma/premier/cta-arrow.svg"
+                   width="30"
+                   height="30"
+                   alt=""
+                   aria-hidden="true"
+              >
+            </a>
+
+            <ul class="premier__features"
+                aria-label="Возможности WorkHere Премьер"
+            >
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-team.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Организация работы больших команд</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-roles.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Управление доступами и ролями</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-security.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Повышенные требования к безопасности</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-infrastructure.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Выделенная инфраструктура</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-analytics.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Расширенная аналитика</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="/src/assets/figma/premier/icon-manager.svg"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Персональный менеджер</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page__api-power"
+             id="api-power"
+    >
+      <div class="api-power"
+           aria-labelledby="api-power-title"
+      >
+        <img class="api-power__bg"
+             src="/src/assets/figma/api-power/bg.svg"
+             width="1920"
+             height="1134"
+             alt=""
+             aria-hidden="true"
+        >
+
+        <div class="api-power__inner">
+          <div class="api-power__header">
+            <h2 class="api-power__title ui-animation ui-animation--fade-up"
+                id="api-power-title"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >Суперсила API
+            </h2>
+            <p class="api-power__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Мы сделали все для легкого встраивания WorkHere в экосистему вашей компании
+            </p>
+            <a class="api-power__button ui-animation ui-animation--fade-up"
+               href="#"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >
+              Портал для разработчиков
+              <img class="api-power__button-icon"
+                   src="/src/assets/figma/api-power/cta-arrow.svg"
+                   width="16"
+                   height="16"
+                   alt=""
+                   aria-hidden="true"
+              >
+            </a>
+          </div>
+
+          <div class="api-power__cards"
+               aria-label="Возможности API WorkHere"
+          >
+            <article class="api-power__card api-power__card--docs ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="api-power__card-main">
+                    <span class="api-power__icon api-power__icon--medium"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-docs.svg"
+                           width="32"
+                           height="32"
+                           alt=""
+                      >
+                    </span>
+                <div class="api-power__card-text">
+                  <h3 class="api-power__card-title">Интерактивная документация</h3>
+                  <p class="api-power__card-lead">Полная документация с примерами кода</p>
+                </div>
+              </div>
+              <div class="api-power__code"
+                   aria-label="Пример API запроса"
+              >
+                <code>GET /api/v1/candidates</code>
+                <code>Authorization: Bearer ...</code>
+              </div>
+            </article>
+
+            <article class="api-power__card api-power__card--career ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                  <span class="api-power__icon api-power__icon--large"
+                        aria-hidden="true"
+                  >
+                    <img src="/src/assets/figma/api-power/icon-career.svg"
+                         width="47"
+                         height="47"
+                         alt=""
+                    >
+                  </span>
+              <div class="api-power__card-text">
+                <h3 class="api-power__card-title">Передавайте отклики с карьерного сайта</h3>
+                <p class="api-power__card-lead">Сбор откликов</p>
+              </div>
+            </article>
+
+            <article class="api-power__card api-power__card--sync ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-sync.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Синхронизация данных</h3>
+              <p class="api-power__card-lead">Двусторонний обмен</p>
+            </article>
+
+            <article class="api-power__card api-power__card--connectors ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-connectors.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Готовые коннекторы</h3>
+              <p class="api-power__card-lead">Популярные интеграции</p>
+            </article>
+
+            <article class="api-power__card api-power__card--intranet ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                  <span class="api-power__icon"
+                        aria-hidden="true"
+                  >
+                    <img src="/src/assets/figma/api-power/icon-intranet.svg"
+                         width="24"
+                         height="24"
+                         alt=""
+                    >
+                  </span>
+              <h3 class="api-power__card-title">Передавайте заявки из интранета</h3>
+              <p class="api-power__card-lead">Автоматический импорт заявок</p>
+            </article>
+
+            <article class="api-power__card api-power__card--finalists ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-finalists.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Отправляйте финалистов в HR-систему</h3>
+              <p class="api-power__card-lead">Бесшовная интеграция</p>
+            </article>
+
+            <article class="api-power__card api-power__card--webhooks ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-webhooks.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Webhooks для событий</h3>
+              <p class="api-power__card-lead">Real-time уведомления</p>
+            </article>
+
+            <article class="api-power__card api-power__card--reports ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-reports.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Разрабатывайте индивидуальные отчеты</h3>
+              <p class="api-power__card-lead">Кастомная аналитика</p>
+            </article>
+
+            <article class="api-power__card api-power__card--sandbox ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="/src/assets/figma/api-power/icon-sandbox.svg"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Sandbox для тестов</h3>
+              <p class="api-power__card-lead">Безопасная разработка</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__security"
+             id="security"
+    >
+      <div class="security">
+        <img
+          class="security__bg"
+          src="src/assets/figma/security/security-brush.svg"
+          width="1920"
+          height="1241"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <div class="security__inner">
+          <header class="security__header">
+            <p class="security__eyebrow ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Безопасность
+            </p>
+
+            <h2 class="security__title ui-animation ui-animation--fade-up"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >
+              Надежная работа<br>
+              и защита ваших данных
+            </h2>
+          </header>
+
+          <div class="security__cards">
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="src/assets/figma/security/server.svg"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Инфраструктура<br>
+                — в России
+              </h3>
+
+              <p class="security__card-text">
+                Сервера WorkHere размещаются в дата-центрах в Санкт-Петербурге и Москве.
+                Организовано географически распределенное непрерывное резервное копирование данных.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="src/assets/figma/security/registry.svg"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Реестр отечественного ПО
+              </h3>
+
+              <p class="security__card-text">
+                WorkHere включен в единый реестр российского программного обеспечения.
+                Это гарантирует соответствие требованиям импортозамещения.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="src/assets/figma/security/audit.svg"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Регулярный аудит безопасности
+              </h3>
+
+              <p class="security__card-text">
+                Проводим регулярные проверки безопасности с привлечением внешних экспертов.
+                Постоянный мониторинг и обновление систем защиты.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="src/assets/figma/security/document.svg"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Соответствие<br>
+                152-ФЗ
+              </h3>
+
+              <p class="security__card-text">
+                Полное соответствие требованиям Федерального закона №152-ФЗ «О персональных данных».
+                Защита данных ваших кандидатов и сотрудников.
+              </p>
+            </article>
+          </div>
+
+          <div class="security__badges"
+               aria-label="Сертификаты и соответствия"
+          >
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >152-ФЗ</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >Реестр ПО</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >ISO 27001</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >ГОСТ Р</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__pricing"
+             id="pricing"
+    >
+      <div class="container">
+
+        <div class="pricing">
+
+          <div class="pricing__bg">
+            <img
+              class="page__pricing-decor"
+              src="src/assets/figma/pricing/bg.svg"
+              width="1840"
+              height="1073"
+              alt=""
+              aria-hidden="true"
+            >
+          </div>
+
+          <div class="pricing__inner">
+
+            <header class="pricing__header">
+              <div class="pricing__label ui-animation ui-animation--fade-up"
+                   data-progress-activate
+                   data-progress-activate-start="0.15"
+              >Цены
+              </div>
+
+              <h2 class="pricing__title ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.15"
+              >
+                Перебьём любую цену<br>
+                конкурентов
+              </h2>
+
+              <p class="pricing__subtitle ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.15"
+              >
+                Покажите нам предложение конкурента – мы предложим лучшие условия
+              </p>
+            </header>
+
+            <div class="pricing__cards">
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="src/assets/figma/pricing/demo.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Демо-версия</h3>
+                    <p class="pricing__card-subtitle">базовый функционал</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">календарь собеседований</li>
+                    <li class="pricing__item">базовые отчёты</li>
+                    <li class="pricing__item">интеграции с мессенджерами</li>
+                    <li class="pricing__item">интеграции с Job-сайтами</li>
+                  </ul>
+                </div>
+
+                <a class="pricing__button pricing__button--demo"
+                   href="#demo-request"
+                >
+                  Попробовать бесплатно
+                </a>
+              </article>
+
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="src/assets/figma/pricing/standard.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Стандарт</h3>
+                    <p class="pricing__card-subtitle">часто покупают</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">базовый функционал</li>
+                    <li class="pricing__item">ИИ поиск по базе</li>
+                    <li class="pricing__item">IP телефония</li>
+                    <li class="pricing__item">конструктор отчетов</li>
+                  </ul>
+                </div>
+
+                <div class="pricing__bottom">
+                  <div class="pricing__price">
+                    <span class="pricing__price-value">1 660</span>
+                    <span class="pricing__price-period">₽/месяц</span>
+                  </div>
+
+                  <a class="pricing__button"
+                     href="#demo-request"
+                  >
+                    Отправить заявку
+                  </a>
+                </div>
+              </article>
+
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="src/assets/figma/pricing/pro.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Профессиональный</h3>
+                    <p class="pricing__card-subtitle">для крупных клиентов</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">всё из тарифа Стандарт</li>
+                    <li class="pricing__item">ИИ агрегатор работных сайтов</li>
+                    <li class="pricing__item">API</li>
+                    <li class="pricing__item">КЭДО</li>
+                  </ul>
+                </div>
+
+                <div class="pricing__bottom">
+                  <div class="pricing__price">
+                    <span class="pricing__price-value">3 500</span>
+                    <span class="pricing__price-period">₽/месяц</span>
+                  </div>
+
+                  <a class="pricing__button"
+                     href="#demo-request"
+                  >
+                    Отправить заявку
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page__demo-request"
+             id="demo-request"
+    >
+      <div class="container">
+        <div class="demo-request">
+          <img
+            class="demo-request__bg"
+            src="src/assets/figma/demo-request/bg.svg"
+            width="1957"
+            height="1650"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="demo-request__content">
+            <h2 class="demo-request__title ui-animation ui-animation--fade-up"
+                data-progress-activate
+                data-progress-activate-start="0.2"
+            >
+              Закажите персональное демо
+            </h2>
+
+            <p class="demo-request__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.2"
+            >
+              Оставьте заявку — мы покажем, как WorkHere поможет улучшить ваш подбор
+            </p>
+
+            <form class="demo-request__form ui-animation ui-animation--fade-up"
+                  action="#"
+                  novalidate
+                  data-email-form
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >
+              <input
+                class="demo-request__input"
+                type="email"
+                name="email"
+                aria-describedby="demo-request-email-error"
+                data-email-input
+                placeholder="Ваша эл. почта"
+                required
+              >
+
+              <button class="demo-request__button"
+                      type="submit"
+              >
+                Оставить заявку
+              </button>
+              <span class="demo-request__error"
+                    id="demo-request-email-error"
+                    data-email-error
+                    hidden
+              >
+                * Заполните обязательное поле
+              </span>
+            </form>
+
+          </div>
+
+          <div class="demo-request__benefits ui-animation ui-animation--fade"
+               data-progress-activate
+               data-progress-activate-start="0.2"
+          >
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Бесплатная консультация</span>
+            </div>
+
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Ответим за 24 часа</span>
+            </div>
+
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot demo-request__benefit-dot--orange"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Без обязательств</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__journal"
+             id="journal"
+    >
+
+      <div class="container">
+        <div class="journal">
+
+          <img
+            class="journal__bg"
+            src="src/assets/figma/journal/bg.svg"
+            width="1973"
+            height="1664"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="journal__inner">
+
+            <header class="journal__header">
+              <h2 class="journal__title ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                Журнал WorkHere
+              </h2>
+
+              <p class="journal__lead ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+              >
+                Более 500 экспертных материалов обо всем, что связано с наймом
+              </p>
+
+              <a class="journal__all-link ui-animation ui-animation--fade-up"
+                 href="#"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+              >
+                <span>Все материалы</span>
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 16 16"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.33398 8H12.6673"
+                        stroke="white"
+                        stroke-width="1.33333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                  />
+                  <path d="M8 3.33398L12.6667 8.00065L8 12.6673"
+                        stroke="white"
+                        stroke-width="1.33333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                  />
+                </svg>
+
+              </a>
+            </header>
+
+            <div class="journal__grid">
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-1.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-2.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-3.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Пошаговое руководство</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-4.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">IT-рекрутеру нужны широкие знания</h3>
+                    <p class="journal__card-desc">Разговор с экспертом</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-5.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-6.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-7.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="src/assets/figma/journal/article-8.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="journal__subscribe ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+            >
+              <div class="journal__subscribe-content">
+                <h3 class="journal__subscribe-title">Подпишитесь на рассылку</h3>
+                <p class="journal__subscribe-text">
+                  Наши письма читают уже более 55 000 HR-специалистов
+                </p>
+              </div>
+
+              <form class="journal__form"
+                    action="#"
+                    novalidate
+                    data-email-form
+              >
+                <input
+                  class="journal__input"
+                  type="email"
+                  name="email"
+                  aria-describedby="journal-email-error"
+                  data-email-input
+                  placeholder="Ваша эл. почта"
+                  required
+                >
+
+                <button class="journal__submit"
+                        type="submit"
+                >
+                  Подписаться
+                </button>
+                <span class="journal__error"
+                      id="journal-email-error"
+                      data-email-error
+                      hidden
+                >
+                  * Заполните обязательное поле
+                </span>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
   </main>
 
   <div class="page__footer"
        id="footer"
   >
-    <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__top">
-          <div class="footer__logo">
-            <a
-              class="logo"
-              href="#top"
-              aria-label="WorkHere"
+    <div class="container">
+      <footer class="footer">
+        <div class="footer__panel">
+          <div class="footer__inner">
+            <div class="footer__top">
+              <a class="footer__logo"
+                 href="/"
+                 aria-label="WorkHere"
+              >
+                <img
+                  class="footer__logo-mark"
+                  src="src/assets/figma/footer/logo-mark.svg"
+                  width="69"
+                  height="69"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="footer__logo-text">
+              Work<span>Here</span>
+            </span>
+              </a>
+
+              <div class="footer__contacts">
+                <a class="footer__email"
+                   href="mailto:hello@workhere.ru"
+                >
+                  hello@workhere.ru
+                </a>
+
+                <a class="footer__phone"
+                   href="tel:88001234567"
+                >
+                  8 800 123-45-67
+                </a>
+              </div>
+            </div>
+
+            <nav class="footer__nav"
+                 aria-label="Навигация в футере"
             >
-              <span
-                class="logo__mark"
-                aria-hidden="true"
-              ></span>
-              <span class="logo__text">WorkHere</span>
-            </a>
-          </div>
-          <div class="footer__contacts">
-            <a href="mailto:hello@workhere.ru">hello@workhere.ru</a>
-            <a
-              class="footer__phone"
-              href="tel:88001234567"
-            >8 800 123-45-67
-            </a>
+              <div class="footer__column">
+                <h3 class="footer__column-title">Продукт</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Что такое WorkHere
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Тарифы
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Внедрение
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Безопасность
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >API
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Возможности</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Автоматизация
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Интеграции
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Аналитика
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Для крупных клиентов
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Ресурсы</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Журнал WorkHere
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Руководства
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Кейсы
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Рассылка
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Компания</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >О компании
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Карьера
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Контакты
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Официальное</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Пользовательское соглашение
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Политика конфиденциальности
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Документы
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Социальные сети</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Telegram
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >VK
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="footer__bottom">
+              <p class="footer__copyright">
+                © ООО «WorkHere», 2020 — 2026
+              </p>
+
+              <a class="footer__privacy"
+                 href="#"
+              >
+                Политика конфиденциальности
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="footer__menus">
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Продукт"
-            >
-              <h2 class="footer-menu__title">Продукт</h2>
-              <a href="#top">Что такое WorkHere</a>
-              <a href="#top">Тарифы</a>
-              <a href="#top">Внедрение</a>
-              <a href="#top">Безопасность</a>
-              <a href="#top">API</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Возможности"
-            >
-              <h2 class="footer-menu__title">Возможности</h2>
-              <a href="#top">Автоматизация</a>
-              <a href="#top">Интеграции</a>
-              <a href="#top">Аналитика</a>
-              <a href="#top">Для крупных клиентов</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Ресурсы"
-            >
-              <h2 class="footer-menu__title">Ресурсы</h2>
-              <a href="#top">Журнал WorkHere</a>
-              <a href="#top">Руководства</a>
-              <a href="#top">Кейсы</a>
-              <a href="#top">Рассылка</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Компания"
-            >
-              <h2 class="footer-menu__title">Компания</h2>
-              <a href="#top">О компании</a>
-              <a href="#top">Карьера</a>
-              <a href="#top">Контакты</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Официальное"
-            >
-              <h2 class="footer-menu__title">Официальное</h2>
-              <a href="#top">Пользовательское соглашение</a>
-              <a href="#top">Политика конфиденциальности</a>
-              <a href="#top">Документы</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Социальные сети"
-            >
-              <h2 class="footer-menu__title">Социальные сети</h2>
-              <a href="#top">Telegram</a>
-              <a href="#top">VK</a>
-            </nav>
-          </div>
-        </div>
-
-        <div class="footer__bottom">
-          <span>© ООО «WorkHere», 2020 - 2026</span>
-          <a href="#top">Политика конфиденциальности</a>
-        </div>
         <p class="footer__note">
-          * Утверждение "Лучшая" основано на внутреннем исследовании и сравнении количества отзывов с оценкой
-          4 и 5 звезд в сервисе Яндекс среди систем, представленных на российском рынке, по состоянию на
+          <span>*</span>
+          Утверждение „Лучшая“ основано на внутреннем исследовании и сравнении количества отзывов с оценкой 4 и 5
+          звезд<br>
+          в сервисе Яндекс (Яндекс Карты / Яндекс Бизнес) среди систем представленных на российском рынке, по состоянию
+          на
           31 января 2026 г.
         </p>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </div>
 </div>
 

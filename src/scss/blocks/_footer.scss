@@ -1,69 +1,213 @@
-.footer {
-  padding: 0 40px 40px;
-  background: #f8fbff;
+@use "../helpers/index" as *;
 
-  &__container {
-    border-radius: 34px;
-    padding: 112px 130px 0;
-    background: var(--color-white);
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding-bottom: 40px;
+
+  &__panel {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #fff;
+    border-radius: 50px;
+    @include xlg-block {
+      padding-block: 40px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 116px;
+    width: 100%;
+    padding: 0 130px;
+    @include xlg-block {
+      padding-inline: 40px;
+      gap: 40px;
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    @include xlg-block {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      justify-content: initial;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 17.214px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  &__logo-mark {
+    display: block;
+    width: 68.856px;
+    height: 68.856px;
+    flex: 0 0 auto;
+  }
+
+  &__logo-text {
+    font-family: var(--font-display);
+    font-size: 38.732px;
+    font-weight: 700;
+    line-height: 60.249px;
+    color: #000;
+
+    span {
+      color: #1890ff;
+    }
   }
 
   &__contacts {
     display: flex;
+    align-items: center;
     gap: 106px;
-    font-size: 20px;
-    font-weight: 700;
-
-    a {
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: var(--color-blue);
-      }
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    @include xlg-block {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
+  }
+
+  &__email,
+  &__phone {
+    color: #000;
+    text-decoration: none;
+    @include tr;
+    @include hover {
+      color: var(--color-blue-hover);
+    }
+  }
+
+  &__email {
+    font-size: 23px;
+    line-height: 20px;
   }
 
   &__phone {
-    &:hover {
-      color: var(--color-blue);
+    font-size: 33px;
+    line-height: 20px;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(6, 220px);
+    justify-content: space-between;
+    width: 100%;
+    @include xlg-block {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
     }
   }
 
-  &__menus {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 52px;
-    margin-top: 124px;
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 0;
+    @include xlg-block{
+        gap: 12px;
+    }
+  }
+
+  &__column-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+    display: flex;
+  }
+
+  &__link {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+    text-decoration: none;
+    padding-block: 16px;
+    @include tr;
+    @include hover {
+      color: var(--color-blue-hover);
+    }
+
+    @include xlg-block{
+        padding-block: 10px;
+    }
   }
 
   &__bottom {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 116px;
-    padding-bottom: 100px;
-    color: rgba(16, 21, 37, 0.72);
+    width: 100%;
+    font-family: var(--font-display);
     font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    white-space: nowrap;
+  }
 
-    a {
-      transition: color 0.2s ease;
+  &__copyright {
+    margin: 0;
+  }
 
-      &:hover {
-        color: var(--color-blue);
-      }
+  &__privacy {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    @include tr;
+    @include hover {
+      color: var(--color-blue-hover);
     }
   }
 
   &__note {
-    margin: 0 -130px;
-    padding: 0 130px 0;
-    color: rgba(16, 21, 37, 0.58);
-    font-size: 18px;
-    line-height: 1.35;
+    width: 100%;
+    padding: 0 130px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    text-align: center;
+
+    span {
+      color: #407bff;
+    }
   }
 }

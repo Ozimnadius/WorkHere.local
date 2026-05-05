@@ -5,6 +5,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0"
   />
+  <title>WorkHere</title>
   <meta name="description"
         content="WorkHere - система автоматизации рекрутмента с искусственным интеллектом."
   />
@@ -22,9 +23,9 @@
         type="image/svg+xml"
         href="/favicon.svg"
   />
-  <title>WorkHere</title>
-  <script type="module" crossorigin src="/assets/js/index-CzxkDd2T.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/css/index-BeIhhzIi.css">
+
+  <script type="module" crossorigin src="/assets/js/index-B_-skaER.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/index-t1hzsrT5.css">
 </head>
 <body>
 <div class="page">
@@ -53,26 +54,44 @@
           <nav class="nav"
                aria-label="Основная навигация"
           >
-            <a class="nav__link nav__link--dropdown"
-               href="#top"
-            >Возможности
-            </a>
+            <div class="nav__item nav__item--has-dropdown">
+              <a class="nav__link nav__link--dropdown"
+                 href="#feature-customers"
+              >Возможности
+              </a>
+              <div class="nav__dropdown"
+                   aria-label="Возможности"
+              >
+                <a class="nav__dropdown-link"
+                   href="#feature-customers"
+                >Работа с заказчиками
+                </a>
+                <a class="nav__dropdown-link"
+                   href="#feature-automation"
+                >Автоматизация
+                </a>
+                <a class="nav__dropdown-link"
+                   href="#feature-analytics"
+                >Аналитика
+                </a>
+              </div>
+            </div>
             <a class="nav__link"
-               href="#top"
+               href="#"
             >Для бизнеса
             </a>
             <a class="nav__link"
-               href="#top"
+               href="#cases"
             >Кейсы
             </a>
             <a
               class="nav__link"
-              href="#top"
+              href="#reviews"
             >Отзывы
             </a>
             <a
               class="nav__link"
-              href="#top"
+              href="#security"
             >Безопасность
             </a>
           </nav>
@@ -81,13 +100,13 @@
         <div class="header__actions">
           <a
             class="header__login"
-            href="#top"
+            href="#"
           >Войти
           </a>
           <div class="header__button">
             <a
               class="button button--primary"
-              href="#top"
+              href="#demo-request"
             >Оставить заявку на демо
             </a>
           </div>
@@ -130,14 +149,14 @@
               <div class="hero__action">
                 <a
                   class="button button--primary button--lg"
-                  href="#top"
+                  href="#demo-request"
                 >Оставить заявку на демо
                 </a>
               </div>
               <div class="hero__action">
                 <a
                   class="button button--secondary button--lg"
-                  href="#footer"
+                  href="#interface"
                 >Узнать больше
                 </a>
               </div>
@@ -159,21 +178,51 @@
             </dl>
           </div>
 
-          <div class="hero__mascot"
-               aria-hidden="true"
-          >
-            <div class="mascot">
-              <div class="mascot__bubble">Привет! Нажми на меня 👋</div>
-              <div class="mascot__badge-ring"></div>
-              <div class="mascot__badge">AI</div>
-              <span class="mascot__lightning">⚡</span>
-              <img
-                class="mascot__image"
-                src="/assets/hero-mascot-Bs7QXEG6.webp"
-                width="863"
-                height="614"
-                alt=""
-              />
+          <div class="hero__mascot">
+            <div class="hero__mascot-bg"
+                 aria-hidden="true"
+            ></div>
+            <div class="mascot"
+                 tabindex="0"
+                 role="button"
+                 aria-label="Интерактивный маскот, нажмите меня!"
+            >
+              <div class="mascot__bubble">
+                <span class="mascot__bubble-text">Привет! Нажми на меня 👋</span>
+                <span class="mascot__bubble-sparkle"
+                      aria-hidden="true"
+                >✨</span>
+                <div class="mascot__bubble-pointer"
+                     aria-hidden="true"
+                ></div>
+              </div>
+              <div class="mascot__inner-glow"
+                   aria-hidden="true"
+              ></div>
+              <div class="mascot__badge-ring"
+                   aria-hidden="true"
+              ></div>
+              <div class="mascot__badge-area"
+                   aria-hidden="true"
+              >
+                <div class="mascot__badge-pulse"></div>
+                <div class="mascot__badge-pulse mascot__badge-pulse--delayed"></div>
+                <div class="mascot__badge">AI</div>
+              </div>
+              <span class="mascot__lightning"
+                    aria-hidden="true"
+              >⚡</span>
+              <div class="mascot__image-wrapper"
+                   aria-hidden="true"
+              >
+                <img
+                  class="mascot__image"
+                  src="/assets/hero-mascot-Bs7QXEG6.webp"
+                  width="863"
+                  height="614"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 
@@ -181,7 +230,9 @@
       </div>
     </section>
 
-    <section class="page__interface">
+    <section class="page__interface"
+             id="interface"
+    >
       <div class="page__interface-container">
         <div
           class="interface"
@@ -793,7 +844,7 @@
 
           <a
             class="button button--primary button--xlg workhere-ai__button ui-animation ui-animation--fade-up"
-            href="#footer"
+            href="#demo-request"
             data-progress-activate
             data-progress-activate-start="0.66"
           >
@@ -803,7 +854,9 @@
       </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-customers"
+    >
       <div class="feature-section">
         <div class="feature-section__badge"
              data-progress
@@ -913,7 +966,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Работа с <br> заявками</h3>
-                      <p>С помощью заявок вы сразу фиксируете требования к кандидатам и дату старта по вакансии. Все поля настраиваются под ваш процесс — без лишних ограничений.</p>
+                      <p>С помощью заявок вы сразу фиксируете требования к кандидатам и дату старта по вакансии. Все
+                        поля настраиваются под ваш процесс — без лишних ограничений.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/1-_fLZmKZz.webp"
@@ -939,7 +994,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Обратная связь <br> по соискателям</h3>
-                      <p>Настраиваемые формы позволяют заказчикам давать понятную и структурированную обратную связь без долгих обсуждений, созвонов и переписок.</p>
+                      <p>Настраиваемые формы позволяют заказчикам давать понятную и структурированную обратную связь без
+                        долгих обсуждений, созвонов и переписок.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/2-Brth_eR4.webp"
@@ -965,7 +1022,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Контроль этапов <br> и сроков</h3>
-                      <p>План вакансии перед глазами у всех, кто за нее отвечает. WorkHere не дает срокам выпадать — этапы на каждом шаге фиксируются и контролируются.</p>
+                      <p>План вакансии перед глазами у всех, кто за нее отвечает. WorkHere не дает срокам выпадать —
+                        этапы на каждом шаге фиксируются и контролируются.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/3-qV5qLBb-.webp"
@@ -991,7 +1050,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Доступ <br> к статистике</h3>
-                      <p>WorkHere открывает заказчикам доступ к статистике по вакансиям, дает работать с рекрутерами напрямую и помогает совместно управлять результатом.</p>
+                      <p>WorkHere открывает заказчикам доступ к статистике по вакансиям, дает работать с рекрутерами
+                        напрямую и помогает совместно управлять результатом.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/4-4_ncpDYg.webp"
@@ -1017,7 +1078,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Общая оценка <br> найма</h3>
-                      <p>Выявляйте слабые места в работе с заказчиками и улучшайте эффективность рекрутеров через регулярную оценку удовлетворенности нанимающих менеджеров — по аналогии с NPS.</p>
+                      <p>Выявляйте слабые места в работе с заказчиками и улучшайте эффективность рекрутеров через
+                        регулярную оценку удовлетворенности нанимающих менеджеров — по аналогии с NPS.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/5-DVQF9ZT_.webp"
@@ -1032,36 +1095,38 @@
                 </div>
               </div>
             </article>
-          <div class="feature-section__pagination"
-               aria-label="Переключение вкладок: Работа с заказчиками"
-          >
-            <button class="feature-section__dot active"
-                    type="button"
-                    aria-label="Показать вкладку 1"
-                    aria-current="true"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 2"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 3"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 4"
-            ></button>
-            <button class="feature-section__dot"
-                    type="button"
-                    aria-label="Показать вкладку 5"
-            ></button>
+            <div class="feature-section__pagination"
+                 aria-label="Переключение вкладок: Работа с заказчиками"
+            >
+              <button class="feature-section__dot active"
+                      type="button"
+                      aria-label="Показать вкладку 1"
+                      aria-current="true"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 2"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 3"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 4"
+              ></button>
+              <button class="feature-section__dot"
+                      type="button"
+                      aria-label="Показать вкладку 5"
+              ></button>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-automation"
+    >
       <div class="feature-section feature-section--automation">
         <div class="feature-section__badge"
              data-progress
@@ -1169,10 +1234,12 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Сохранение <br> резюме с 20+ <br> источников</h3>
-                      <p>Одним кликом сохраняйте резюме и мгновенно берите кандидата в работу по вакансии. Работает во всех современных браузерах на компьютере и ноутбуке.</p>
+                      <p>Одним кликом сохраняйте резюме и мгновенно берите кандидата в работу по вакансии. Работает во
+                        всех современных браузерах на компьютере и ноутбуке.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
-                      <img src="/assets/1-CPGGaRtD.webp"
+                      <img src="/assets/1-DaO0Epe7.webp"
                            width="863"
                            height="696"
                            title="Сохранение резюме с 20+ источников"
@@ -1195,7 +1262,10 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Публикация <br> вакансий</h3>
-                      <p>Размещайте вакансии на HeadHunter, Superjob, Авито и Работа.ру прямо из WorkHere. Автоматическая загрузка откликов в режиме реального времени помогает быстрее обрабатывать кандидатов.</p>
+                      <p>Размещайте вакансии на HeadHunter, Superjob, Авито и Работа.ру прямо из WorkHere.
+                        Автоматическая загрузка откликов в режиме реального времени помогает быстрее обрабатывать
+                        кандидатов.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/2-DGMve-0g.webp"
@@ -1221,7 +1291,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Работа с дублями <br> резюме</h3>
-                      <p>WorkHere автоматически проверяет дубликаты на всех этапах воронки. После объединения карточек система сохранит предыдущие версии и историю коммуникаций.</p>
+                      <p>WorkHere автоматически проверяет дубликаты на всех этапах воронки. После объединения карточек
+                        система сохранит предыдущие версии и историю коммуникаций.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/3-RS0L4TyK.webp"
@@ -1247,7 +1319,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Назначение <br> интервью</h3>
-                      <p>Все собеседования, встречи и звонки можно планировать прямо из WorkHere. Участники получают уведомления, а рекрутер видит расписание и статус коммуникации в одном месте.</p>
+                      <p>Все собеседования, встречи и звонки можно планировать прямо из WorkHere. Участники получают
+                        уведомления, а рекрутер видит расписание и статус коммуникации в одном месте.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/4-BOFqi5-m.webp"
@@ -1273,7 +1347,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Интеграции с почтой <br> и мессенджерами</h3>
-                      <p>Общайтесь с кандидатами в любом мессенджере напрямую из WorkHere, отправляйте офферы на почту и получайте ответы в системе без переключения между сервисами.</p>
+                      <p>Общайтесь с кандидатами в любом мессенджере напрямую из WorkHere, отправляйте офферы на почту и
+                        получайте ответы в системе без переключения между сервисами.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/5-DM0OrzI2.webp"
@@ -1319,7 +1395,9 @@
       </div>
     </section>
 
-    <section class="page__feature-section">
+    <section class="page__feature-section"
+             id="feature-analytics"
+    >
       <div class="feature-section feature-section--analytics">
 
         <div class="feature-section__badge"
@@ -1429,7 +1507,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Глубокая <br> аналитика</h3>
-                      <p>С какого этапа чаще всего отсеиваются кандидаты? Какие источники релевантны? WorkHere переводит аналитику на совершенно новый уровень детализации.</p>
+                      <p>С какого этапа чаще всего отсеиваются кандидаты? Какие источники релевантны? WorkHere переводит
+                        аналитику на совершенно новый уровень детализации.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/1-Dfsn0vUH.webp"
@@ -1455,7 +1535,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Статистика по срокам <br> закрытия вакансий</h3>
-                      <p>Контролируйте средний срок найма и находите этапы, на которых вакансии начинают задерживаться. Отчеты помогают быстрее принимать управленческие решения.</p>
+                      <p>Контролируйте средний срок найма и находите этапы, на которых вакансии начинают задерживаться.
+                        Отчеты помогают быстрее принимать управленческие решения.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/2-C2hJ3tZ5.webp"
@@ -1481,7 +1563,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Эффективность <br> рекрутеров</h3>
-                      <p>Сравнивайте нагрузку, скорость и результативность рекрутеров без ручного подсчета. WorkHere показывает зоны роста каждого участника команды.</p>
+                      <p>Сравнивайте нагрузку, скорость и результативность рекрутеров без ручного подсчета. WorkHere
+                        показывает зоны роста каждого участника команды.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/3-DoxjgMDJ.webp"
@@ -1507,7 +1591,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Динамика движения <br> по воронке</h3>
-                      <p>Отслеживайте, как кандидаты проходят этапы подбора, сколько времени занимает каждый шаг и где команда теряет скорость.</p>
+                      <p>Отслеживайте, как кандидаты проходят этапы подбора, сколько времени занимает каждый шаг и где
+                        команда теряет скорость.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/4-BKlni5Qa.webp"
@@ -1533,7 +1619,9 @@
                   <div class="feature-panel__grid">
                     <div class="feature-panel__content">
                       <h3>Письма под <br> контролем</h3>
-                      <p>Оценивайте конверсию в ответы, эффективность заголовков и долю непрочитанных писем. Отслеживайте открытия и ответы, чтобы улучшать результат холодных писем.</p>
+                      <p>Оценивайте конверсию в ответы, эффективность заголовков и долю непрочитанных писем.
+                        Отслеживайте открытия и ответы, чтобы улучшать результат холодных писем.
+                      </p>
                     </div>
                     <div class="feature-panel__img">
                       <img src="/assets/5-Bc1nNq3i.webp"
@@ -1580,120 +1668,2073 @@
       </div>
     </section>
 
+    <section class="page__reviews"
+             id="reviews"
+    >
+      <div class="reviews"
+           aria-label="Отзывы клиентов"
+      >
+        <div class="reviews__inner">
+          <div class="reviews__slider swiper"
+               data-reviews-slider
+          >
+            <div class="reviews__wrapper swiper-wrapper">
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/assets/avatar-DfSIkq-b.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2086%2062'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='format-quote-close'%20clip-path='url(%23clip0_0_8)'%3e%3cpath%20id='Vector'%20d='M55.4559%2061.7042H73.9341L86.2529%2037.0667V0.110352H49.2966V37.0667H67.7747M6.18087%2061.7042H24.659L36.9778%2037.0667V0.110352H0.0214844V37.0667H18.4996L6.18087%2061.7042Z'%20fill='var(--fill-0,%20%23339F61)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_8'%3e%3crect%20width='86'%20height='62'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/assets/avatar-DfSIkq-b.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2086%2062'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='format-quote-close'%20clip-path='url(%23clip0_0_8)'%3e%3cpath%20id='Vector'%20d='M55.4559%2061.7042H73.9341L86.2529%2037.0667V0.110352H49.2966V37.0667H67.7747M6.18087%2061.7042H24.659L36.9778%2037.0667V0.110352H0.0214844V37.0667H18.4996L6.18087%2061.7042Z'%20fill='var(--fill-0,%20%23339F61)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_8'%3e%3crect%20width='86'%20height='62'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/assets/avatar-DfSIkq-b.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2086%2062'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='format-quote-close'%20clip-path='url(%23clip0_0_8)'%3e%3cpath%20id='Vector'%20d='M55.4559%2061.7042H73.9341L86.2529%2037.0667V0.110352H49.2966V37.0667H67.7747M6.18087%2061.7042H24.659L36.9778%2037.0667V0.110352H0.0214844V37.0667H18.4996L6.18087%2061.7042Z'%20fill='var(--fill-0,%20%23339F61)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_8'%3e%3crect%20width='86'%20height='62'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__slide swiper-slide">
+                <article class="reviews__card">
+                  <div class="reviews__author">
+                    <div class="reviews__person">
+                      <div class="reviews__avatar">
+                        <img class="reviews__avatar-img"
+                             src="/assets/avatar-DfSIkq-b.webp"
+                             width="119"
+                             height="119"
+                             alt="Анастасия Петрова"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="reviews__meta">
+                        <p class="reviews__name">Анастасия Петрова</p>
+                        <p class="reviews__role">Руководитель отдела персонала, TechCorp</p>
+                      </div>
+                    </div>
+                    <p class="reviews__company">TechCorp</p>
+                    <div class="reviews__quote"
+                         aria-hidden="true"
+                    >
+                      <img class="reviews__quote-img"
+                           src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2086%2062'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='format-quote-close'%20clip-path='url(%23clip0_0_8)'%3e%3cpath%20id='Vector'%20d='M55.4559%2061.7042H73.9341L86.2529%2037.0667V0.110352H49.2966V37.0667H67.7747M6.18087%2061.7042H24.659L36.9778%2037.0667V0.110352H0.0214844V37.0667H18.4996L6.18087%2061.7042Z'%20fill='var(--fill-0,%20%23339F61)'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_8'%3e%3crect%20width='86'%20height='62'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                           width="86"
+                           height="62"
+                           alt=""
+                           loading="lazy"
+                      >
+                    </div>
+                  </div>
+                  <div class="reviews__content">
+                    <h2 class="reviews__title">«Ни разу не пожалели о своем решении»</h2>
+                    <p class="reviews__text">Даже на старте WorkHere был удобнее наших стандартных инструментов. Мы
+                      понимали, что дальше станет еще лучше и комфортнее. С тех пор мы ни разу не пожалели о своем
+                      решении.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <button class="reviews__button reviews__button--prev"
+                  type="button"
+                  aria-label="Предыдущий отзыв"
+          >
+            <img class="reviews__button-icon"
+                 src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M15%2018L9%2012L15%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+          <button class="reviews__button reviews__button--next"
+                  type="button"
+                  aria-label="Следующий отзыв"
+          >
+            <img class="reviews__button-icon"
+                 src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+
+          <div class="reviews__pagination"
+               aria-label="Переключение отзывов"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__cases"
+             id="cases"
+    >
+      <div class="container">
+        <div class="cases"
+             aria-labelledby="cases-title"
+        >
+          <img class="cases__bg"
+               src="/assets/brush-lSA1hGZd.svg"
+               width="1840"
+               height="1437"
+               alt=""
+               aria-hidden="true"
+          >
+          <div class="cases__inner">
+            <div class="cases__header">
+              <div class="cases__text">
+                <h2 class="cases__title"
+                    id="cases-title"
+                >Кейсы клиентов
+                </h2>
+                <p class="cases__lead">Клиенты рассказали о результатах, которых они достигли после внедрения WorkHere
+                </p>
+              </div>
+              <a class="cases__link"
+                 href="#"
+              >
+                Все кейсы
+                <img class="cases__link-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="16"
+                     height="16"
+                     alt=""
+                     aria-hidden="true"
+                >
+              </a>
+            </div>
+
+            <div class="cases__slider-wrap">
+              <div class="cases__slider swiper"
+                   data-cases-slider
+              >
+                <div class="cases__wrapper swiper-wrapper">
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-2-DcYIYNso.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-2-DcYIYNso.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-2-DcYIYNso.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-2-DcYIYNso.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-2-DcYIYNso.webp"
+                             width="506"
+                             height="759"
+                             alt="Сотрудница с документами в офисе"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">IT</span>
+                          <span class="cases__tag cases__tag--yellow">Стартап</span>
+                        </div>
+                        <h3 class="cases__card-title">Автоматизация подбора в быстрорастущей компании</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cases__slide swiper-slide">
+                    <article class="cases__card">
+                      <div class="cases__image-wrap">
+                        <img class="cases__image"
+                             src="/assets/case-1-XKsZ5d6d.webp"
+                             width="759"
+                             height="506"
+                             alt="Команда обсуждает подбор кандидатов"
+                             loading="lazy"
+                        >
+                      </div>
+                      <div class="cases__card-body">
+                        <div class="cases__tags">
+                          <span class="cases__tag">E-commerce</span>
+                          <span class="cases__tag cases__tag--yellow">Массовый найм</span>
+                        </div>
+                        <h3 class="cases__card-title">Как увеличили скорость найма на 30%</h3>
+                        <a class="cases__card-link"
+                           href="#"
+                        >
+                          Читать кейс
+                          <img class="cases__card-link-icon"
+                               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                               width="12"
+                               height="12"
+                               alt=""
+                               aria-hidden="true"
+                          >
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cases__pagination"
+                 aria-label="Переключение кейсов"
+            ></div>
+          </div>
+
+          <button class="cases__button cases__button--prev"
+                  type="button"
+                  aria-label="Предыдущие кейсы"
+          >
+            <img class="cases__button-icon"
+                 src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M15%2018L9%2012L15%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+          <button class="cases__button cases__button--next"
+                  type="button"
+                  aria-label="Следующие кейсы"
+          >
+            <img class="cases__button-icon"
+                 src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9%2018L15%2012L9%206'%20stroke='var(--stroke-0,%20%23101828)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                 width="24"
+                 height="24"
+                 alt=""
+                 aria-hidden="true"
+            >
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="page__premier"
+             id="premier"
+    >
+      <div class="container">
+        <section class="premier"
+                 aria-labelledby="premier-title"
+        >
+          <img class="premier__bg"
+               src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%202925.71%201214.77'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='Vector'%20d='M114.497%20770.47C917.736%201277.88%201013.74%201166.39%20710.424%20664.006C702.115%20650.245%20708.305%20634.974%20724.134%20637.778C957.85%20679.187%202256.05%201347.4%202030.83%20895.949C1714.09%20261.012%202630.7%20549.012%202811.2%20114.512'%20stroke='var(--stroke-0,%20%230031A1)'%20stroke-width='228.964'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+               width="2926"
+               height="1215"
+               alt=""
+               aria-hidden="true"
+          >
+          <div class="premier__content">
+            <p class="premier__badge ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >WorkHere Премьер
+            </p>
+            <h2 class="premier__title ui-animation ui-animation--fade-up"
+                id="premier-title"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >Автоматизация рекрутмента в крупных компаниях
+            </h2>
+            <p class="premier__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Готовое решение для трансформации, систематизации и масштабирования бизнес-процесса
+              рекрутмента
+            </p>
+            <a class="premier__button ui-animation ui-animation--fade-up"
+               href="#"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >
+              Узнать подробнее
+              <img class="premier__button-icon"
+                   src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2030%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M6.25%2015H23.75'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M15%206.25L23.75%2015L15%2023.75'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                   width="30"
+                   height="30"
+                   alt=""
+                   aria-hidden="true"
+              >
+            </a>
+
+            <ul class="premier__features"
+                aria-label="Возможности WorkHere Премьер"
+            >
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M33.3333%2040.002H46.6667'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M33.3333%2026.6705H46.6667'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M46.6667%2070.0002V60.0002C46.6667%2058.232%2045.9643%2056.5363%2044.714%2055.2861C43.4638%2054.0359%2041.7681%2053.3335%2040%2053.3335C38.2319%2053.3335%2036.5362%2054.0359%2035.2859%2055.2861C34.0357%2056.5363%2033.3333%2058.232%2033.3333%2060.0002V70.0002'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M19.9995%2033.3335H13.3329C11.5647%2033.3335%209.86905%2034.0359%208.61881%2035.2861C7.36857%2036.5363%206.66619%2038.232%206.66619%2040.0002V63.3335C6.66619%2065.1016%207.36857%2066.7973%208.61881%2068.0475C9.86905%2069.2978%2011.5647%2070.0002%2013.3329%2070.0002H66.6662C68.4343%2070.0002%2070.13%2069.2978%2071.3802%2068.0475C72.6305%2066.7973%2073.3329%2065.1016%2073.3329%2063.3335V30.0002C73.3329%2028.232%2072.6305%2026.5363%2071.3802%2025.2861C70.13%2024.0359%2068.4343%2023.3335%2066.6662%2023.3335H59.9995'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_5'%20d='M19.9998%2070.002V16.6687C19.9998%2014.9006%2020.7021%2013.2049%2021.9524%2011.9546C23.2026%2010.7044%2024.8983%2010.002%2026.6664%2010.002H53.3331C55.1012%2010.002%2056.7969%2010.7044%2058.0471%2011.9546C59.2974%2013.2049%2059.9998%2014.9006%2059.9998%2016.6687V70.002'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Организация работы больших команд</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M53.3332%2070.002V63.3353C53.3332%2059.7991%2051.9284%2056.4077%2049.428%2053.9073C46.9275%2051.4068%2043.5361%2050.002%2039.9999%2050.002H19.9999C16.4637%2050.002%2013.0723%2051.4068%2010.5718%2053.9073C8.0713%2056.4077%206.66655%2059.7991%206.66655%2063.3353V70.002'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M53.3337%2010.4261C56.1929%2011.1674%2058.725%2012.837%2060.5326%2015.173C62.3402%2017.509%2063.321%2020.3791%2063.321%2023.3328C63.321%2026.2865%2062.3402%2029.1566%2060.5326%2031.4926C58.725%2033.8286%2056.1929%2035.4982%2053.3337%2036.2394'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M73.3337%2070.0039V63.3373C73.3315%2060.383%2072.3482%2057.5132%2070.5382%2055.1783C68.7283%2052.8435%2066.1941%2051.1758%2063.3337%2050.4373'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M29.9999%2036.6687C37.3637%2036.6687%2043.3332%2030.6991%2043.3332%2023.3353C43.3332%2015.9715%2037.3637%2010.002%2029.9999%2010.002C22.6361%2010.002%2016.6665%2015.9715%2016.6665%2023.3353C16.6665%2030.6991%2022.6361%2036.6687%2029.9999%2036.6687Z'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Управление доступами и ролями</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M66.6669%2043.3329C66.6669%2059.9995%2055.0002%2068.3329%2041.1335%2073.1662C40.4074%2073.4123%2039.6186%2073.4005%2038.9002%2073.1329C25.0002%2068.3329%2013.3335%2059.9995%2013.3335%2043.3329V19.9995C13.3335%2019.1155%2013.6847%2018.2676%2014.3098%2017.6425C14.935%2017.0174%2015.7828%2016.6662%2016.6669%2016.6662C23.3335%2016.6662%2031.6669%2012.6662%2037.4669%207.59954C38.173%206.9962%2039.0714%206.66471%2040.0002%206.66471C40.929%206.66471%2041.8273%206.9962%2042.5335%207.59954C48.3669%2012.6995%2056.6669%2016.6662%2063.3335%2016.6662C64.2176%2016.6662%2065.0654%2017.0174%2065.6905%2017.6425C66.3157%2018.2676%2066.6669%2019.1155%2066.6669%2019.9995V43.3329Z'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Повышенные требования к безопасности</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M13.3333%2046.6646C12.7025%2046.6667%2012.0841%2046.4898%2011.5498%2046.1545C11.0155%2045.8191%2010.5874%2045.3391%2010.3151%2044.7701C10.0428%2044.2011%209.93761%2043.5665%2010.0116%2042.9401C10.0856%2042.3137%2010.3359%2041.7211%2010.7333%2041.2312L43.7333%207.23124C43.9808%206.94551%2044.3182%206.75243%2044.6899%206.68369C45.0616%206.61494%2045.4457%206.67462%2045.7791%206.85292C46.1124%207.03123%2046.3752%207.31757%2046.5244%207.66494C46.6736%208.01231%2046.7002%208.40007%2046.6%208.76458L40.2%2028.8312C40.0112%2029.3363%2039.9479%2029.8796%2040.0153%2030.4146C40.0827%2030.9496%2040.2788%2031.4602%2040.5869%2031.9027C40.895%2032.3451%2041.3059%2032.7063%2041.7842%2032.9551C42.2626%2033.2039%2042.7941%2033.333%2043.3333%2033.3312H66.6666C67.2974%2033.3291%2067.9159%2033.506%2068.4501%2033.8413C68.9844%2034.1767%2069.4125%2034.6567%2069.6848%2035.2257C69.9571%2035.7947%2070.0623%2036.4293%2069.9883%2037.0557C69.9143%2037.6821%2069.664%2038.2747%2069.2666%2038.7646L36.2666%2072.7646C36.0191%2073.0503%2035.6818%2073.2434%2035.31%2073.3121C34.9383%2073.3809%2034.5542%2073.3212%2034.2209%2073.1429C33.8875%2072.9646%2033.6247%2072.6782%2033.4755%2072.3309C33.3263%2071.9835%2033.2997%2071.5957%2033.4%2071.2312L39.8%2051.1646C39.9887%2050.6595%2040.0521%2050.1162%2039.9847%2049.5812C39.9173%2049.0463%2039.7211%2048.5356%2039.413%2048.0931C39.1049%2047.6507%2038.6941%2047.2895%2038.2157%2047.0407C37.7374%2046.7919%2037.2058%2046.6628%2036.6666%2046.6646H13.3333Z'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Выделенная инфраструктура</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M10.0001%209.99853V63.3319C10.0001%2065.1%2010.7025%2066.7957%2011.9527%2068.0459C13.203%2069.2961%2014.8987%2069.9985%2016.6668%2069.9985H70.0001'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M60.0001%2056.6652V29.9985'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M43.3337%2056.6671V16.6671'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M26.6665%2056.6671V46.6671'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Расширенная аналитика</p>
+              </li>
+              <li class="premier__feature ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                <img class="premier__feature-icon"
+                     src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M9.99996%2046.6652H20C21.7681%2046.6652%2023.4638%2047.3676%2024.714%2048.6178C25.9642%2049.8681%2026.6666%2051.5638%2026.6666%2053.3319V63.3319C26.6666%2065.1%2025.9642%2066.7957%2024.714%2068.0459C23.4638%2069.2961%2021.7681%2069.9985%2020%2069.9985H16.6666C14.8985%2069.9985%2013.2028%2069.2961%2011.9526%2068.0459C10.7023%2066.7957%209.99996%2065.1%209.99996%2063.3319V39.9985C9.99996%2032.042%2013.1607%2024.4114%2018.7868%2018.7853C24.4128%2013.1592%2032.0435%209.99853%2040%209.99853C47.9565%209.99853%2055.5871%2013.1592%2061.2132%2018.7853C66.8392%2024.4114%2070%2032.042%2070%2039.9985V63.3319C70%2065.1%2069.2976%2066.7957%2068.0473%2068.0459C66.7971%2069.2961%2065.1014%2069.9985%2063.3333%2069.9985H60C58.2318%2069.9985%2056.5362%2069.2961%2055.2859%2068.0459C54.0357%2066.7957%2053.3333%2065.1%2053.3333%2063.3319V53.3319C53.3333%2051.5638%2054.0357%2049.8681%2055.2859%2048.6178C56.5362%2047.3676%2058.2318%2046.6652%2060%2046.6652H70'%20stroke='var(--stroke-0,%20%2392B4FF)'%20stroke-width='5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                     width="80"
+                     height="80"
+                     alt=""
+                     aria-hidden="true"
+                >
+                <p class="premier__feature-text">Персональный менеджер</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page__api-power"
+             id="api-power"
+    >
+      <div class="api-power"
+           aria-labelledby="api-power-title"
+      >
+        <img class="api-power__bg"
+             src="/assets/bg-bp4ywFCG.svg"
+             width="1920"
+             height="1134"
+             alt=""
+             aria-hidden="true"
+        >
+
+        <div class="api-power__inner">
+          <div class="api-power__header">
+            <h2 class="api-power__title ui-animation ui-animation--fade-up"
+                id="api-power-title"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >Суперсила API
+            </h2>
+            <p class="api-power__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Мы сделали все для легкого встраивания WorkHere в экосистему вашей компании
+            </p>
+            <a class="api-power__button ui-animation ui-animation--fade-up"
+               href="#"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >
+              Портал для разработчиков
+              <img class="api-power__button-icon"
+                   src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M3.33333%208H12.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='1.33333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M8%203.33333L12.6667%208L8%2012.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='1.33333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                   width="16"
+                   height="16"
+                   alt=""
+                   aria-hidden="true"
+              >
+            </a>
+          </div>
+
+          <div class="api-power__cards"
+               aria-label="Возможности API WorkHere"
+          >
+            <article class="api-power__card api-power__card--docs ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="api-power__card-main">
+                    <span class="api-power__icon api-power__icon--medium"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M8%2029.3333C7.29276%2029.3333%206.61448%2029.0524%206.11438%2028.5523C5.61428%2028.0522%205.33333%2027.3739%205.33333%2026.6667V5.33333C5.33333%204.62609%205.61428%203.94781%206.11438%203.44771C6.61448%202.94762%207.29276%202.66667%208%202.66667H18.6667C19.0887%202.66598%2019.5068%202.7488%2019.8967%202.91036C20.2866%203.07191%2020.6408%203.30901%2020.9387%203.608L25.7227%208.392C26.0225%208.69001%2026.2602%209.04446%2026.4223%209.43488C26.5843%209.8253%2026.6674%2010.244%2026.6667%2010.6667V26.6667C26.6667%2027.3739%2026.3857%2028.0522%2025.8856%2028.5523C25.3855%2029.0524%2024.7072%2029.3333%2024%2029.3333H8Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M18.6667%202.66667V9.33333C18.6667%209.68696%2018.8071%2010.0261%2019.0572%2010.2761C19.3072%2010.5262%2019.6464%2010.6667%2020%2010.6667H26.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M13.3333%2012H10.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M21.3333%2017.3333H10.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_5'%20d='M21.3333%2022.6667H10.6667'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="32"
+                           height="32"
+                           alt=""
+                      >
+                    </span>
+                <div class="api-power__card-text">
+                  <h3 class="api-power__card-title">Интерактивная документация</h3>
+                  <p class="api-power__card-lead">Полная документация с примерами кода</p>
+                </div>
+              </div>
+              <div class="api-power__code"
+                   aria-label="Пример API запроса"
+              >
+                <code>GET /api/v1/candidates</code>
+                <code>Authorization: Bearer ...</code>
+              </div>
+            </article>
+
+            <article class="api-power__card api-power__card--career ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                  <span class="api-power__icon api-power__icon--large"
+                        aria-hidden="true"
+                  >
+                    <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2046.5068%2046.5068'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M11.6267%2042.6318C10.5988%2042.6318%209.61308%2042.2234%208.88627%2041.4966C8.15946%2040.7698%207.75114%2039.7841%207.75114%2038.7562V7.75163C7.75114%206.72377%208.15946%205.738%208.88627%205.01119C9.61308%204.28438%2010.5988%203.87606%2011.6267%203.87606H27.129C27.7424%203.87507%2028.35%203.99544%2028.9167%204.23023C29.4834%204.46503%2029.998%204.80961%2030.431%205.24414L37.3837%2012.1969C37.8194%2012.63%2038.165%2013.1452%2038.4005%2013.7126C38.636%2014.28%2038.7567%2014.8884%2038.7557%2015.5028V38.7562C38.7557%2039.7841%2038.3474%2040.7698%2037.6206%2041.4966C36.8938%2042.2234%2035.908%2042.6318%2034.8801%2042.6318H11.6267Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M27.129%203.87606V13.565C27.129%2014.0789%2027.3331%2014.5718%2027.6966%2014.9352C28.06%2015.2986%2028.5528%2015.5028%2029.0668%2015.5028H38.7557'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M15.5023%2025.1917H19.3778'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M27.129%2025.1917H31.0046'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_5'%20d='M15.5023%2032.9428H19.3778'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_6'%20d='M27.129%2032.9428H31.0046'%20stroke='var(--stroke-0,%20white)'%20stroke-width='3.87557'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                         width="47"
+                         height="47"
+                         alt=""
+                    >
+                  </span>
+              <div class="api-power__card-text">
+                <h3 class="api-power__card-title">Передавайте отклики с карьерного сайта</h3>
+                <p class="api-power__card-lead">Сбор откликов</p>
+              </div>
+            </article>
+
+            <article class="api-power__card api-power__card--sync ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M12%208C16.9706%208%2021%206.65685%2021%205C21%203.34315%2016.9706%202%2012%202C7.02944%202%203%203.34315%203%205C3%206.65685%207.02944%208%2012%208Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M3%205V19C3%2019.7956%203.94821%2020.5587%205.63604%2021.1213C7.32387%2021.6839%209.61305%2022%2012%2022C14.3869%2022%2016.6761%2021.6839%2018.364%2021.1213C20.0518%2020.5587%2021%2019.7956%2021%2019V5'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M3%2012C3%2012.7956%203.94821%2013.5587%205.63604%2014.1213C7.32387%2014.6839%209.61305%2015%2012%2015C14.3869%2015%2016.6761%2014.6839%2018.364%2014.1213C20.0518%2013.5587%2021%2012.7956%2021%2012'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Синхронизация данных</h3>
+              <p class="api-power__card-lead">Двусторонний обмен</p>
+            </article>
+
+            <article class="api-power__card api-power__card--connectors ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M12%2022V17'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M15%208V2'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M17%208C17.2652%208%2017.5196%208.10536%2017.7071%208.29289C17.8946%208.48043%2018%208.73478%2018%209V13C18%2014.0609%2017.5786%2015.0783%2016.8284%2015.8284C16.0783%2016.5786%2015.0609%2017%2014%2017H10C8.93913%2017%207.92172%2016.5786%207.17157%2015.8284C6.42143%2015.0783%206%2014.0609%206%2013V9C6%208.73478%206.10536%208.48043%206.29289%208.29289C6.48043%208.10536%206.73478%208%207%208H17Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M9%208V2'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Готовые коннекторы</h3>
+              <p class="api-power__card-lead">Популярные интеграции</p>
+            </article>
+
+            <article class="api-power__card api-power__card--intranet ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                  <span class="api-power__icon"
+                        aria-hidden="true"
+                  >
+                    <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M14.536%2021.686C14.574%2021.7807%2014.64%2021.8615%2014.7253%2021.9175C14.8105%2021.9736%2014.9109%2022.0023%2015.0128%2021.9996C15.1148%2021.997%2015.2136%2021.9633%2015.2958%2021.9029C15.3781%2021.8426%2015.4399%2021.7585%2015.473%2021.662L21.973%202.662C22.005%202.57339%2022.0111%202.47751%2021.9906%202.38555C21.9701%202.2936%2021.9238%202.20939%2021.8572%202.14278C21.7906%202.07616%2021.7064%202.0299%2021.6144%202.00939C21.5225%201.98889%2021.4266%201.995%2021.338%202.027L2.338%208.527C2.2415%208.56009%202.15743%208.62192%202.09707%208.70417C2.03672%208.78642%202.00297%208.88517%202.00036%208.98716C1.99775%209.08915%202.02639%209.18949%202.08246%209.27473C2.13852%209.35996%202.21932%209.42601%202.314%209.464L10.244%2012.644C10.4947%2012.7444%2010.7225%2012.8945%2010.9136%2013.0852C11.1047%2013.276%2011.2552%2013.5035%2011.356%2013.754L14.536%2021.686Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M21.854%202.147L10.914%2013.086'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                         width="24"
+                         height="24"
+                         alt=""
+                    >
+                  </span>
+              <h3 class="api-power__card-title">Передавайте заявки из интранета</h3>
+              <p class="api-power__card-lead">Автоматический импорт заявок</p>
+            </article>
+
+            <article class="api-power__card api-power__card--finalists ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M6%2014L7.5%2011.1C7.66307%2010.7761%207.91112%2010.5027%208.21761%2010.3089C8.5241%2010.1152%208.8775%2010.0084%209.24%2010H20M20%2010C20.3055%209.99946%2020.6071%2010.0689%2020.8816%2010.2031C21.1561%2010.3372%2021.3963%2010.5325%2021.5836%2010.7739C21.7709%2011.0152%2021.9004%2011.2963%2021.9622%2011.5956C22.024%2011.8948%2022.0164%2012.2042%2021.94%2012.5L20.4%2018.5C20.2886%2018.9316%2020.0362%2019.3135%2019.6829%2019.5853C19.3296%2019.857%2018.8957%2020.003%2018.45%2020H4C3.46957%2020%202.96086%2019.7893%202.58579%2019.4142C2.21071%2019.0391%202%2018.5304%202%2018V5C2%204.46957%202.21071%203.96086%202.58579%203.58579C2.96086%203.21071%203.46957%203%204%203H7.9C8.23449%202.99672%208.56445%203.07739%208.8597%203.23462C9.15495%203.39185%209.40604%203.62062%209.59%203.9L10.4%205.1C10.5821%205.37653%2010.83%205.60352%2011.1215%205.7606C11.413%205.91769%2011.7389%205.99995%2012.07%206H18C18.5304%206%2019.0391%206.21071%2019.4142%206.58579C19.7893%206.96086%2020%207.46957%2020%208V10Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Отправляйте финалистов в HR-систему</h3>
+              <p class="api-power__card-lead">Бесшовная интеграция</p>
+            </article>
+
+            <article class="api-power__card api-power__card--webhooks ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M18%2016.98H12.01C10.91%2016.98%2010.06%2017.92%209.53%2018.88C9.11045%2019.6672%208.43979%2020.2917%207.62462%2020.654C6.80945%2021.0163%205.89656%2021.0957%205.03107%2020.8796C4.16558%2020.6635%203.39715%2020.1643%202.84795%2019.4614C2.29874%2018.7584%202.00028%2017.8921%202%2017C2.01%2016.3%202.2%2015.6%202.57%2015'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M6%2017L9.13%2011.22C9.66%2010.25%209.23%209.04%208.63%208.12C8.34681%207.6671%208.15721%207.16207%208.07236%206.63471C7.98751%206.10735%208.00915%205.56833%208.13599%205.04947C8.26283%204.5306%208.49231%204.04239%208.81088%203.61365C9.12946%203.18491%209.53068%202.82431%209.99087%202.55314C10.4511%202.28197%2010.9609%202.10571%2011.4903%202.03477C12.0197%201.96383%2012.558%201.99964%2013.0733%202.14009C13.5887%202.28053%2014.0707%202.52278%2014.4909%202.85252C14.9111%203.18227%2015.261%203.59283%2015.52%204.06'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M12%206L15.13%2011.73C15.66%2012.7%2016.9%2013%2018%2013C19.0609%2013%2020.0783%2013.4214%2020.8284%2014.1716C21.5786%2014.9217%2022%2015.9391%2022%2017C22%2018.0609%2021.5786%2019.0783%2020.8284%2019.8284C20.0783%2020.5786%2019.0609%2021%2018%2021'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Webhooks для событий</h3>
+              <p class="api-power__card-lead">Real-time уведомления</p>
+            </article>
+
+            <article class="api-power__card api-power__card--reports ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M16%2018L22%2012L16%206'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M8%206L2%2012L8%2018'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Разрабатывайте индивидуальные отчеты</h3>
+              <p class="api-power__card-lead">Кастомная аналитика</p>
+            </article>
+
+            <article class="api-power__card api-power__card--sandbox ui-animation ui-animation--fade"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+                    <span class="api-power__icon"
+                          aria-hidden="true"
+                    >
+                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVG'%3e%3cpath%20id='Vector'%20d='M12%2020V22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M12%202V4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M17%2020V22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M17%202V4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_5'%20d='M2%2012H4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_6'%20d='M2%2017H4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_7'%20d='M2%207H4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_8'%20d='M20%2012H22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_9'%20d='M20%2017H22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_10'%20d='M20%207H22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_11'%20d='M7%2020V22'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_12'%20d='M7%202V4'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_13'%20d='M18%204H6C4.89543%204%204%204.89543%204%206V18C4%2019.1046%204.89543%2020%206%2020H18C19.1046%2020%2020%2019.1046%2020%2018V6C20%204.89543%2019.1046%204%2018%204Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_14'%20d='M15%208H9C8.44772%208%208%208.44772%208%209V15C8%2015.5523%208.44772%2016%209%2016H15C15.5523%2016%2016%2015.5523%2016%2015V9C16%208.44772%2015.5523%208%2015%208Z'%20stroke='var(--stroke-0,%20white)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e"
+                           width="24"
+                           height="24"
+                           alt=""
+                      >
+                    </span>
+              <h3 class="api-power__card-title">Sandbox для тестов</h3>
+              <p class="api-power__card-lead">Безопасная разработка</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__security"
+             id="security"
+    >
+      <div class="security">
+        <img
+          class="security__bg"
+          src="/assets/security-brush-BlvgiaAQ.svg"
+          width="1920"
+          height="1241"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <div class="security__inner">
+          <header class="security__header">
+            <p class="security__eyebrow ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.15"
+            >Безопасность
+            </p>
+
+            <h2 class="security__title ui-animation ui-animation--fade-up"
+                data-progress-activate
+                data-progress-activate-start="0.15"
+            >
+              Надежная работа<br>
+              и защита ваших данных
+            </h2>
+          </header>
+
+          <div class="security__cards">
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="data:image/svg+xml,%3csvg%20width='81'%20height='81'%20viewBox='0%200%2081%2081'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M67.293%206.72656H13.4596C9.74322%206.72656%206.73047%209.73931%206.73047%2013.4557V26.9141C6.73047%2030.6305%209.74322%2033.6432%2013.4596%2033.6432H67.293C71.0094%2033.6432%2074.0221%2030.6305%2074.0221%2026.9141V13.4557C74.0221%209.73931%2071.0094%206.72656%2067.293%206.72656Z'%20stroke='url(%23paint0_linear_131_1907)'%20stroke-width='6.72917'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M67.293%2047.1016H13.4596C9.74322%2047.1016%206.73047%2050.1143%206.73047%2053.8307V67.2891C6.73047%2071.0055%209.74322%2074.0182%2013.4596%2074.0182H67.293C71.0094%2074.0182%2074.0221%2071.0055%2074.0221%2067.2891V53.8307C74.0221%2050.1143%2071.0094%2047.1016%2067.293%2047.1016Z'%20stroke='url(%23paint1_linear_131_1907)'%20stroke-width='6.72917'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M20.1875%2020.1875H20.2211'%20stroke='url(%23paint2_linear_131_1907)'%20stroke-width='6.72917'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M20.1875%2060.5625H20.2211'%20stroke='url(%23paint3_linear_131_1907)'%20stroke-width='6.72917'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_131_1907'%20x1='40.3763'%20y1='6.72656'%20x2='40.3763'%20y2='33.6432'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_131_1907'%20x1='40.3763'%20y1='47.1016'%20x2='40.3763'%20y2='74.0182'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_131_1907'%20x1='20.2043'%20y1='20.1875'%20x2='20.2043'%20y2='21.1875'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint3_linear_131_1907'%20x1='20.2043'%20y1='60.5625'%20x2='20.2043'%20y2='61.5625'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Инфраструктура<br>
+                — в России
+              </h3>
+
+              <p class="security__card-text">
+                Сервера WorkHere размещаются в дата-центрах в Санкт-Петербурге и Москве.
+                Организовано географически распределенное непрерывное резервное копирование данных.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="data:image/svg+xml,%3csvg%20width='80'%20height='80'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M51.5892%2042.9688L56.6392%2071.3888C56.6957%2071.7234%2056.6488%2072.0673%2056.5046%2072.3746C56.3604%2072.6818%2056.1258%2072.9377%2055.8323%2073.1081C55.5387%2073.2784%2055.2002%2073.3551%2054.8619%2073.3278C54.5236%2073.3005%2054.2016%2073.1706%2053.9392%2072.9554L42.0058%2063.9987C41.4298%2063.5684%2040.7299%2063.3358%2040.0108%2063.3358C39.2917%2063.3358%2038.5919%2063.5684%2038.0158%2063.9987L26.0625%2072.9521C25.8002%2073.1669%2025.4787%2073.2966%2025.1408%2073.3239C24.8029%2073.3512%2024.4647%2073.2748%2024.1714%2073.105C23.878%2072.9351%2023.6434%2072.6798%2023.4989%2072.3732C23.3544%2072.0666%2023.3068%2071.7231%2023.3625%2071.3888L28.4092%2042.9688'%20stroke='url(%23paint0_linear_131_1916)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M40%2046.666C51.0457%2046.666%2060%2037.7117%2060%2026.666C60%2015.6203%2051.0457%206.66602%2040%206.66602C28.9543%206.66602%2020%2015.6203%2020%2026.666C20%2037.7117%2028.9543%2046.666%2040%2046.666Z'%20stroke='url(%23paint1_linear_131_1916)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_131_1916'%20x1='40.0012'%20y1='42.9688'%20x2='40.0012'%20y2='73.3332'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_131_1916'%20x1='40'%20y1='6.66602'%20x2='40'%20y2='46.666'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Реестр отечественного ПО
+              </h3>
+
+              <p class="security__card-text">
+                WorkHere включен в единый реестр российского программного обеспечения.
+                Это гарантирует соответствие требованиям импортозамещения.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="data:image/svg+xml,%3csvg%20width='80'%20height='80'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M66.6654%2043.3342C66.6654%2060.0008%2054.9987%2068.3342%2041.132%2073.1675C40.4059%2073.4136%2039.6172%2073.4018%2038.8987%2073.1342C24.9987%2068.3342%2013.332%2060.0008%2013.332%2043.3342V20.0008C13.332%2019.1168%2013.6832%2018.2689%2014.3083%2017.6438C14.9335%2017.0187%2015.7813%2016.6675%2016.6654%2016.6675C23.332%2016.6675%2031.6654%2012.6675%2037.4654%207.60085C38.1715%206.99751%2039.0699%206.66602%2039.9987%206.66602C40.9275%206.66602%2041.8259%206.99751%2042.532%207.60085C48.3654%2012.7008%2056.6654%2016.6675%2063.332%2016.6675C64.2161%2016.6675%2065.0639%2017.0187%2065.6891%2017.6438C66.3142%2018.2689%2066.6654%2019.1168%2066.6654%2020.0008V43.3342Z'%20stroke='url(%23paint0_linear_131_1923)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_131_1923'%20x1='39.9987'%20y1='6.66602'%20x2='39.9987'%20y2='73.3439'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Регулярный аудит безопасности
+              </h3>
+
+              <p class="security__card-text">
+                Проводим регулярные проверки безопасности с привлечением внешних экспертов.
+                Постоянный мониторинг и обновление систем защиты.
+              </p>
+            </article>
+
+            <article class="security__card ui-animation ui-animation--fade-up"
+                     data-progress-activate
+                     data-progress-activate-start="0.2"
+            >
+              <div class="security__icon-wrap">
+                <img
+                  class="security__icon"
+                  src="data:image/svg+xml,%3csvg%20width='80'%20height='80'%20viewBox='0%200%2080%2080'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.9987%2073.3327C18.2306%2073.3327%2016.5349%2072.6303%2015.2847%2071.3801C14.0344%2070.1298%2013.332%2068.4341%2013.332%2066.666V13.3327C13.332%2011.5646%2014.0344%209.86889%2015.2847%208.61865C16.5349%207.3684%2018.2306%206.66603%2019.9987%206.66603H46.6654C47.7205%206.66432%2048.7656%206.87137%2049.7405%207.27526C50.7153%207.67914%2051.6006%208.27189%2052.3454%209.01936L64.3054%2020.9794C65.0548%2021.7244%2065.6493%2022.6105%2066.0543%2023.5866C66.4594%2024.5626%2066.6671%2025.6093%2066.6654%2026.666V66.666C66.6654%2068.4341%2065.963%2070.1298%2064.7127%2071.3801C63.4625%2072.6303%2061.7668%2073.3327%2059.9987%2073.3327H19.9987Z'%20stroke='url(%23paint0_linear_131_1929)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M46.668%206.66602V23.3327C46.668%2024.2167%2047.0192%2025.0646%2047.6443%2025.6897C48.2694%2026.3148%2049.1172%2026.666%2050.0013%2026.666H66.668'%20stroke='url(%23paint1_linear_131_1929)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M30%2050.0007L36.6667%2056.6673L50%2043.334'%20stroke='url(%23paint2_linear_131_1929)'%20stroke-width='6.66667'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_131_1929'%20x1='39.9987'%20y1='6.66602'%20x2='39.9987'%20y2='73.3327'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_131_1929'%20x1='56.668'%20y1='6.66602'%20x2='56.668'%20y2='26.666'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_131_1929'%20x1='40'%20y1='43.334'%20x2='40'%20y2='56.6673'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%233070FE'/%3e%3cstop%20offset='1'%20stop-color='%233BBDDE'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                  width="80"
+                  height="80"
+                  alt=""
+                  aria-hidden="true"
+                >
+              </div>
+
+              <h3 class="security__card-title">
+                Соответствие<br>
+                152-ФЗ
+              </h3>
+
+              <p class="security__card-text">
+                Полное соответствие требованиям Федерального закона №152-ФЗ «О персональных данных».
+                Защита данных ваших кандидатов и сотрудников.
+              </p>
+            </article>
+          </div>
+
+          <div class="security__badges"
+               aria-label="Сертификаты и соответствия"
+          >
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >152-ФЗ</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >Реестр ПО</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >ISO 27001</span>
+            <span class="security__badge ui-animation ui-animation--fade"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >ГОСТ Р</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__pricing"
+             id="pricing"
+    >
+      <div class="container">
+
+        <div class="pricing">
+
+          <div class="pricing__bg">
+            <img
+              class="page__pricing-decor"
+              src="data:image/svg+xml,%3csvg%20width='1840'%20height='1073'%20viewBox='0%200%201840%201073'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_131_1945)'%3e%3crect%20width='1840'%20height='1073'%20fill='%23CFE8FF'/%3e%3cpath%20opacity='0.21'%20d='M1895.95%201264.52C1652.3%201493.73%201146.98%201864.38%201074.93%201513.38C984.852%201074.62%201872.62%201132.8%201861.58%20725.187C1850.75%20325.526%201112.95%201010.96%20911.025%201012.57C284.381%201017.56%201334.8%20590.081%201234.17%20180.66C1090.67%20-403.175%20160.339%20652.602%20-58.2242%20814.838'%20stroke='%239BC4EA'%20stroke-width='169'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_131_1945'%3e%3crect%20width='1840'%20height='1073'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+              width="1840"
+              height="1073"
+              alt=""
+              aria-hidden="true"
+            >
+          </div>
+
+          <div class="pricing__inner">
+
+            <header class="pricing__header">
+              <div class="pricing__label ui-animation ui-animation--fade-up"
+                   data-progress-activate
+                   data-progress-activate-start="0.15"
+              >Цены
+              </div>
+
+              <h2 class="pricing__title ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.15"
+              >
+                Перебьём любую цену<br>
+                конкурентов
+              </h2>
+
+              <p class="pricing__subtitle ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.15"
+              >
+                Покажите нам предложение конкурента – мы предложим лучшие условия
+              </p>
+            </header>
+
+            <div class="pricing__cards">
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="/assets/demo-CpoCN0s7.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Демо-версия</h3>
+                    <p class="pricing__card-subtitle">базовый функционал</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">календарь собеседований</li>
+                    <li class="pricing__item">базовые отчёты</li>
+                    <li class="pricing__item">интеграции с мессенджерами</li>
+                    <li class="pricing__item">интеграции с Job-сайтами</li>
+                  </ul>
+                </div>
+
+                <a class="pricing__button pricing__button--demo"
+                   href="#demo-request"
+                >
+                  Попробовать бесплатно
+                </a>
+              </article>
+
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="/assets/standard-D8crKaZ5.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Стандарт</h3>
+                    <p class="pricing__card-subtitle">часто покупают</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">базовый функционал</li>
+                    <li class="pricing__item">ИИ поиск по базе</li>
+                    <li class="pricing__item">IP телефония</li>
+                    <li class="pricing__item">конструктор отчетов</li>
+                  </ul>
+                </div>
+
+                <div class="pricing__bottom">
+                  <div class="pricing__price">
+                    <span class="pricing__price-value">1 660</span>
+                    <span class="pricing__price-period">₽/месяц</span>
+                  </div>
+
+                  <a class="pricing__button"
+                     href="#demo-request"
+                  >
+                    Отправить заявку
+                  </a>
+                </div>
+              </article>
+
+              <article class="pricing__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="pricing__card-content">
+                  <img
+                    class="pricing__icon"
+                    src="/assets/pro-rUthQgmt.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                    aria-hidden="true"
+                  >
+
+                  <div class="pricing__card-head">
+                    <h3 class="pricing__card-title">Профессиональный</h3>
+                    <p class="pricing__card-subtitle">для крупных клиентов</p>
+                  </div>
+
+                  <ul class="pricing__list">
+                    <li class="pricing__item">всё из тарифа Стандарт</li>
+                    <li class="pricing__item">ИИ агрегатор работных сайтов</li>
+                    <li class="pricing__item">API</li>
+                    <li class="pricing__item">КЭДО</li>
+                  </ul>
+                </div>
+
+                <div class="pricing__bottom">
+                  <div class="pricing__price">
+                    <span class="pricing__price-value">3 500</span>
+                    <span class="pricing__price-period">₽/месяц</span>
+                  </div>
+
+                  <a class="pricing__button"
+                     href="#demo-request"
+                  >
+                    Отправить заявку
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page__demo-request"
+             id="demo-request"
+    >
+      <div class="container">
+        <div class="demo-request">
+          <img
+            class="demo-request__bg"
+            src="data:image/svg+xml,%3csvg%20width='1840'%20height='476'%20viewBox='0%200%201840%20476'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_131_2047)'%3e%3crect%20width='1840'%20height='476'%20fill='%232963E9'/%3e%3cpath%20opacity='0.21'%20d='M288.954%20671.713C532.604%20900.917%201037.92%201271.57%201109.98%20920.566C1200.05%20481.807%20312.28%20539.99%20323.322%20132.377C334.149%20-267.285%201071.95%20418.15%201273.88%20419.758C1900.52%20424.748%20850.105%20-2.72925%20950.734%20-412.15C1094.23%20-995.986%202024.56%2059.791%202243.13%20222.027'%20stroke='%231744AD'%20stroke-width='169'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_131_2047'%3e%3crect%20width='1840'%20height='476'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+            width="1957"
+            height="1650"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="demo-request__content">
+            <h2 class="demo-request__title ui-animation ui-animation--fade-up"
+                data-progress-activate
+                data-progress-activate-start="0.2"
+            >
+              Закажите персональное демо
+            </h2>
+
+            <p class="demo-request__lead ui-animation ui-animation--fade-up"
+               data-progress-activate
+               data-progress-activate-start="0.2"
+            >
+              Оставьте заявку — мы покажем, как WorkHere поможет улучшить ваш подбор
+            </p>
+
+            <form class="demo-request__form ui-animation ui-animation--fade-up"
+                  action="#"
+                  novalidate
+                  data-email-form
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+            >
+              <input
+                class="demo-request__input"
+                type="email"
+                name="email"
+                aria-describedby="demo-request-email-error"
+                data-email-input
+                placeholder="Ваша эл. почта"
+                required
+              >
+
+              <button class="demo-request__button"
+                      type="submit"
+              >
+                Оставить заявку
+              </button>
+              <span class="demo-request__error"
+                    id="demo-request-email-error"
+                    data-email-error
+                    hidden
+              >
+                * Заполните обязательное поле
+              </span>
+            </form>
+
+          </div>
+
+          <div class="demo-request__benefits ui-animation ui-animation--fade"
+               data-progress-activate
+               data-progress-activate-start="0.2"
+          >
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Бесплатная консультация</span>
+            </div>
+
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Ответим за 24 часа</span>
+            </div>
+
+            <div class="demo-request__benefit">
+              <span class="demo-request__benefit-dot demo-request__benefit-dot--orange"
+                    aria-hidden="true"
+              ></span>
+              <span class="demo-request__benefit-text">Без обязательств</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__journal"
+             id="journal"
+    >
+
+      <div class="container">
+        <div class="journal">
+
+          <img
+            class="journal__bg"
+            src="data:image/svg+xml,%3csvg%20width='1840'%20height='1617'%20viewBox='0%200%201840%201617'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_131_2069)'%3e%3crect%20width='1840'%20height='1617'%20fill='%23CFE8FF'/%3e%3cpath%20opacity='0.21'%20d='M1904.15%201245.86C1658.45%201476.99%201148.89%201850.76%201076.23%201496.8C985.397%201054.35%201880.63%201113.03%201869.49%20701.988C1858.57%20298.968%201114.57%20990.162%20910.95%20991.784C279.04%20996.815%201338.28%20565.747%201236.81%20152.885C1092.1%20-435.855%20153.956%20628.792%20-66.4431%20792.391'%20stroke='%239BC4EA'%20stroke-width='169'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_131_2069'%3e%3crect%20width='1840'%20height='1617'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+            width="1973"
+            height="1664"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="journal__inner">
+
+            <header class="journal__header">
+              <h2 class="journal__title ui-animation ui-animation--fade-up"
+                  data-progress-activate
+                  data-progress-activate-start="0.2"
+              >
+                Журнал WorkHere
+              </h2>
+
+              <p class="journal__lead ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+              >
+                Более 500 экспертных материалов обо всем, что связано с наймом
+              </p>
+
+              <a class="journal__all-link ui-animation ui-animation--fade-up"
+                 href="#"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+              >
+                <span>Все материалы</span>
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 16 16"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3.33398 8H12.6673"
+                        stroke="white"
+                        stroke-width="1.33333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                  />
+                  <path d="M8 3.33398L12.6667 8.00065L8 12.6673"
+                        stroke="white"
+                        stroke-width="1.33333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                  />
+                </svg>
+
+              </a>
+            </header>
+
+            <div class="journal__grid">
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-1-DdC76FD5.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-2-B4gAU72U.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-3-bsVQoqdR.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Пошаговое руководство</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-4-BW5mKCUJ.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">IT-рекрутеру нужны широкие знания</h3>
+                    <p class="journal__card-desc">Разговор с экспертом</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-5-mtXvneWd.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-6-DKVA8XJX.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-7-DKTp2ya4.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/assets/article-8-BU0Pxdm-.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <img
+                      class="journal__read-icon"
+                      src="src/assets/figma/journal/arrow-read.svg"
+                      width="12"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                    >
+                  </a>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="journal__subscribe ui-animation ui-animation--fade-up"
+                 data-progress-activate
+                 data-progress-activate-start="0.2"
+            >
+              <div class="journal__subscribe-content">
+                <h3 class="journal__subscribe-title">Подпишитесь на рассылку</h3>
+                <p class="journal__subscribe-text">
+                  Наши письма читают уже более 55 000 HR-специалистов
+                </p>
+              </div>
+
+              <form class="journal__form"
+                    action="#"
+                    novalidate
+                    data-email-form
+              >
+                <input
+                  class="journal__input"
+                  type="email"
+                  name="email"
+                  aria-describedby="journal-email-error"
+                  data-email-input
+                  placeholder="Ваша эл. почта"
+                  required
+                >
+
+                <button class="journal__submit"
+                        type="submit"
+                >
+                  Подписаться
+                </button>
+                <span class="journal__error"
+                      id="journal-email-error"
+                      data-email-error
+                      hidden
+                >
+                  * Заполните обязательное поле
+                </span>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
   </main>
 
   <div class="page__footer"
        id="footer"
   >
-    <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__top">
-          <div class="footer__logo">
-            <a
-              class="logo"
-              href="#top"
-              aria-label="WorkHere"
+    <div class="container">
+      <footer class="footer">
+        <div class="footer__panel">
+          <div class="footer__inner">
+            <div class="footer__top">
+              <a class="footer__logo"
+                 href="/"
+                 aria-label="WorkHere"
+              >
+                <img
+                  class="footer__logo-mark"
+                  src="data:image/svg+xml,%3csvg%20width='69'%20height='69'%20viewBox='0%200%2069%2069'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='68.8561'%20height='68.8561'%20rx='18'%20fill='url(%23paint0_linear_131_2103)'/%3e%3cpath%20d='M26.2864%2043.818L20.748%2025.0391H26.4331L29.0005%2036.5925H29.1472L32.1915%2025.0391H36.6661L39.7104%2036.6292H39.8571L42.4245%2025.0391H48.1095L42.5712%2043.818H37.6931L34.5022%2033.3282H34.3554L31.1645%2043.818H26.2864Z'%20fill='white'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_131_2103'%20x1='0'%20y1='0'%20x2='68.8561'%20y2='68.8561'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%231890FF'/%3e%3cstop%20offset='1'%20stop-color='%230D6EDB'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"
+                  width="69"
+                  height="69"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="footer__logo-text">
+              Work<span>Here</span>
+            </span>
+              </a>
+
+              <div class="footer__contacts">
+                <a class="footer__email"
+                   href="mailto:hello@workhere.ru"
+                >
+                  hello@workhere.ru
+                </a>
+
+                <a class="footer__phone"
+                   href="tel:88001234567"
+                >
+                  8 800 123-45-67
+                </a>
+              </div>
+            </div>
+
+            <nav class="footer__nav"
+                 aria-label="Навигация в футере"
             >
-              <span
-                class="logo__mark"
-                aria-hidden="true"
-              ></span>
-              <span class="logo__text">WorkHere</span>
-            </a>
-          </div>
-          <div class="footer__contacts">
-            <a href="mailto:hello@workhere.ru">hello@workhere.ru</a>
-            <a
-              class="footer__phone"
-              href="tel:88001234567"
-            >8 800 123-45-67
-            </a>
+              <div class="footer__column">
+                <h3 class="footer__column-title">Продукт</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Что такое WorkHere
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Тарифы
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Внедрение
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Безопасность
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >API
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Возможности</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Автоматизация
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Интеграции
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Аналитика
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Для крупных клиентов
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Ресурсы</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Журнал WorkHere
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Руководства
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Кейсы
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Рассылка
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Компания</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >О компании
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Карьера
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Контакты
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Официальное</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Пользовательское соглашение
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Политика конфиденциальности
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Документы
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer__column">
+                <h3 class="footer__column-title">Социальные сети</h3>
+
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >Telegram
+                    </a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__link"
+                       href="#"
+                    >VK
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="footer__bottom">
+              <p class="footer__copyright">
+                © ООО «WorkHere», 2020 — 2026
+              </p>
+
+              <a class="footer__privacy"
+                 href="#"
+              >
+                Политика конфиденциальности
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="footer__menus">
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Продукт"
-            >
-              <h2 class="footer-menu__title">Продукт</h2>
-              <a href="#top">Что такое WorkHere</a>
-              <a href="#top">Тарифы</a>
-              <a href="#top">Внедрение</a>
-              <a href="#top">Безопасность</a>
-              <a href="#top">API</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Возможности"
-            >
-              <h2 class="footer-menu__title">Возможности</h2>
-              <a href="#top">Автоматизация</a>
-              <a href="#top">Интеграции</a>
-              <a href="#top">Аналитика</a>
-              <a href="#top">Для крупных клиентов</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Ресурсы"
-            >
-              <h2 class="footer-menu__title">Ресурсы</h2>
-              <a href="#top">Журнал WorkHere</a>
-              <a href="#top">Руководства</a>
-              <a href="#top">Кейсы</a>
-              <a href="#top">Рассылка</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Компания"
-            >
-              <h2 class="footer-menu__title">Компания</h2>
-              <a href="#top">О компании</a>
-              <a href="#top">Карьера</a>
-              <a href="#top">Контакты</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Официальное"
-            >
-              <h2 class="footer-menu__title">Официальное</h2>
-              <a href="#top">Пользовательское соглашение</a>
-              <a href="#top">Политика конфиденциальности</a>
-              <a href="#top">Документы</a>
-            </nav>
-          </div>
-          <div class="footer__menu">
-            <nav
-              class="footer-menu"
-              aria-label="Социальные сети"
-            >
-              <h2 class="footer-menu__title">Социальные сети</h2>
-              <a href="#top">Telegram</a>
-              <a href="#top">VK</a>
-            </nav>
-          </div>
-        </div>
-
-        <div class="footer__bottom">
-          <span>© ООО «WorkHere», 2020 - 2026</span>
-          <a href="#top">Политика конфиденциальности</a>
-        </div>
         <p class="footer__note">
-          * Утверждение "Лучшая" основано на внутреннем исследовании и сравнении количества отзывов с оценкой
-          4 и 5 звезд в сервисе Яндекс среди систем, представленных на российском рынке, по состоянию на
+          <span>*</span>
+          Утверждение „Лучшая“ основано на внутреннем исследовании и сравнении количества отзывов с оценкой 4 и 5
+          звезд<br>
+          в сервисе Яндекс (Яндекс Карты / Яндекс Бизнес) среди систем представленных на российском рынке, по состоянию
+          на
           31 января 2026 г.
         </p>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </div>
 </div>
 

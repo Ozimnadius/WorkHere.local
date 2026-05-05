@@ -1,3 +1,5 @@
+@use "../helpers/index" as *;
+
 .logo {
   display: inline-flex;
   align-items: center;
@@ -42,11 +44,21 @@
   &__image {
     width: 154px;
     height: 44px;
+
+    @include xlg-block() {
+      width: 132px;
+      height: 37.714px;
+    }
   }
 
   &--figma {
     display: block;
     width: 154px;
     height: 44px;
+
+    @include xlg-block() {
+      width: 132px;
+      height: 37.714px;
+    }
   }
 }

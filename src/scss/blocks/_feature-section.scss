@@ -1,6 +1,14 @@
+@use "../helpers/index" as *;
+
 .feature-section {
   --feature-section-badge-bg: #cfe8ff;
   --feature-section-body-bg: #cfe8ff;
+  --feature-section-badge-target-top: 120px;
+  --feature-section-badge-final-half-height: 31px;
+  --feature-section-badge-final-offset: 220px;
+  --feature-section-badge-overlap: calc(
+    50vh + var(--feature-section-badge-target-top) + var(--feature-section-badge-final-half-height) - var(--feature-section-badge-final-offset)
+  );
 
   position: relative;
   color: #101828;
@@ -51,6 +59,9 @@
     white-space: nowrap;
     transform: translate(-50%, calc(-50% + 220px * var(--progress, 0)));
     will-change: height, border-radius;
+    @include xlg-block {
+      transform: translate(-50%, calc(-50% + 180px * var(--progress, 0)));
+    }
 
     &::before {
       content: attr(data-content);
@@ -62,9 +73,8 @@
   }
 
   &__content {
-    max-width: 1840px;
-    width: 100%;
-    margin: -42vh auto 0;
+    margin-top: calc(-1 * var(--feature-section-badge-overlap));
+    margin-inline: 40px;
 
     display: flex;
     flex-direction: column;
@@ -73,6 +83,11 @@
     background: var(--color-white);
     border-radius: 60px;
     overflow: hidden;
+    @include xlg-block {
+      padding-top: 170px;
+      padding-inline: 40px;
+      padding-bottom: 80px;
+    }
   }
 
   &__title {
@@ -121,7 +136,6 @@
     }
   }
 
-
   &__metric-text {
     font-family: var(--font-display);
     font-size: 23px;
@@ -132,11 +146,27 @@
   &__tabs {
     display: flex;
     align-items: center;
-    justify-content: center;
+    //    justify-content: center;
     gap: 40px;
     width: 100%;
     max-width: 1175px;
-    border-bottom: 3px solid #e7e8eb;
+    border-bottom: 1px solid #e7e8eb;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #a5a5a5; /* цвет плашки */
+      border-radius: 100vmax; /* закругления плашки */
+    }
   }
 
   &__tab {

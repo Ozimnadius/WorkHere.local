@@ -1,7 +1,9 @@
+@use "../helpers/index" as *;
+
 .hero {
 
   display: grid;
-  grid-template-columns: 893px 467px;
+  grid-template-columns: 893fr 467fr;
   gap: 0;
 
   &__inner {
@@ -27,13 +29,16 @@
   }
 
   &__title {
-    width: 962px;
+    max-width: 962px;
     font-family: var(--font-display);
     font-size: 90px;
     font-weight: 600;
     line-height: 0.92;
     letter-spacing: 0;
     text-transform: uppercase;
+    @include xlg-block{
+      font-size: 65px;
+    }
   }
 
   &__star {
@@ -106,6 +111,27 @@
   }
 
   &__mascot {
+    position: relative;
     padding-top: 106px;
+  }
+
+  &__mascot-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(24, 144, 255, 0.2) 0%, transparent 70%);
+      opacity: 0.4;
+      animation: mascot-bg-breath 6s ease-in-out infinite;
+    }
   }
 }

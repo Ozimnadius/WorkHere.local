@@ -1,15 +1,194 @@
+@use "../helpers/index" as *;
+
+// ─── Keyframes ────────────────────────────────────────────────────────────────
+
+@keyframes mascot-float {
+  0%, 100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes mascot-bubble-float {
+  0% {
+    transform: rotate(-1deg) translateY(0);
+  }
+  33% {
+    transform: rotate(0deg) translateY(-3px);
+  }
+  66% {
+    transform: rotate(-1deg) translateY(-1px);
+  }
+  100% {
+    transform: rotate(-1deg) translateY(0);
+  }
+}
+
+@keyframes mascot-bubble-entry {
+  0% {
+    opacity: 0;
+    transform: rotate(-1deg) translateY(0) scale(0);
+  }
+  60% {
+    transform: rotate(-1deg) translateY(0) scale(1.08);
+  }
+  80% {
+    transform: rotate(-1deg) translateY(0) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-1deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes mascot-sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-15deg);
+  }
+}
+
+@keyframes mascot-triangle-wobble {
+  0%, 100% {
+    transform: translateX(-50%);
+  }
+  33% {
+    transform: translateX(calc(-50% - 1px));
+  }
+  66% {
+    transform: translateX(calc(-50% + 1px));
+  }
+}
+
+@keyframes mascot-badge-pulse {
+  0% {
+    transform: rotate(-7.99deg) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(-7.99deg) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes mascot-lightning {
+  0%, 100% {
+    transform: rotate(-17.59deg) scale(1);
+  }
+  50% {
+    transform: rotate(-12deg) scale(1.2);
+  }
+}
+
+@keyframes mascot-bg-breath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes mascot-inner-glow-pulse {
+  0%, 100% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+@keyframes mascot-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mascot-text-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mascot-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mascot-orbit-rev {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+// ─── Mascot container ─────────────────────────────────────────────────────────
+
 .mascot {
   position: relative;
   width: 467px;
   height: 428px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // ─── Inner glow ─────────────────────────────────────────────────────────────
+
+  &__inner-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(24, 144, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    animation: mascot-inner-glow-pulse 4s ease-in-out infinite;
+  }
+
+  // ─── Speech bubble ──────────────────────────────────────────────────────────
 
   &__bubble {
     position: absolute;
     left: 81.4px;
     top: 2.93px;
-    z-index: 5;
+    z-index: 10;
     display: flex;
     align-items: center;
+    gap: 6px;
     width: 337.53px;
     height: 69.42px;
     padding: 0 26.77px;
@@ -18,17 +197,63 @@
     background: var(--color-white);
     box-shadow: 0 12.397px 18.595px -3.719px rgba(0, 0, 0, 0.1),
     0 4.959px 7.438px -4.959px rgba(0, 0, 0, 0.1);
+    animation: mascot-bubble-entry 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    mascot-bubble-float 3s ease-in-out 0.8s infinite;
+    transition: border-color 0.3s ease;
+
+    .mascot:hover &,
+    .mascot:focus-visible & {
+      border-color: rgba(24, 144, 255, 0.5);
+    }
+  }
+
+  &__bubble-text {
+    flex: 1;
     color: #1e2939;
     font-family: var(--font-main);
-    font-size: 22.315px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1;
     white-space: nowrap;
-    transform: rotate(-1deg);
+    animation: mascot-text-in 0.25s ease both;
+
+    &.is-exiting {
+      animation: mascot-text-out 0.15s ease both;
+    }
   }
+
+  &__bubble-sparkle {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 18px;
+    animation: mascot-sparkle 1.5s ease-in-out infinite;
+  }
+
+  &__bubble-pointer {
+    display: none;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: mascot-triangle-wobble 2s ease-in-out infinite;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 12px solid var(--color-white);
+    }
+  }
+
+  // ─── Badge ring (static decorative) ─────────────────────────────────────────
 
   &__badge-ring {
     position: absolute;
+    z-index: 10;
     left: 6.07px;
     top: 57.87px;
     width: 93.932px;
@@ -39,14 +264,35 @@
     transform: rotate(-7.99deg);
   }
 
-  &__badge {
+  // ─── AI Badge area (pulse rings + badge) ────────────────────────────────────
+
+  &__badge-area {
     position: absolute;
     left: 18.34px;
     top: 70.13px;
-    z-index: 3;
-    display: grid;
+    z-index: 10;
     width: 69.423px;
     height: 69.423px;
+  }
+
+  &__badge-pulse {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    border: 2px solid rgba(24, 144, 255, 0.4);
+    border-radius: 19.835px;
+    animation: mascot-badge-pulse 1.5s ease-out infinite;
+
+    &--delayed {
+      animation-delay: 0.5s;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: grid;
     place-items: center;
     border-radius: 19.835px;
     background: linear-gradient(135deg, #40a9ff 0%, #0d6edb 100%);
@@ -57,25 +303,83 @@
     font-weight: 900;
     text-shadow: 0 0 6.198px rgba(255, 255, 255, 0.5);
     transform: rotate(-7.99deg);
+    transition: transform 0.3s ease;
+
+    .mascot:hover & {
+      transform: rotate(-12deg);
+    }
   }
+
+  // ─── Lightning ──────────────────────────────────────────────────────────────
 
   &__lightning {
     position: absolute;
+    z-index: 10;
     left: 66.81px;
     top: 57.13px;
-    z-index: 4;
+    z-index: 10;
     font-size: 22.81px;
     color: #171717;
-    transform: rotate(-17.59deg);
+    animation: mascot-lightning 1s ease-in-out infinite;
   }
 
-  &__image {
+  // ─── Image wrapper with float ────────────────────────────────────────────────
+
+  &__image-wrapper {
     position: absolute;
     left: 33.6px;
     top: 78.74px;
-    z-index: 1;
+    z-index: 10;
     width: 433px;
     height: 349px;
-    object-fit: contain;
+    animation: mascot-float 4s ease-in-out infinite;
   }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  }
+
+  // ─── Orbiting particles (JS-created, shown on hover) ────────────────────────
+
+  &__orbit {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__orbit-track {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: mascot-orbit var(--orbit-duration, 4s) linear infinite;
+
+    &--rev {
+      animation-name: mascot-orbit-rev;
+    }
+  }
+
+  &__orbit-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--dot-size, 4px);
+    height: var(--dot-size, 4px);
+    margin-left: calc(var(--dot-size, 4px) * -0.5);
+    margin-top: calc(var(--dot-size, 4px) * -0.5);
+    border-radius: 50%;
+    background: #1890ff;
+    box-shadow: 0 0 10px rgba(24, 144, 255, 0.9);
+  }
+}
+
+// ─── Active (click) state — disable interaction during explosion ──────────────
+
+.mascot--active {
+  pointer-events: none;
 }
