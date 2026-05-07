@@ -8,6 +8,7 @@
   width: 100%;
   min-height: 300vh;
 
+
   &__sticky {
     position: sticky;
     top: 0;
@@ -24,6 +25,9 @@
     width: 1px;
     height: 1px;
     transform-style: preserve-3d;
+    @include sm-block{
+      scale: 0.7;
+    }
   }
 
   &__ai {
@@ -37,9 +41,7 @@
     left: 0;
     width: 398px;
     pointer-events: none;
-    transform:
-      translate3d(calc(var(--ai-x) - 50%), calc(var(--ai-y) - 50%), var(--ai-z))
-      rotateY(var(--ai-facing-rotate-y));
+    transform: translate3d(calc(var(--ai-x) - 50%), calc(var(--ai-y) - 50%), var(--ai-z)) rotateY(var(--ai-facing-rotate-y));
     transform-style: preserve-3d;
   }
 
@@ -72,10 +74,7 @@
     top: 0;
     left: 0;
     opacity: var(--card-opacity);
-    transform:
-      translate3d(calc(var(--card-x) - 50%), calc(var(--card-y) - 50%), var(--card-z))
-      rotateY(var(--card-facing-rotate-y))
-      scale(var(--card-scale));
+    transform: translate3d(calc(var(--card-x) - 50%), calc(var(--card-y) - 50%), var(--card-z)) rotateY(var(--card-facing-rotate-y)) scale(var(--card-scale));
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
     will-change: transform, opacity;

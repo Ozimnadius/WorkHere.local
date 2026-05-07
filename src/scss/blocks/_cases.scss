@@ -6,6 +6,9 @@
   border-radius: 60px;
   background: #ffffff;
   color: #101828;
+  @include xs-block {
+    border-radius: 20px;
+  }
 
   &__bg {
     position: absolute;
@@ -13,17 +16,35 @@
     pointer-events: none;
     width: auto;
     height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
   }
 
   &__inner {
     position: relative;
     z-index: 1;
-    width: 849px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1240px;
     margin-inline: auto;
     padding: 317px 0;
-    @include xlg-block{
-        padding-block: 105px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @include xlg-block {
+      padding-block: 105px;
+      max-width: 1040px;
+    }
+    @include md-block {
+      padding: 60px 20px;
+    }
+    @include xs-block {
+      padding: 30px 20px;
     }
   }
 
@@ -33,6 +54,12 @@
     align-items: center;
     gap: 32px;
     text-align: center;
+    @include md-block {
+      gap: 20px;
+    }
+    @include xs-block{
+        gap: 12px;
+    }
   }
 
   &__text {
@@ -40,6 +67,9 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    @include xs-block{
+        gap: 12px;
+    }
   }
 
   &__title {
@@ -48,17 +78,29 @@
     font-size: 76px;
     font-weight: 700;
     line-height: 1;
+    @include md-block {
+      font-size: 44px;
+    }
+    @include xs-block{
+      font-size: 24px;
+    }
   }
 
   &__lead {
-    width: 639px;
-    max-width: 100%;
+    max-width: 639px;
+    width: 100%;
     margin: 0;
     font-family: var(--font-display);
     font-size: 24px;
     font-weight: 400;
     line-height: 1.42;
     color: #000000;
+    @include md-block {
+      font-size: 16px;
+    }
+    @include xs-block{
+      font-size: 16px;
+    }
   }
 
   &__link {
@@ -87,13 +129,21 @@
 
   &__slider-wrap {
     position: relative;
-    width: 824px;
-    max-width: 100%;
-    margin: 32px auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
   }
 
   &__slider {
+    width: 100%;
+    max-width: 824px;
     overflow: hidden;
+    @include xs-block {
+      padding-inline: 20px;
+      margin-inline: -20px;
+      width: calc(100% + 40px);
+
+    }
   }
 
   &__wrapper {
@@ -102,6 +152,9 @@
 
   &__slide {
     flex-shrink: 0;
+    @include xs-block {
+      width: 270px;
+    }
   }
 
   &__card {
@@ -139,6 +192,10 @@
     align-items: flex-start;
     gap: 17px;
     padding: 20px;
+    @include xs-block{
+      padding: 15px;
+      gap: 10px;
+    }
   }
 
   &__tags {
@@ -184,8 +241,11 @@
     font-family: var(--font-display);
     font-size: 18px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 1.4;
     color: #000000;
+    @include xs-block{
+      font-size: 16px;
+    }
   }
 
   &__card-link {
@@ -216,7 +276,6 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: 32px;
   }
 
   &__bullet {
@@ -235,9 +294,6 @@
   }
 
   &__button {
-    position: absolute;
-    top: 680px;
-    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,7 +304,11 @@
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
+    translate: 0 127px;
     transition: background 0.2s ease;
+    @include md-block {
+      display: none;
+    }
 
     @include hover {
       background: #3f77f5;

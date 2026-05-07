@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: 893fr 467fr;
   gap: 0;
+  @include sm-block {
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
 
   &__inner {
 
@@ -12,6 +16,19 @@
 
   &__content {
     padding-top: 70px;
+    @include sm-block {
+      order: 1;
+      text-align: center;
+      padding-top: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include xs-block{
+      max-width: 100%;
+
+    }
   }
 
   &__eyebrow {
@@ -26,6 +43,9 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 14px;
+    @include xs-block{
+      font-size: 14px;
+    }
   }
 
   &__title {
@@ -36,8 +56,11 @@
     line-height: 0.92;
     letter-spacing: 0;
     text-transform: uppercase;
-    @include xlg-block{
+    @include xlg-block {
       font-size: 65px;
+    }
+    @include xs-block{
+      font-size: 34px;
     }
   }
 
@@ -52,6 +75,9 @@
     font-family: var(--font-display);
     font-size: 24px;
     line-height: 32.5px;
+    @include xs-block{
+      font-size: 14px;
+    }
 
     span {
       color: var(--color-blue);
@@ -67,9 +93,20 @@
     width: max-content;
     gap: 15.45px;
     margin-top: 30px;
+    @include xs-block{
+      width: 100%;
+        flex-direction: column;
+    }
   }
 
   &__action {
+
+    *{
+      @include xs-block{
+        width: 100%;
+      }
+    }
+
 
   }
 
@@ -78,9 +115,19 @@
     width: max-content;
     gap: 37px;
     margin-top: 30px;
+    @include xs-block{
+      width: 100%;
+      display:grid;
+      grid-template-columns: repeat(3,auto);
+      gap: 20px;
+    }
   }
 
   &__stat {
+    @include xs-block{
+      width: auto!important;
+      text-align: left;
+    }
     &:nth-child(1) {
       width: 80px;
     }
@@ -98,7 +145,9 @@
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 600;
-      line-height: 32px;
+      @include xs-block{
+        font-size: 16px;
+      }
     }
 
     dd {
@@ -113,6 +162,10 @@
   &__mascot {
     position: relative;
     padding-top: 106px;
+    max-width: 100%;
+    @include xs-block{
+      padding-top: 80px;
+    }
   }
 
   &__mascot-bg {

@@ -28,7 +28,7 @@
 
   &__companies {
     position: relative;
-    @include xlg-block{
+    @include xlg-block {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -43,6 +43,9 @@
     text-transform: uppercase;
     margin-bottom: 50px;
     color: #000;
+    @include xs-block {
+      font-size: 24px;
+    }
   }
 
   &__logos {
@@ -53,6 +56,10 @@
     @include xlg-block {
       gap: 20px;
       max-width: 810px;
+    }
+    @include xs-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -72,8 +79,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include xlg-block{
+    @include xlg-block {
       margin-top: 295px;
+    }
+    @include sm-block {
+      margin-top: 40px;
     }
   }
 
@@ -89,6 +99,12 @@
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -1.56px;
+    @include sm-block {
+      font-size: 70px;
+    }
+    @include xs-block{
+      font-size: 43px;
+    }
   }
 
   &__future-text-part {

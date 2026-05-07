@@ -20,6 +20,9 @@
       background: #D9E5FF;
       box-shadow: 0 35px 80px -21px rgba(22, 115, 158, 0.70);
       overflow: hidden;
+      @include sm-block{
+        border-radius: 14px;
+      }
     }
   }
 

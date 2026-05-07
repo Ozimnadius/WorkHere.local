@@ -5,7 +5,17 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-  padding: 165px 0;
+  padding: 165px 40px;
+  @include xlg-block {
+    padding: 80px 40px;
+  }
+  @include sm-block {
+    padding: 60px 20px;
+    padding-top: 30px;
+  }
+  @include xs-block{
+    padding: 20px;
+  }
 
   &__bg {
     position: absolute;
@@ -13,6 +23,16 @@
     width: auto;
     height: auto;
     pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      @include xs-block {
+        object-fit: cover;
+      }
+    }
   }
 
   &__inner {
@@ -24,6 +44,9 @@
     gap: 50px;
     width: 100%;
     max-width: 1352px;
+    @include xs-block{
+        gap: 20px;
+    }
   }
 
   &__header {
@@ -42,6 +65,9 @@
     font-weight: 400;
     line-height: 1.88;
     color: #000;
+    @include xs-block{
+      font-size: 24px;
+    }
   }
 
   &__eyebrow.is-active {
@@ -54,6 +80,13 @@
     font-weight: 700;
     line-height: 1;
     color: #101828;
+    @include sm-block {
+      font-size: 44px;
+    }
+    @include xs-block{
+      font-size: 24px;
+    }
+
   }
 
   &__title.is-active {
@@ -61,15 +94,23 @@
   }
 
   &__cards {
-    display: flex;
-//    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
+    @include xlg-block {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 880px;
+    }
+    @include xs-block{
+        grid-template-columns: 100%;
+    }
+
   }
 
   &__card {
     display: flex;
-    flex: 1 1 0;
+    //    flex: 1 1 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -83,6 +124,9 @@
     opacity 0.7s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
+    @include xlg-block {
+      min-height: initial;
+    }
 
     @include hover {
       border-color: #3f77f5;
@@ -151,6 +195,10 @@
     align-items: center;
     gap: 12px;
     width: 633px;
+    @include xs-block{
+      width: 100%;
+      flex-direction: column;
+    }
   }
 
   &__badge {
@@ -173,6 +221,9 @@
     transition: background-color 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease;
+    @include xs-block{
+      width: 100%;
+    }
 
     @include hover {
       color: #fff;

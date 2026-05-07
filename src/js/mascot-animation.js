@@ -43,11 +43,11 @@ export function initMascotAnimation() {
 
   function createOrbit() {
     if (orbitEl) return;
-    orbitEl = document.createElement('div');
+    orbitEl = document.createElement('span');
     orbitEl.className = 'mascot__orbit';
 
     ORBIT_PARTICLES.forEach((p) => {
-      const track = document.createElement('div');
+      const track = document.createElement('span');
       track.className = 'mascot__orbit-track' + (p.reverse ? ' mascot__orbit-track--rev' : '');
       const diameter = p.radius * 2;
       track.style.cssText = [
@@ -59,7 +59,7 @@ export function initMascotAnimation() {
         `animation-delay:${-p.delay}s`,
       ].join(';');
 
-      const dot = document.createElement('div');
+      const dot = document.createElement('span');
       dot.className = 'mascot__orbit-dot';
       dot.style.setProperty('--dot-size', p.size + 'px');
 

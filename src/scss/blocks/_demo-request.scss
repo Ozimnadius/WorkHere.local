@@ -5,23 +5,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  min-height: 476px;
+  gap: 90px;
+
   overflow: hidden;
-  padding: 120px 451px 40px;
+  padding: 120px 40px 40px;
   background-color: #2963e9;
   border-radius: 60px;
+  @include xlg-block {
+    padding-block: 80px;
+    gap: 32px;
+  }
+  @include md-block {
+    padding: 40px 60px;
+    border-radius: 24px;
+  }
+  @include xs-block{
+    padding: 30px 20px;
+  }
 
   &__bg {
     position: absolute;
-    top: 50%;
-    left: calc(50% + 345px);
-    z-index: 0;
-    width: 1957px;
-    height: auto;
-    transform: translate(-50%, -50%) scaleY(-1) rotate(-0.31deg);
+    inset: 0;
     pointer-events: none;
-    user-select: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      @include xs-block{
+          object-fit: cover;
+      }
+    }
   }
 
   &__content {
@@ -38,10 +53,16 @@
     font-family: var(--font-display);
     font-size: 72px;
     font-weight: 700;
-    line-height: 79.2px;
+    line-height: 1.1;
     color: #fff;
     text-align: center;
-    white-space: nowrap;
+    text-wrap: balance;
+    @include md-block {
+      font-size: 44px;
+    }
+    @include xs-block{
+      font-size: 24px;
+    }
   }
 
   &__lead {
@@ -51,6 +72,9 @@
     line-height: 28px;
     color: #fff;
     text-align: center;
+    @include xs-block{
+      font-size: 16px;
+    }
   }
 
   &__form {
@@ -58,6 +82,9 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    @include xs-block{
+        flex-direction: column;
+    }
   }
 
   &__input {
@@ -105,10 +132,12 @@
     border: 0;
     border-radius: 12px;
     cursor: pointer;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease,
-      transform 0.2s ease;
+    transition: background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+    @include xs-block{
+      width: 100%;
+    }
 
     @include hover {
       background-color: #45c67c;
@@ -129,9 +158,8 @@
     opacity: 1;
     text-align: left;
     visibility: visible;
-    transition:
-      opacity 0.2s ease,
-      visibility 0.2s ease;
+    transition: opacity 0.2s ease,
+    visibility 0.2s ease;
 
     &[hidden] {
       opacity: 0;
@@ -145,6 +173,11 @@
     display: flex;
     align-items: center;
     gap: 23px;
+    @include xs-block{
+           gap: 20px;
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   &__benefit {

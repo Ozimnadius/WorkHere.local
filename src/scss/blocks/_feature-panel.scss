@@ -5,6 +5,10 @@
   width: 100%;
   aspect-ratio: 1600 / 903;
   overflow: hidden;
+  @include sm-block {
+    aspect-ratio: initial;
+  }
+
 
   &::before {
     content: '';
@@ -16,11 +20,13 @@
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
-    -webkit-mask-image: url('/src/assets/figma/feature-section/feature-brush.svg');
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
     pointer-events: none;
+    @include sm-block {
+      mask-image: url('/src/assets/figma/feature-section/feature-brush-768.svg');
+    }
+    @include xs-block {
+      mask-image: url('/src/assets/figma/feature-section/feature-brush-375.svg');
+    }
   }
 
   &__body {
@@ -30,53 +36,78 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include sm-block {
+      position: relative;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 
-  &__grid{
+  &__grid {
     max-width: 1164px;
     width: 100%;
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 623px;
     align-items: center;
     gap: 40px;
-    @include xlg-block{
+
+    @include xlg-block {
       grid-template-columns: 3fr 4fr;
       max-width: 72vw;
       gap: 20px;
     }
+    @include sm-block {
+      max-width: 505px;
+      grid-template-columns: 100%;
+
+    }
+
   }
 
-  &__content{
+  &__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
     color: #000;
     font-family: var(--font-display);
+    @include sm-block {
+      order: 1;
+      text-align: center;
+    }
 
-    h3{
+    h3 {
       font-size: 53px;
       font-weight: 600;
       line-height: 1.02; /* 54.06px */
-      @include xlg-block{
+      @include xlg-block {
         font-size: 34px;
+      }
+      @include sm-block{
+        br{
+          display: none;
+        }
+        font-size: 24px;
       }
     }
 
-    p{
+    p {
       font-size: 27px;
       line-height: 1.42; /* 38.34px */
-      @include xlg-block{
+      @include xlg-block {
         font-size: 18px;
+      }
+      @include sm-block{
+        font-size: 14px;
       }
     }
   }
 
-  &__img{
+  &__img {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img{
+    img {
       width: auto;
       height: auto;
     }

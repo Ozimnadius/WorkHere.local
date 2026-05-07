@@ -7,15 +7,22 @@
   gap: 50px;
   color: #1d83d4;
   text-align: center;
+  @include xs-block{
+      gap: 20px;
+  }
 
   &__title {
     font-family: var(--font-display);
     max-width: 1180px;
+    width: 100%;
     color: #0164C1;
     font-size: 74px;
     font-weight: 600;
     line-height: 1.12; /* 82.88px */
     letter-spacing: -1.56px;
+    @include xs-block {
+      font-size: 34px;
+    }
   }
 
   &__lead {
@@ -23,12 +30,15 @@
     color: #416CA9;
     font-size: 30px;
     line-height: 1.42;
+    @include xs-block {
+      font-size: 16px;
+    }
   }
 
   &__media-stage {
     width: 100%;
     height: 420vh;
-    margin-top: -8px;
+    margin-top: -50px;
   }
 
   &__media-sticky {
@@ -43,9 +53,9 @@
 
   &__media {
     position: relative;
-    width: 1168px;
-    aspect-ratio: 1168/857;
+    width: 100%;
     max-width: 75vw;
+    aspect-ratio: 1168/857;
     --card-current-x: 0%;
     --card-current-y: 0%;
     --card-current-scale: 1;
@@ -66,6 +76,12 @@
     overflow: hidden;
 
     box-shadow: 0 70px 80px -48px #4DADDA;
+    @include sm-block {
+      max-width: 85vw;
+    }
+    @include xs-block{
+      max-width: 100%;
+    }
 
   }
 
@@ -77,7 +93,7 @@
     object-fit: cover;
   }
 
-  &__cards{
+  &__cards {
     position: absolute;
     bottom: 3.4%;
     right: 2.7%;
@@ -98,17 +114,13 @@
     &:nth-child(1) {
       z-index: 2;
       opacity: var(--card-current-opacity, 1);
-      transform: translate3d(var(--card-current-x, 0%), var(--card-current-y, 0%), 0)
-        rotate(var(--card-current-rotate, 0deg))
-        scale(var(--card-current-scale, 1));
+      transform: translate3d(var(--card-current-x, 0%), var(--card-current-y, 0%), 0) rotate(var(--card-current-rotate, 0deg)) scale(var(--card-current-scale, 1));
     }
 
     &:nth-child(2) {
       z-index: 3;
       opacity: var(--card-next-opacity, 0);
-      transform: translate3d(var(--card-next-x, 0%), var(--card-next-y, 0%), 0)
-        rotate(var(--card-next-rotate, 0deg))
-        scale(var(--card-next-scale, 0));
+      transform: translate3d(var(--card-next-x, 0%), var(--card-next-y, 0%), 0) rotate(var(--card-next-rotate, 0deg)) scale(var(--card-next-scale, 0));
     }
   }
 
@@ -121,9 +133,7 @@
     height: auto;
     opacity: var(--hand-opacity, 0);
     pointer-events: none;
-    transform: translate3d(-34%, -6%, 0)
-      rotate(var(--hand-rotate, 0deg))
-      scale(var(--hand-scale, 0.59));
+    transform: translate3d(-34%, -6%, 0) rotate(var(--hand-rotate, 0deg)) scale(var(--hand-scale, 0.59));
     transform-origin: 34% 6%;
     will-change: transform, opacity;
   }
@@ -133,6 +143,9 @@
     color: #416CA9;
     font-size: 30px;
     line-height: 1.42; /* 42.6px */
+    @include xs-block{
+      font-size: 16px;
+    }
   }
 
   &__button {

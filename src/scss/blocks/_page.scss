@@ -3,10 +3,9 @@
 .page {
   min-height: 100vh;
 
-
-
   &__header {
     position: absolute;
+    z-index: 1000;
     top: 40px;
     left: 0;
     right: 0;
@@ -17,7 +16,7 @@
   }
 
   &__main {
-//    overflow: hidden;
+
   }
 
   &__hero {
@@ -25,8 +24,14 @@
     padding-top: 190px;
     padding-bottom: 100px;
     padding-inline: 40px;
-    @include xlg-block{
+    overflow: hidden;
+    @include xlg-block {
       padding-top: 124px;
+    }
+    @include sm-block {
+      padding-top: 30px;
+      padding-inline: 20px;
+      padding-bottom: 50px;
     }
 
 
@@ -50,12 +55,21 @@
   &__interface {
     background: linear-gradient(180deg, #F0F2F8 76.27%, #BEDCF9 100%);
     padding-bottom: 60px;
+    @include xs-block {
+      padding-bottom: 20px;
+    }
   }
 
   &__interface-container {
     max-width: 1360px;
     padding-inline: 50px;
     margin-inline: auto;
+    @include sm-block {
+      padding-inline: 25px;
+    }
+    @include xs-block {
+      padding-inline: 10px;
+    }
   }
 
   &__trusted {
@@ -63,7 +77,6 @@
     padding-bottom: 60px;
     background: #BEDCF9;
     overflow: hidden;
-
   }
 
   &__trusted-container {
@@ -80,6 +93,9 @@
   &__workhere-ai {
     background: #BEDCF9 linear-gradient(180deg, #BEDCF9 76.27%, #F0F2F8 100%);
     padding: 0 50px;
+    @include sm-block {
+      padding-inline: 20px;
+    }
   }
 
   &__workhere-ai-container {
@@ -90,44 +106,81 @@
 
   &__feature-section {
     margin-top: 80px;
+    @include sm-block {
+      margin-top: 60px;
+    }
+    @include xs-block {
+      margin-top: 20px;
+    }
   }
 
   &__reviews {
     background: #f0f2f8;
     margin-top: 80px;
-
+    @include sm-block {
+      margin-top: 40px;
+    }
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
 
   &__cases {
     margin-top: 60px;
     background: #f0f2f8;
+    @include md-block {
+      margin-top: 40px;
+    }
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
 
   &__premier {
     margin-top: 80px;
+    @include xs-block{
+      margin-top: 40px;
+    }
   }
 
   &__api-power {
     margin-top: 40px;
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
 
   &__security {
-
+    @include sm-block {
+      margin-top: 30px;
+    }
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
 
   &__pricing {
     margin-top: 40px;
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
 
   &__demo-request {
     margin-top: 80px;
+    @include md-block {
+      margin-top: 40px;
+    }
   }
 
   &__journal {
     margin-top: 80px;
+    @include sm-block {
+      margin-top: 40px;
+    }
   }
 
-  &__footer{
+  &__footer {
     margin-top: 40px;
   }
 

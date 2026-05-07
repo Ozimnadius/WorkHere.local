@@ -9,11 +9,17 @@
   background: #f0f2f8;
   color: #101828;
 
+
   &__inner {
     position: relative;
-    width: 1280px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1208px;
     min-height: 404px;
+
+    @include sm-block {
+
+      padding-bottom: 30px;
+    }
   }
 
   &__slider {
@@ -21,7 +27,7 @@
     max-width: calc(100% - 178px);
     margin-inline: auto;
     overflow: hidden;
-    @include lg-block{
+    @include lg-block {
       max-width: 100%;
     }
   }
@@ -43,6 +49,23 @@
     padding: 40px;
     border-radius: 30px;
     background: #ffffff;
+    @include sm-block {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    @include xs-block{
+      padding: 20px;
+    }
+  }
+
+  &__person {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    @include sm-block {
+      align-items: center;
+    }
   }
 
   &__author {
@@ -56,12 +79,14 @@
     border: 1px solid #d9d9d9;
     border-radius: 23px;
     background: #ffffff;
-  }
-
-  &__person {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    @include sm-block {
+      width: 100%;
+      max-width: 462px;
+      height: auto;
+      gap: 20px;
+      justify-content: start;
+      flex: initial;
+    }
   }
 
   &__avatar {
@@ -113,6 +138,10 @@
     right: 29px;
     width: 86px;
     height: 62px;
+    @include xs-block{
+      width: 59px;
+      height: 42px;
+    }
   }
 
   &__quote-img {
@@ -136,6 +165,9 @@
     font-size: 36px;
     font-weight: 600;
     line-height: 1.12;
+    @include xs-block{
+      font-size: 18px;
+    }
   }
 
   &__text {
@@ -143,7 +175,9 @@
     font-family: var(--font-display);
     font-size: 18px;
     font-weight: 400;
-    line-height: 29.25px;
+    @include xs-block{
+      font-size: 13px;
+    }
   }
 
   &__button {
@@ -161,7 +195,7 @@
     background: #ffffff;
     cursor: pointer;
     transition: background 0.2s ease;
-    @include lg-block{
+    @include lg-block {
       display: none;
     }
 

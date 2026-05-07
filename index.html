@@ -26,6 +26,7 @@
 
 </head>
 <body>
+
 <div class="page">
   <div class="page__header"
        id="top"
@@ -57,9 +58,7 @@
                  href="#feature-customers"
               >Возможности
               </a>
-              <div class="nav__dropdown"
-                   aria-label="Возможности"
-              >
+              <div class="nav__dropdown">
                 <a class="nav__dropdown-link"
                    href="#feature-customers"
                 >Работа с заказчиками
@@ -108,9 +107,118 @@
             >Оставить заявку на демо
             </a>
           </div>
+          <button class="header__burger-btn"
+                  type="button"
+                  aria-label="Открыть меню"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+          >
+            <svg width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z"
+                    fill="black"
+              />
+            </svg>
+          </button>
         </div>
 
       </header>
+    </div>
+  </div>
+
+  <div class="mobile-menu"
+       id="mobile-menu"
+       inert
+  >
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__header">
+        <a class="mobile-menu__logo logo logo--figma"
+           href="#top"
+           aria-label="WorkHere"
+        >
+          <img class="logo__image"
+               src="/src/assets/figma/hero-logo.webp"
+               width="132"
+               height="38"
+               alt="WorkHere"
+               loading="lazy"
+          >
+        </a>
+        <button class="mobile-menu__close"
+                type="button"
+                aria-label="Закрыть меню"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <nav class="mobile-menu__nav"
+           aria-label="Мобильная навигация"
+      >
+        <div class="mobile-menu__item mobile-menu__item--features">
+          <div class="mobile-menu__row">
+            <a class="mobile-menu__link mobile-menu__link--accent"
+               href="#feature-customers"
+            >Возможности
+            </a>
+            <button class="mobile-menu__toggle"
+                    type="button"
+                    aria-label="Показать подразделы возможностей"
+                    aria-controls="mobile-menu-features"
+                    aria-expanded="false"
+            ></button>
+          </div>
+          <div class="mobile-menu__dropdown"
+               id="mobile-menu-features"
+               hidden
+          >
+            <a class="mobile-menu__dropdown-link"
+               href="#feature-customers"
+            >Работа с заказчиками
+            </a>
+            <a class="mobile-menu__dropdown-link"
+               href="#feature-automation"
+            >Автоматизация
+            </a>
+            <a class="mobile-menu__dropdown-link"
+               href="#feature-analytics"
+            >Аналитика
+            </a>
+          </div>
+        </div>
+
+        <a class="mobile-menu__link"
+           href="#"
+        >Для бизнеса
+        </a>
+        <a class="mobile-menu__link"
+           href="#cases"
+        >Кейсы
+        </a>
+        <a class="mobile-menu__link"
+           href="#reviews"
+        >Отзывы
+        </a>
+        <a class="mobile-menu__link"
+           href="#security"
+        >Безопасность
+        </a>
+      </nav>
+
+      <div class="mobile-menu__actions">
+        <a class="mobile-menu__login"
+           href="#"
+        >Войти
+        </a>
+        <a class="mobile-menu__cta"
+           href="#demo-request"
+        >Оставить заявку на демо
+        </a>
+      </div>
     </div>
   </div>
 
@@ -118,10 +226,7 @@
 
     <section class="page__hero">
       <div class="page__hero-container">
-        <div
-          class="hero"
-          aria-labelledby="hero-title"
-        >
+        <div class="hero">
 
           <div class="hero__content">
             <p class="hero__eyebrow">Система автоматизации рекрутмента №1</p>
@@ -180,38 +285,37 @@
             <div class="hero__mascot-bg"
                  aria-hidden="true"
             ></div>
-            <div class="mascot"
-                 tabindex="0"
-                 role="button"
-                 aria-label="Интерактивный маскот, нажмите меня!"
+            <button class="mascot"
+                    type="button"
+                    aria-label="Интерактивный маскот, нажмите меня!"
             >
-              <div class="mascot__bubble">
+              <span class="mascot__bubble">
                 <span class="mascot__bubble-text">Привет! Нажми на меня 👋</span>
                 <span class="mascot__bubble-sparkle"
                       aria-hidden="true"
                 >✨</span>
-                <div class="mascot__bubble-pointer"
-                     aria-hidden="true"
-                ></div>
-              </div>
-              <div class="mascot__inner-glow"
-                   aria-hidden="true"
-              ></div>
-              <div class="mascot__badge-ring"
-                   aria-hidden="true"
-              ></div>
-              <div class="mascot__badge-area"
-                   aria-hidden="true"
+                <span class="mascot__bubble-pointer"
+                      aria-hidden="true"
+                ></span>
+              </span>
+              <span class="mascot__inner-glow"
+                    aria-hidden="true"
+              ></span>
+              <span class="mascot__badge-ring"
+                    aria-hidden="true"
+              ></span>
+              <span class="mascot__badge-area"
+                    aria-hidden="true"
               >
-                <div class="mascot__badge-pulse"></div>
-                <div class="mascot__badge-pulse mascot__badge-pulse--delayed"></div>
-                <div class="mascot__badge">AI</div>
-              </div>
+                <span class="mascot__badge-pulse"></span>
+                <span class="mascot__badge-pulse mascot__badge-pulse--delayed"></span>
+                <span class="mascot__badge">AI</span>
+              </span>
               <span class="mascot__lightning"
                     aria-hidden="true"
               >⚡</span>
-              <div class="mascot__image-wrapper"
-                   aria-hidden="true"
+              <span class="mascot__image-wrapper"
+                    aria-hidden="true"
               >
                 <img
                   class="mascot__image"
@@ -219,16 +323,17 @@
                   width="863"
                   height="614"
                   alt=""
+                  loading="lazy"
                 />
-              </div>
-            </div>
+              </span>
+            </button>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section class="page__interface"
+    <div class="page__interface"
              id="interface"
     >
       <div class="page__interface-container">
@@ -306,7 +411,7 @@
         </div>
       </div>
 
-    </section>
+    </div>
 
     <section class="page__trusted">
       <div class="page__trusted-container">
@@ -336,7 +441,6 @@
             </h2>
 
             <ul class="trusted__logos ui-animation ui-animation--fade"
-                aria-label="Компании, которые доверяют WorkHere"
                 data-progress-activate
                 data-progress-activate-start="0.5"
             >
@@ -466,7 +570,7 @@
       </div>
     </section>
 
-    <section class="page__ai-stage">
+    <div class="page__ai-stage">
       <div class="ai-stage"
            data-progress
            data-progress-smooth="0.12"
@@ -600,9 +704,7 @@
                                     y2="93.0759"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -615,9 +717,7 @@
                                     y2="99.4616"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -630,9 +730,7 @@
                                     y2="145.542"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -645,9 +743,7 @@
                                     y2="148.576"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -660,9 +756,7 @@
                                     y2="145.542"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -675,9 +769,7 @@
                                     y2="108.573"
                                     gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#5BB1FF"
-                            stop-opacity="0.6"
-                      />
+                      <stop offset="0" stop-color="#5BB1FF" stop-opacity="0.6" />
                       <stop offset="1"
                             stop-color="#AED8FF"
                             stop-opacity="0"
@@ -704,7 +796,7 @@
 
               <div class="ai-stage__card ai-stage__card--expertise">
                 <img
-                  src="/src/assets/figma/ai-stage/Card0.png"
+                  src="/src/assets/figma/ai-stage/Card0.webp"
                   width="988"
                   height="429"
                   alt=""
@@ -715,7 +807,7 @@
                 class="ai-stage__card ai-stage__card--clients"
               >
                 <img
-                  src="/src/assets/figma/ai-stage/Card1.png"
+                  src="/src/assets/figma/ai-stage/Card1.webp"
                   width="577"
                   height="315"
                   alt=""
@@ -726,7 +818,7 @@
                 class="ai-stage__card ai-stage__card--recruiters"
               >
                 <img
-                  src="/src/assets/figma/ai-stage/Card2.png"
+                  src="/src/assets/figma/ai-stage/Card2.webp"
                   width="596"
                   height="311"
                   alt=""
@@ -737,7 +829,7 @@
                 class="ai-stage__card ai-stage__card--years"
               >
                 <img
-                  src="/src/assets/figma/ai-stage/Card3.png"
+                  src="/src/assets/figma/ai-stage/Card3.webp"
                   width="565"
                   height="298"
                   alt=""
@@ -748,7 +840,7 @@
                 class="ai-stage__card ai-stage__card--candidates"
               >
                 <img
-                  src="/src/assets/figma/ai-stage/Card4.png"
+                  src="/src/assets/figma/ai-stage/Card4.webp"
                   width="790"
                   height="311"
                   alt=""
@@ -759,7 +851,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="page__workhere-ai">
       <div class="page__workhere-ai-container">
@@ -819,7 +911,7 @@
                 </div>
                 <img
                   class="workhere-ai__hand"
-                  src="/src/assets/figma/workhere-ai/workhere-ai-hand.png"
+                  src="/src/assets/figma/workhere-ai/workhere-ai-hand.webp"
                   width="64"
                   height="64"
                   alt=""
@@ -954,7 +1046,7 @@
           </div>
 
           <div class="feature-section__body">
-            <article class="feature-section__panel active"
+            <div class="feature-section__panel active"
                      id="feature-customers-panel-0"
                      role="tabpanel"
                      aria-labelledby="feature-customers-tab-0"
@@ -980,8 +1072,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-customers-panel-1"
                      role="tabpanel"
                      aria-labelledby="feature-customers-tab-1"
@@ -1008,8 +1100,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-customers-panel-2"
                      role="tabpanel"
                      aria-labelledby="feature-customers-tab-2"
@@ -1036,8 +1128,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-customers-panel-3"
                      role="tabpanel"
                      aria-labelledby="feature-customers-tab-3"
@@ -1064,8 +1156,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-customers-panel-4"
                      role="tabpanel"
                      aria-labelledby="feature-customers-tab-4"
@@ -1092,10 +1184,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <div class="feature-section__pagination"
-                 aria-label="Переключение вкладок: Работа с заказчиками"
-            >
+            </div>
+            <div class="feature-section__pagination">
               <button class="feature-section__dot active"
                       type="button"
                       aria-label="Показать вкладку 1"
@@ -1120,6 +1210,7 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
 
     <section class="page__feature-section"
@@ -1222,7 +1313,7 @@
           </div>
 
           <div class="feature-section__body">
-            <article class="feature-section__panel active"
+            <div class="feature-section__panel active"
                      id="feature-automation-panel-0"
                      role="tabpanel"
                      aria-labelledby="feature-automation-tab-0"
@@ -1248,8 +1339,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-automation-panel-1"
                      role="tabpanel"
                      aria-labelledby="feature-automation-tab-1"
@@ -1277,8 +1368,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-automation-panel-2"
                      role="tabpanel"
                      aria-labelledby="feature-automation-tab-2"
@@ -1305,8 +1396,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-automation-panel-3"
                      role="tabpanel"
                      aria-labelledby="feature-automation-tab-3"
@@ -1333,8 +1424,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-automation-panel-4"
                      role="tabpanel"
                      aria-labelledby="feature-automation-tab-4"
@@ -1361,12 +1452,10 @@
                   </div>
                 </div>
               </div>
-            </article>
+            </div>
           </div>
 
-          <div class="feature-section__pagination"
-               aria-label="Переключение вкладок: Автоматизация"
-          >
+          <div class="feature-section__pagination">
             <button class="feature-section__dot active"
                     type="button"
                     aria-label="Показать вкладку 1"
@@ -1495,7 +1584,7 @@
           </div>
 
           <div class="feature-section__body">
-            <article class="feature-section__panel active"
+            <div class="feature-section__panel active"
                      id="feature-analytics-panel-0"
                      role="tabpanel"
                      aria-labelledby="feature-analytics-tab-0"
@@ -1521,8 +1610,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-analytics-panel-1"
                      role="tabpanel"
                      aria-labelledby="feature-analytics-tab-1"
@@ -1549,8 +1638,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-analytics-panel-2"
                      role="tabpanel"
                      aria-labelledby="feature-analytics-tab-2"
@@ -1577,8 +1666,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-analytics-panel-3"
                      role="tabpanel"
                      aria-labelledby="feature-analytics-tab-3"
@@ -1605,8 +1694,8 @@
                   </div>
                 </div>
               </div>
-            </article>
-            <article class="feature-section__panel"
+            </div>
+            <div class="feature-section__panel"
                      id="feature-analytics-panel-4"
                      role="tabpanel"
                      aria-labelledby="feature-analytics-tab-4"
@@ -1633,12 +1722,10 @@
                   </div>
                 </div>
               </div>
-            </article>
+            </div>
           </div>
 
-          <div class="feature-section__pagination"
-               aria-label="Переключение вкладок: Аналитика"
-          >
+          <div class="feature-section__pagination">
             <button class="feature-section__dot active"
                     type="button"
                     aria-label="Показать вкладку 1"
@@ -1666,12 +1753,10 @@
       </div>
     </section>
 
-    <section class="page__reviews"
+    <div class="page__reviews"
              id="reviews"
     >
-      <div class="reviews"
-           aria-label="Отзывы клиентов"
-      >
+      <div class="reviews">
         <div class="reviews__inner">
           <div class="reviews__slider swiper"
                data-reviews-slider
@@ -1850,6 +1935,7 @@
                  height="24"
                  alt=""
                  aria-hidden="true"
+                 loading="lazy"
             >
           </button>
           <button class="reviews__button reviews__button--next"
@@ -1862,31 +1948,44 @@
                  height="24"
                  alt=""
                  aria-hidden="true"
+                 loading="lazy"
             >
           </button>
 
-          <div class="reviews__pagination"
-               aria-label="Переключение отзывов"
-          ></div>
+          <div class="reviews__pagination"></div>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="page__cases"
              id="cases"
     >
       <div class="container">
-        <div class="cases"
-             aria-labelledby="cases-title"
-        >
-          <img class="cases__bg"
-               src="/src/assets/figma/cases/brush.svg"
-               width="1840"
-               height="1437"
-               alt=""
-               aria-hidden="true"
-          >
+        <div class="cases">
+          <div class="cases__bg">
+            <picture aria-hidden="true">
+              <source
+                media="(max-width: 767.98px)"
+                srcset="/src/assets/figma/cases/brush-375.svg"
+              />
+              <source
+                media="(max-width: 1919.98px)"
+                srcset="/src/assets/figma/cases/brush-1200.svg"
+                width="1133"
+                height="955"
+              />
+              <img
+                src="/src/assets/figma/cases/brush.svg"
+                width="1840"
+                height="1437"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+          </div>
+
           <div class="cases__inner">
+
             <div class="cases__header">
               <div class="cases__text">
                 <h2 class="cases__title"
@@ -1906,11 +2005,27 @@
                      height="16"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
               </a>
             </div>
 
             <div class="cases__slider-wrap">
+
+              <button class="cases__button cases__button--prev"
+                      type="button"
+                      aria-label="Предыдущие кейсы"
+              >
+                <img class="cases__button-icon"
+                     src="/src/assets/figma/ui/arrow-prev.svg"
+                     width="24"
+                     height="24"
+                     alt=""
+                     aria-hidden="true"
+                     loading="lazy"
+                >
+              </button>
+
               <div class="cases__slider swiper"
                    data-cases-slider
               >
@@ -1942,6 +2057,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -1974,6 +2090,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2006,6 +2123,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2038,6 +2156,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2070,6 +2189,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2102,6 +2222,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2134,6 +2255,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2166,6 +2288,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2198,6 +2321,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2230,6 +2354,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2262,6 +2387,7 @@
                                height="12"
                                alt=""
                                aria-hidden="true"
+                               loading="lazy"
                           >
                         </a>
                       </div>
@@ -2269,43 +2395,34 @@
                   </div>
                 </div>
               </div>
+
+              <button class="cases__button cases__button--next"
+                      type="button"
+                      aria-label="Следующие кейсы"
+              >
+                <img class="cases__button-icon"
+                     src="/src/assets/figma/ui/arrow-next.svg"
+                     width="24"
+                     height="24"
+                     alt=""
+                     aria-hidden="true"
+                     loading="lazy"
+                >
+              </button>
+
             </div>
 
-            <div class="cases__pagination"
-                 aria-label="Переключение кейсов"
-            ></div>
+            <div class="cases__pagination"></div>
+
           </div>
 
-          <button class="cases__button cases__button--prev"
-                  type="button"
-                  aria-label="Предыдущие кейсы"
-          >
-            <img class="cases__button-icon"
-                 src="/src/assets/figma/ui/arrow-prev.svg"
-                 width="24"
-                 height="24"
-                 alt=""
-                 aria-hidden="true"
-            >
-          </button>
-          <button class="cases__button cases__button--next"
-                  type="button"
-                  aria-label="Следующие кейсы"
-          >
-            <img class="cases__button-icon"
-                 src="/src/assets/figma/ui/arrow-next.svg"
-                 width="24"
-                 height="24"
-                 alt=""
-                 aria-hidden="true"
-            >
-          </button>
+
         </div>
       </div>
 
     </section>
 
-    <section class="page__premier"
+    <div class="page__premier"
              id="premier"
     >
       <div class="container">
@@ -2318,6 +2435,7 @@
                height="1215"
                alt=""
                aria-hidden="true"
+               loading="lazy"
           >
           <div class="premier__content">
             <p class="premier__badge ui-animation ui-animation--fade-up"
@@ -2349,12 +2467,11 @@
                    height="30"
                    alt=""
                    aria-hidden="true"
+                   loading="lazy"
               >
             </a>
 
-            <ul class="premier__features"
-                aria-label="Возможности WorkHere Премьер"
-            >
+            <ul class="premier__features">
               <li class="premier__feature ui-animation ui-animation--fade-up"
                   data-progress-activate
                   data-progress-activate-start="0.2"
@@ -2365,6 +2482,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Организация работы больших команд</p>
               </li>
@@ -2378,6 +2496,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Управление доступами и ролями</p>
               </li>
@@ -2391,6 +2510,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Повышенные требования к безопасности</p>
               </li>
@@ -2404,6 +2524,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Выделенная инфраструктура</p>
               </li>
@@ -2417,6 +2538,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Расширенная аналитика</p>
               </li>
@@ -2430,6 +2552,7 @@
                      height="80"
                      alt=""
                      aria-hidden="true"
+                     loading="lazy"
                 >
                 <p class="premier__feature-text">Персональный менеджер</p>
               </li>
@@ -2437,21 +2560,37 @@
           </div>
         </section>
       </div>
-    </section>
+    </div>
 
     <section class="page__api-power"
              id="api-power"
     >
-      <div class="api-power"
-           aria-labelledby="api-power-title"
-      >
-        <img class="api-power__bg"
-             src="/src/assets/figma/api-power/bg.svg"
-             width="1920"
-             height="1134"
-             alt=""
-             aria-hidden="true"
-        >
+      <div class="api-power">
+        <div class="api-power__bg">
+          <picture aria-hidden="true">
+            <source
+              media="(max-width: 1023.98px)"
+              srcset="/src/assets/figma/api-power/bg-768.svg"
+              width="768"
+              height="2026"
+            />
+            <source
+              media="(max-width: 1919.98px)"
+              srcset="/src/assets/figma/api-power/bg-1200.svg"
+              width="1458"
+              height="1090"
+            />
+            <img class="api-power__bg"
+                 src="/src/assets/figma/api-power/bg.svg"
+                 width="1920"
+                 height="1134"
+                 alt=""
+                 aria-hidden="true"
+                 loading="lazy"
+            >
+          </picture>
+        </div>
+
 
         <div class="api-power__inner">
           <div class="api-power__header">
@@ -2478,13 +2617,12 @@
                    height="16"
                    alt=""
                    aria-hidden="true"
+                   loading="lazy"
               >
             </a>
           </div>
 
-          <div class="api-power__cards"
-               aria-label="Возможности API WorkHere"
-          >
+          <div class="api-power__cards">
             <article class="api-power__card api-power__card--docs ui-animation ui-animation--fade"
                      data-progress-activate
                      data-progress-activate-start="0.2"
@@ -2497,6 +2635,7 @@
                            width="32"
                            height="32"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
                 <div class="api-power__card-text">
@@ -2504,9 +2643,7 @@
                   <p class="api-power__card-lead">Полная документация с примерами кода</p>
                 </div>
               </div>
-              <div class="api-power__code"
-                   aria-label="Пример API запроса"
-              >
+              <div class="api-power__code">
                 <code>GET /api/v1/candidates</code>
                 <code>Authorization: Bearer ...</code>
               </div>
@@ -2523,6 +2660,7 @@
                          width="47"
                          height="47"
                          alt=""
+                         loading="lazy"
                     >
                   </span>
               <div class="api-power__card-text">
@@ -2542,6 +2680,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Синхронизация данных</h3>
@@ -2559,6 +2698,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Готовые коннекторы</h3>
@@ -2576,6 +2716,7 @@
                          width="24"
                          height="24"
                          alt=""
+                         loading="lazy"
                     >
                   </span>
               <h3 class="api-power__card-title">Передавайте заявки из интранета</h3>
@@ -2593,6 +2734,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Отправляйте финалистов в HR-систему</h3>
@@ -2610,6 +2752,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Webhooks для событий</h3>
@@ -2627,6 +2770,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Разрабатывайте индивидуальные отчеты</h3>
@@ -2644,6 +2788,7 @@
                            width="24"
                            height="24"
                            alt=""
+                           loading="lazy"
                       >
                     </span>
               <h3 class="api-power__card-title">Sandbox для тестов</h3>
@@ -2658,14 +2803,38 @@
              id="security"
     >
       <div class="security">
-        <img
-          class="security__bg"
-          src="src/assets/figma/security/security-brush.svg"
-          width="1920"
-          height="1241"
-          alt=""
-          aria-hidden="true"
-        >
+
+        <div class="cases__bg">
+          <picture aria-hidden="true">
+            <source
+              media="(max-width: 1023.98px)"
+              srcset="/src/assets/figma/security/security-brush-375.svg"
+              width="375"
+              height="1956"
+            />
+            <source
+              media="(max-width: 1023.98px)"
+              srcset="/src/assets/figma/security/security-brush-768.svg"
+              width="728"
+              height="1315"
+            />
+            <source
+              media="(max-width: 1919.98px)"
+              srcset="/src/assets/figma/security/security-brush-1200.svg"
+              width="1169"
+              height="973"
+            />
+            <img
+              src="/src/assets/figma/security/security-brush.svg"
+              width="1920"
+              height="1241"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            >
+          </picture>
+
+        </div>
 
         <div class="security__inner">
           <header class="security__header">
@@ -2692,11 +2861,12 @@
               <div class="security__icon-wrap">
                 <img
                   class="security__icon"
-                  src="src/assets/figma/security/server.svg"
+                  src="/src/assets/figma/security/server.svg"
                   width="80"
                   height="80"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                 >
               </div>
 
@@ -2718,11 +2888,12 @@
               <div class="security__icon-wrap">
                 <img
                   class="security__icon"
-                  src="src/assets/figma/security/registry.svg"
+                  src="/src/assets/figma/security/registry.svg"
                   width="80"
                   height="80"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                 >
               </div>
 
@@ -2743,11 +2914,12 @@
               <div class="security__icon-wrap">
                 <img
                   class="security__icon"
-                  src="src/assets/figma/security/audit.svg"
+                  src="/src/assets/figma/security/audit.svg"
                   width="80"
                   height="80"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                 >
               </div>
 
@@ -2768,11 +2940,12 @@
               <div class="security__icon-wrap">
                 <img
                   class="security__icon"
-                  src="src/assets/figma/security/document.svg"
+                  src="/src/assets/figma/security/document.svg"
                   width="80"
                   height="80"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                 >
               </div>
 
@@ -2788,9 +2961,7 @@
             </article>
           </div>
 
-          <div class="security__badges"
-               aria-label="Сертификаты и соответствия"
-          >
+          <div class="security__badges">
             <span class="security__badge ui-animation ui-animation--fade"
                   data-progress-activate
                   data-progress-activate-start="0.2"
@@ -2820,14 +2991,17 @@
         <div class="pricing">
 
           <div class="pricing__bg">
-            <img
-              class="page__pricing-decor"
-              src="src/assets/figma/pricing/bg.svg"
-              width="1840"
-              height="1073"
-              alt=""
-              aria-hidden="true"
-            >
+            <picture aria-hidden="true">
+              <img
+                src="/src/assets/figma/pricing/bg.svg"
+                width="2063"
+                height="1821"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              >
+            </picture>
+
           </div>
 
           <div class="pricing__inner">
@@ -2863,11 +3037,12 @@
                 <div class="pricing__card-content">
                   <img
                     class="pricing__icon"
-                    src="src/assets/figma/pricing/demo.svg"
+                    src="/src/assets/figma/pricing/demo.svg"
                     width="64"
                     height="64"
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
                   >
 
                   <div class="pricing__card-head">
@@ -2897,11 +3072,12 @@
                 <div class="pricing__card-content">
                   <img
                     class="pricing__icon"
-                    src="src/assets/figma/pricing/standard.svg"
+                    src="/src/assets/figma/pricing/standard.svg"
                     width="64"
                     height="64"
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
                   >
 
                   <div class="pricing__card-head">
@@ -2938,11 +3114,12 @@
                 <div class="pricing__card-content">
                   <img
                     class="pricing__icon"
-                    src="src/assets/figma/pricing/pro.svg"
+                    src="/src/assets/figma/pricing/pro.svg"
                     width="64"
                     height="64"
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
                   >
 
                   <div class="pricing__card-head">
@@ -2983,14 +3160,19 @@
     >
       <div class="container">
         <div class="demo-request">
-          <img
-            class="demo-request__bg"
-            src="src/assets/figma/demo-request/bg.svg"
-            width="1957"
-            height="1650"
-            alt=""
-            aria-hidden="true"
-          >
+
+          <div class="demo-request__bg">
+            <img
+              class="demo-request__bg"
+              src="/src/assets/figma/demo-request/bg.svg"
+              width="2063"
+              height="1821"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            >
+          </div>
+
 
           <div class="demo-request__content">
             <h2 class="demo-request__title ui-animation ui-animation--fade-up"
@@ -3019,6 +3201,7 @@
                 type="email"
                 name="email"
                 aria-describedby="demo-request-email-error"
+                autocomplete="email"
                 data-email-input
                 placeholder="Ваша эл. почта"
                 required
@@ -3075,15 +3258,17 @@
 
       <div class="container">
         <div class="journal">
-
-          <img
-            class="journal__bg"
-            src="src/assets/figma/journal/bg.svg"
-            width="1973"
-            height="1664"
-            alt=""
-            aria-hidden="true"
-          >
+          <div class="journal__bg">
+            <img
+              class="journal__bg"
+              src="/src/assets/figma/journal/bg.svg"
+              width="2079"
+              height="1835"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            >
+          </div>
 
           <div class="journal__inner">
 
@@ -3139,238 +3324,11 @@
                 <div class="journal__image-wrap">
                   <img
                     class="journal__image"
-                    src="src/assets/figma/journal/article-1.webp"
+                    src="/src/assets/figma/journal/article-1.webp"
                     width="300"
                     height="252"
                     alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
-                    <p class="journal__card-desc">Опыт крупных компаний</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-2.webp"
-                    width="300"
-                    height="252"
-                    alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
-                    <p class="journal__card-desc">Опыт крупных компаний</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-3.webp"
-                    width="300"
-                    height="252"
-                    alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
-                    <p class="journal__card-desc">Пошаговое руководство</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-4.webp"
-                    width="300"
-                    height="252"
-                    alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">IT-рекрутеру нужны широкие знания</h3>
-                    <p class="journal__card-desc">Разговор с экспертом</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-5.webp"
-                    width="300"
-                    height="252"
-                    alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
-                    <p class="journal__card-desc">Опыт крупных компаний</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-6.webp"
-                    width="300"
-                    height="252"
-                    alt=""
-                  >
-                </div>
-
-                <div class="journal__card-body">
-                  <span class="journal__tag">Кейсы</span>
-
-                  <div class="journal__card-text">
-                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
-                    <p class="journal__card-desc">Опыт крупных компаний</p>
-                  </div>
-
-                  <a class="journal__read-link"
-                     href="#"
-                  >
-                    <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
-                    >
-                  </a>
-                </div>
-              </article>
-
-              <article class="journal__card ui-animation ui-animation--fade-up"
-                       data-progress-activate
-                       data-progress-activate-start="0.2"
-              >
-                <div class="journal__image-wrap">
-                  <img
-                    class="journal__image"
-                    src="src/assets/figma/journal/article-7.webp"
-                    width="300"
-                    height="252"
-                    alt=""
+                    loading="lazy"
                   >
                 </div>
 
@@ -3414,10 +3372,11 @@
                 <div class="journal__image-wrap">
                   <img
                     class="journal__image"
-                    src="src/assets/figma/journal/article-8.webp"
+                    src="/src/assets/figma/journal/article-2.webp"
                     width="300"
                     height="252"
                     alt=""
+                    loading="lazy"
                   >
                 </div>
 
@@ -3433,14 +3392,311 @@
                      href="#"
                   >
                     <span>Читать</span>
-                    <img
-                      class="journal__read-icon"
-                      src="src/assets/figma/journal/arrow-read.svg"
-                      width="12"
-                      height="12"
-                      alt=""
-                      aria-hidden="true"
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
                     >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-3.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Пошаговое руководство</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-4.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">IT-рекрутеру нужны широкие знания</h3>
+                    <p class="journal__card-desc">Разговор с экспертом</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-5.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-6.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-7.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="journal__card ui-animation ui-animation--fade-up"
+                       data-progress-activate
+                       data-progress-activate-start="0.2"
+              >
+                <div class="journal__image-wrap">
+                  <img
+                    class="journal__image"
+                    src="/src/assets/figma/journal/article-8.webp"
+                    width="300"
+                    height="252"
+                    alt=""
+                    loading="lazy"
+                  >
+                </div>
+
+                <div class="journal__card-body">
+                  <span class="journal__tag">Кейсы</span>
+
+                  <div class="journal__card-text">
+                    <h3 class="journal__card-title">Как вовлечь заказчиков в автоматизацию</h3>
+                    <p class="journal__card-desc">Опыт крупных компаний</p>
+                  </div>
+
+                  <a class="journal__read-link"
+                     href="#"
+                  >
+                    <span>Читать</span>
+                    <svg width="12"
+                         height="12"
+                         viewBox="0 0 12 12"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2.5 6H9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                      <path d="M6 2.5L9.5 6L6 9.5"
+                            stroke="black"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
               </article>
@@ -3468,6 +3724,7 @@
                   type="email"
                   name="email"
                   aria-describedby="journal-email-error"
+                  autocomplete="email"
                   data-email-input
                   placeholder="Ваша эл. почта"
                   required
@@ -3510,11 +3767,12 @@
               >
                 <img
                   class="footer__logo-mark"
-                  src="src/assets/figma/footer/logo-mark.svg"
+                  src="/src/assets/figma/footer/logo-mark.svg"
                   width="69"
                   height="69"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                 >
 
                 <span class="footer__logo-text">

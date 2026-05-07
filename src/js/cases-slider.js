@@ -13,8 +13,8 @@ export function initCasesSlider() {
 
     new Swiper(slider, {
       modules: [Navigation, Pagination],
-      slidesPerView: 2,
-      spaceBetween: 24,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
       loop: true,
       speed: 500,
       navigation: {
@@ -27,6 +27,13 @@ export function initCasesSlider() {
         bulletActiveClass: 'cases__bullet--active',
         clickable: true,
       },
+      breakpoints: {
+        // when window width is >= 320px
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        }
+      }
     });
   });
 }

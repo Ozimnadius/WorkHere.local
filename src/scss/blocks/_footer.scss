@@ -16,6 +16,10 @@
     @include xlg-block {
       padding-block: 40px;
     }
+    @include sm-block {
+      border-radius: 24px;
+      padding: 20px;
+    }
   }
 
   &__inner {
@@ -27,6 +31,12 @@
     @include xlg-block {
       padding-inline: 40px;
       gap: 40px;
+    }
+    @include sm-block {
+      padding: 0;
+    }
+    @include xs-block{
+        gap: 20px;
     }
   }
 
@@ -40,6 +50,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       justify-content: initial;
+    }
+    @include sm-block {
+      grid-template-columns: 100%;
+      gap: 20px;
     }
   }
 
@@ -84,6 +98,9 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
+    @include sm-block {
+      grid-template-columns: 100%;
+    }
   }
 
   &__email,
@@ -115,6 +132,13 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
     }
+    @include sm-block {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @include xs-block {
+      grid-template-columns: 100%;
+    }
   }
 
   &__column {
@@ -123,8 +147,8 @@
     align-items: flex-start;
     gap: 16px;
     min-width: 0;
-    @include xlg-block{
-        gap: 12px;
+    @include xlg-block {
+      gap: 12px;
     }
   }
 
@@ -163,8 +187,8 @@
       color: var(--color-blue-hover);
     }
 
-    @include xlg-block{
-        padding-block: 10px;
+    @include xlg-block {
+      padding-block: 10px;
     }
   }
 
@@ -178,7 +202,10 @@
     font-weight: 400;
     line-height: 24px;
     color: #000;
-    white-space: nowrap;
+    @include xs-block {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   &__copyright {
@@ -205,6 +232,12 @@
     line-height: 24px;
     color: #000;
     text-align: center;
+    @include sm-block {
+      padding: 0;
+    }
+    @include xs-block{
+      font-size: 14px;
+    }
 
     span {
       color: #407bff;

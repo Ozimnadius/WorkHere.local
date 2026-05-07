@@ -62,6 +62,16 @@
     @include xlg-block {
       transform: translate(-50%, calc(-50% + 180px * var(--progress, 0)));
     }
+    @include md-block {
+      font-size: calc(40px - 8px * var(--progress, 0));
+      transform: translate(-50%, calc(-50% + 150px * var(--progress, 0)));
+    }
+    @include xs-block {
+      transform: translate(-50%, calc(-50% + 120px * var(--progress, 0)));
+      height: calc(100vh - (100vh - 50px) * var(--progress, 0));
+      width: calc(105.2083vw - (105.2083vw - 188px) * var(--progress, 0));
+      font-size: calc(24px - 10px * var(--progress, 0));
+    }
 
     &::before {
       content: attr(data-content);
@@ -69,6 +79,10 @@
       transform: scale(calc(4.54 - var(--progress, 0) * 3.10));
       transform-origin: center;
       will-change: transform;
+
+      @include md-block {
+        transform: none;
+      }
     }
   }
 
@@ -86,7 +100,17 @@
     @include xlg-block {
       padding-top: 170px;
       padding-inline: 40px;
+      margin-inline: 40px;
       padding-bottom: 80px;
+    }
+    @include md-block {
+      padding-top: 150px;
+      margin-inline: 20px;
+    }
+    @include xs-block {
+      padding: 20px;
+      padding-top: 100px;
+      border-radius: 20px;
     }
   }
 
@@ -97,6 +121,12 @@
     font-weight: 700;
     line-height: 1;
     text-align: center;
+    @include md-block {
+      font-size: 44px;
+    }
+    @include xs-block {
+      font-size: 24px;
+    }
   }
 
   &__lead {
@@ -105,6 +135,11 @@
     font-size: 24px;
     line-height: 1.42;
     text-align: center;
+    text-wrap: balance;
+    @include md-block {
+      font-size: 16px;
+      margin-top: 20px;
+    }
   }
 
   &__metric {
@@ -114,10 +149,21 @@
     gap: 22px;
     margin-top: 26px;
     margin-bottom: 26px;
+    @include xs-block {
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 4px;
+    }
   }
 
   &__metric-value {
     position: relative;
+
+    svg {
+      @include xs-block {
+        max-width: 130px;
+      }
+    }
 
     span {
       position: absolute;
@@ -133,6 +179,9 @@
       font-style: italic;
       font-weight: 700;
       letter-spacing: -2.418px;
+      @include xs-block {
+        font-size: 40px;
+      }
     }
   }
 
@@ -141,6 +190,13 @@
     font-size: 23px;
     line-height: 1.12;
     text-transform: uppercase;
+    @include xs-block {
+      text-align: center;
+      font-size: 16px;
+      br {
+        display: none;
+      }
+    }
   }
 
   &__tabs {
@@ -154,18 +210,36 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 2px;
+    @include xs-block {
+      gap: 20px;
+      border-bottom: none;
+      padding-inline: 20px;
+      margin-inline: -20px;
+      width: calc(100% + 40px);
+    }
+
 
     &::-webkit-scrollbar {
       height: 5px;
+      @include xs-block {
+        height: initial;
+      }
     }
 
     &::-webkit-scrollbar-track {
       background: transparent;
+      @include xs-block {
+        background: initial;
+      }
     }
 
     &::-webkit-scrollbar-thumb {
       background: #a5a5a5; /* цвет плашки */
       border-radius: 100vmax; /* закругления плашки */
+      @include xs-block {
+        background: initial;
+        border-radius: initial;
+      }
     }
   }
 
@@ -183,6 +257,9 @@
     white-space: nowrap;
     cursor: pointer;
     transition: color 0.2s ease;
+    @include xs-block {
+      font-size: 14px;
+    }
 
     &.active,
     &[aria-selected='true'] {
@@ -224,6 +301,12 @@
     transform: translateY(18px);
     transition: opacity 0.28s ease,
     transform 0.28s ease;
+    @include sm-block {
+      margin-top: 40px;
+    }
+    @include xs-block{
+      margin-top: 0;
+    }
 
     &.active {
       position: static;
