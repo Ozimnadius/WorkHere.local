@@ -140,7 +140,7 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-#OpenServer
+#Project
 .osp
 .idea
 .claude
