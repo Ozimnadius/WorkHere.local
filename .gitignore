@@ -149,5 +149,4 @@ node_modules
 PROJECT_RULES.md
 .codex-vite.err.log
 .codex-vite.log
-
 # End of https://www.toptal.com/developers/gitignore/api/node
