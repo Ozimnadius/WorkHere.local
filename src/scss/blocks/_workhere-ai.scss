@@ -7,8 +7,8 @@
   gap: 50px;
   color: #1d83d4;
   text-align: center;
-  @include xs-block{
-      gap: 20px;
+  @include xs-block {
+    gap: 20px;
   }
 
   &__title {
@@ -37,8 +37,12 @@
 
   &__media-stage {
     width: 100%;
-    height: 420vh;
-    margin-top: -50px;
+//    height: 420vh;
+    height: 200vh;
+    @include xlg-block{
+      margin-top: -50px;
+    }
+
   }
 
   &__media-sticky {
@@ -54,7 +58,7 @@
   &__media {
     position: relative;
     width: 100%;
-    max-width: 75vw;
+    max-width: 1160px;
     aspect-ratio: 1168/857;
     --card-current-x: 0%;
     --card-current-y: 0%;
@@ -76,10 +80,13 @@
     overflow: hidden;
 
     box-shadow: 0 70px 80px -48px #4DADDA;
+    @include xlg-block{
+      max-width: 70vw;
+    }
     @include sm-block {
       max-width: 85vw;
     }
-    @include xs-block{
+    @include xs-block {
       max-width: 100%;
     }
 
@@ -143,7 +150,7 @@
     color: #416CA9;
     font-size: 30px;
     line-height: 1.42; /* 42.6px */
-    @include xs-block{
+    @include xs-block {
       font-size: 16px;
     }
   }

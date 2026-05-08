@@ -2,7 +2,7 @@ import './scss/main.scss';
 
 import {initAiStageWhirl} from './js/ai-stage-whirl.js';
 import {initCasesSlider} from './js/cases-slider.js';
-import {initEmailFormsValidation} from './js/email-forms-validation.js';
+import {initFormsValidation} from './js/forms-validation.js';
 import {initFeatureSectionTabs} from './js/feature-section-tabs.js';
 import {initMascotAnimation} from './js/mascot-animation.js';
 import {initMobileMenu} from './js/mobile-menu.js';
@@ -13,7 +13,7 @@ import {initWorkhereAiAnimation} from './js/workhere-ai-animation.js';
 
 initAiStageWhirl();
 initCasesSlider();
-initEmailFormsValidation();
+initFormsValidation();
 initFeatureSectionTabs();
 initMascotAnimation();
 initMobileMenu();
