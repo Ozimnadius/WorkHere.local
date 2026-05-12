@@ -35,8 +35,8 @@
     @include sm-block {
       padding: 0;
     }
-    @include xs-block{
-        gap: 20px;
+    @include xs-block {
+      gap: 20px;
     }
   }
 
@@ -164,6 +164,16 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    &--socials{
+      flex-direction: row;
+      gap: 10px;
+
+      svg{
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   &__item {
@@ -232,7 +242,7 @@
     @include sm-block {
       padding: 0;
     }
-    @include xs-block{
+    @include xs-block {
       font-size: 14px;
     }
 
