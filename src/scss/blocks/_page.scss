@@ -9,9 +9,28 @@
     top: 40px;
     left: 0;
     right: 0;
+    @include tr;
 
     @include xlg-block() {
       top: 20px;
+    }
+
+    .container,.header{
+      @include tr;
+    }
+
+    &.active{
+      top: 0;
+
+      .container{
+        margin-inline: 0;
+      }
+
+      .header{
+        border-radius: 0;
+      }
+
+
     }
   }
 
@@ -120,7 +139,7 @@
     @include sm-block {
       margin-top: 40px;
     }
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
   }
@@ -131,21 +150,21 @@
     @include md-block {
       margin-top: 40px;
     }
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
   }
 
   &__premier {
     margin-top: 80px;
-    @include xs-block{
+    @include xs-block {
       margin-top: 40px;
     }
   }
 
   &__api-power {
     margin-top: 40px;
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
   }
@@ -154,14 +173,14 @@
     @include sm-block {
       margin-top: 30px;
     }
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
   }
 
   &__pricing {
     margin-top: 40px;
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
   }

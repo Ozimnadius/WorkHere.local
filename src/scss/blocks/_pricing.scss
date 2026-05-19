@@ -55,8 +55,8 @@
     gap: 20px;
     width: 100%;
     text-align: center;
-    @include xs-block{
-        gap: 10px;
+    @include xs-block {
+      gap: 10px;
     }
   }
 
@@ -72,7 +72,7 @@
     color: #101828;
     background-color: #f1effe;
     border-radius: 10px;
-    @include xs-block{
+    @include xs-block {
       font-size: 24px;
     }
   }
@@ -91,7 +91,7 @@
     @include md-block {
       font-size: 44px;
     }
-    @include xs-block{
+    @include xs-block {
       font-size: 24px;
     }
   }
@@ -108,7 +108,7 @@
     letter-spacing: 0.103px;
     color: #101828;
     text-align: center;
-    @include xs-block{
+    @include xs-block {
       font-size: 16px;
     }
   }
@@ -134,7 +134,7 @@
       width: calc(100% + 40px);
       padding-inline: 20px;
     }
-    @include xs-block{
+    @include xs-block {
       margin-inline: -10px;
       width: calc(100% + 20px);
       padding-inline: 10px;
@@ -161,7 +161,7 @@
     @include sm-block {
       min-width: 386px;
     }
-    @include xs-block{
+    @include xs-block {
       min-width: 250px;
     }
 
@@ -211,6 +211,9 @@
     line-height: 1.2;
     letter-spacing: 0.123px;
     color: #333;
+    @include xs-block{
+      font-size: 20px;
+    }
   }
 
   &__card-subtitle {
@@ -250,7 +253,7 @@
       left: 0;
       width: 24px;
       height: 24px;
-//      background-image: url("check-circle.svg");
+      //      background-image: url("check-circle.svg");
       background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cmVjdCB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIGZpbGw9J3doaXRlJy8+PHBhdGggZD0nTTEyIDIuMjVDMTAuMDcxNiAyLjI1IDguMTg2NTcgMi44MjE4MyA2LjU4MzE5IDMuODkzMTdDNC45Nzk4MiA0Ljk2NDUyIDMuNzMwMTMgNi40ODcyNiAyLjk5MjE4IDguMjY4ODRDMi4yNTQyMiAxMC4wNTA0IDIuMDYxMTQgMTIuMDEwOCAyLjQzNzM1IDEzLjkwMjFDMi44MTM1NSAxNS43OTM0IDMuNzQyMTUgMTcuNTMwNyA1LjEwNTcxIDE4Ljg5NDNDNi40NjkyOCAyMC4yNTc5IDguMjA2NTYgMjEuMTg2NSAxMC4wOTc5IDIxLjU2MjdDMTEuOTg5MiAyMS45Mzg5IDEzLjk0OTYgMjEuNzQ1OCAxNS43MzEyIDIxLjAwNzhDMTcuNTEyNyAyMC4yNjk5IDE5LjAzNTUgMTkuMDIwMiAyMC4xMDY4IDE3LjQxNjhDMjEuMTc4MiAxNS44MTM0IDIxLjc1IDEzLjkyODQgMjEuNzUgMTJDMjEuNzQ1IDkuNDE1NjYgMjAuNzE2MiA2LjkzODU5IDE4Ljg4ODggNS4xMTExOEMxNy4wNjE0IDMuMjgzNzggMTQuNTg0MyAyLjI1NDk2IDEyIDIuMjVWMi4yNVpNMTYuNjQwNiAxMC4yOTM4TDExLjE0NjkgMTUuNTQzOEMxMS4wMDQ5IDE1LjY3NzQgMTAuODE2OSAxNS43NTEyIDEwLjYyMTkgMTUuNzVDMTAuNTI2NiAxNS43NTE0IDEwLjQzMTkgMTUuNzMzOCAxMC4zNDM0IDE1LjY5ODRDMTAuMjU0OSAxNS42NjMgMTAuMTc0MyAxNS42MTA1IDEwLjEwNjMgMTUuNTQzOEw3LjM1OTM4IDEyLjkxODhDNy4yODMxOSAxMi44NTIzIDcuMjIxMjMgMTIuNzcxMSA3LjE3NzIyIDEyLjY4MDFDNy4xMzMyMSAxMi41ODkgNy4xMDgwNiAxMi40OSA3LjEwMzI4IDEyLjM4OUM3LjA5ODUgMTIuMjg4MSA3LjExNDE5IDEyLjE4NzEgNy4xNDk0MSAxMi4wOTI0QzcuMTg0NjMgMTEuOTk3NiA3LjIzODY1IDExLjkxMDkgNy4zMDgyMiAxMS44Mzc1QzcuMzc3OCAxMS43NjQyIDcuNDYxNDkgMTEuNzA1NiA3LjU1NDI2IDExLjY2NTRDNy42NDcwMyAxMS42MjUyIDcuNzQ2OTggMTEuNjA0MiA3Ljg0ODA5IDExLjYwMzZDNy45NDkxOSAxMS42MDMgOC4wNDkzOCAxMS42MjI5IDguMTQyNjEgMTEuNjYyQzguMjM1ODUgMTEuNzAxMSA4LjMyMDIxIDExLjc1ODcgOC4zOTA2MyAxMS44MzEyTDEwLjYyMTkgMTMuOTU5NEwxNS42MDk0IDkuMjA2MjVDMTUuNzU1MiA5LjA3OTAyIDE1Ljk0NDYgOS4wMTMwOSAxNi4xMzc5IDkuMDIyMjNDMTYuMzMxMiA5LjAzMTM4IDE2LjUxMzUgOS4xMTQ5IDE2LjY0NjcgOS4yNTUzM0MxNi43Nzk4IDkuMzk1NzYgMTYuODUzNiA5LjU4MjIyIDE2Ljg1MjQgOS43NzU3NUMxNi44NTEzIDkuOTY5MjggMTYuNzc1NCAxMC4xNTQ5IDE2LjY0MDYgMTAuMjkzOFonIGZpbGw9JyMzRjc3RjUnLz48L3N2Zz4=");
       background-repeat: no-repeat;
       background-position: center;
@@ -281,7 +284,7 @@
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: 0.13px;
-    @include xs-block{
+    @include xs-block {
       font-size: 24px;
     }
   }
@@ -312,7 +315,7 @@
     border-radius: 8px;
     transition: background-color 0.2s ease,
     color 0.2s ease;
-    @include xs-block{
+    @include xs-block {
       font-size: 14px;
     }
 

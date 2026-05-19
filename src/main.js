@@ -1,5 +1,6 @@
 import './scss/main.scss';
 
+import {initHeaderScroll} from './js/header-scroll.js';
 import {initAiStageWhirl} from './js/ai-stage-whirl.js';
 import {initCasesSlider} from './js/cases-slider.js';
 import {initFormsValidation} from './js/forms-validation.js';
@@ -11,6 +12,7 @@ import {initScrollProgress} from './js/scroll-progress.js';
 import {initSmoothScroll} from './js/smooth-scroll.js';
 import {initWorkhereAiAnimation} from './js/workhere-ai-animation.js';
 
+initHeaderScroll();
 initAiStageWhirl();
 initCasesSlider();
 initFormsValidation();
