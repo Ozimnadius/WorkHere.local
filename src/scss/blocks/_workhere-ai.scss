@@ -39,6 +39,9 @@
     width: 100%;
     height: 200vh;
     position: relative;
+    @include xs-block {
+      height: auto;
+    }
   }
 
   &__media-sticky {
@@ -52,6 +55,10 @@
     @include xlg-block {
       top: 50px;
       min-height: initial;
+    }
+    @include xs-block {
+      position: static;
+      top: auto;
     }
   }
 

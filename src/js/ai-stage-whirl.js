@@ -6,6 +6,10 @@ const SCENE_END_Y = 407;
 const SCENE_SCALE = 1.08;
 const SCENE_ROTATION_SPEED = 80;
 const LAPTOP_MEDIA_QUERY = '(max-width: 1799.98px)';
+const AUTOPLAY_MEDIA_QUERY = '(max-width: 743.98px)';
+const REDUCED_MOTION_MEDIA_QUERY = '(prefers-reduced-motion: reduce)';
+const AUTOPLAY_VISIBILITY_THRESHOLD = 0.15;
+const AUTOPLAY_STATIC_TIME = 4;
 const ORBIT_X_SCALE = 0.9;
 const ORBIT_DEPTH_SCALE = 0.5;
 const LOGO_PULSE_DURATION = 11.9666666666667;
@@ -194,10 +198,9 @@ const setAiStyles = (element, sceneRotateY, sceneY) => {
   element.style.setProperty('--ai-facing-rotate-y', `${(-sceneRotateY).toFixed(4)}deg`);
 };
 
-const setAiPetalsStyles = (element, time) => {
-  const logoPulseTime = Math.min(time, LOGO_PULSE_DURATION);
-  const rotate = lerp(0, -360, logoPulseTime / LOGO_PULSE_DURATION);
-  const scale = getTimelineValue(logoPulseTime, AI_PETALS_SCALE_KEYFRAMES);
+const setAiPetalsStyles = (element, petalsTime) => {
+  const rotate = lerp(0, -360, petalsTime / LOGO_PULSE_DURATION);
+  const scale = getTimelineValue(petalsTime, AI_PETALS_SCALE_KEYFRAMES);
 
   element.setAttribute(
     'transform',
@@ -236,12 +239,17 @@ export function initAiStageWhirl() {
     return;
   }
 
-  let animationFrame = null;
   const laptopMedia = window.matchMedia(LAPTOP_MEDIA_QUERY);
+  const autoplayMedia = window.matchMedia(AUTOPLAY_MEDIA_QUERY);
+  const reducedMotionMedia = window.matchMedia(REDUCED_MOTION_MEDIA_QUERY);
 
-  const render = () => {
-    const progress = readProgress(stage);
-    const time = progress * SCENE_DURATION;
+  let animationFrame = null;
+  let autoplayObserver = null;
+  let autoplayElapsed = 0;
+  let autoplayResumedAt = 0;
+  let isAutoplayRunning = false;
+
+  const renderFrame = (time, petalsTime) => {
     const rotateY = SCENE_ROTATION_SPEED * time;
     const sceneY = getSceneY(time);
     const isLaptop = laptopMedia.matches;
@@ -255,21 +263,126 @@ export function initAiStageWhirl() {
     setAiStyles(ai, rotateY, sceneY);
 
     if (aiPetals) {
-      setAiPetalsStyles(aiPetals, time);
+      setAiPetalsStyles(aiPetals, petalsTime);
     }
 
     cards.forEach(({element, config}) => {
       setCardStyles(element, config, time, rotateY, isLaptop);
     });
-
-    animationFrame = window.requestAnimationFrame(render);
   };
 
-  render();
-
-  window.addEventListener('pagehide', () => {
+  const stopLoop = () => {
     if (animationFrame) {
       window.cancelAnimationFrame(animationFrame);
+      animationFrame = null;
     }
+  };
+
+  const startLoop = (renderTick) => {
+    stopLoop();
+
+    const loop = () => {
+      renderTick();
+      animationFrame = window.requestAnimationFrame(loop);
+    };
+
+    loop();
+  };
+
+  const renderScrollFrame = () => {
+    const time = readProgress(stage) * SCENE_DURATION;
+
+    renderFrame(time, Math.min(time, LOGO_PULSE_DURATION));
+  };
+
+  const getAutoplayElapsed = () => {
+    if (!isAutoplayRunning) {
+      return autoplayElapsed;
+    }
+
+    return autoplayElapsed + (window.performance.now() - autoplayResumedAt) / 1000;
+  };
+
+  const renderAutoplayFrame = () => {
+    const elapsed = getAutoplayElapsed();
+
+    renderFrame(elapsed % SCENE_DURATION, elapsed % LOGO_PULSE_DURATION);
+  };
+
+  const resumeAutoplay = () => {
+    if (isAutoplayRunning) {
+      return;
+    }
+
+    isAutoplayRunning = true;
+    autoplayResumedAt = window.performance.now();
+    startLoop(renderAutoplayFrame);
+  };
+
+  const pauseAutoplay = () => {
+    if (!isAutoplayRunning) {
+      return;
+    }
+
+    autoplayElapsed = getAutoplayElapsed();
+    isAutoplayRunning = false;
+    stopLoop();
+  };
+
+  const connectAutoplay = () => {
+    if (autoplayObserver) {
+      return;
+    }
+
+    autoplayObserver = new window.IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          resumeAutoplay();
+          return;
+        }
+
+        pauseAutoplay();
+      });
+    }, {threshold: AUTOPLAY_VISIBILITY_THRESHOLD});
+
+    autoplayObserver.observe(stage);
+  };
+
+  const disconnectAutoplay = () => {
+    if (autoplayObserver) {
+      autoplayObserver.disconnect();
+      autoplayObserver = null;
+    }
+
+    isAutoplayRunning = false;
+  };
+
+  const applyMode = () => {
+    stopLoop();
+
+    if (!autoplayMedia.matches) {
+      disconnectAutoplay();
+      startLoop(renderScrollFrame);
+      return;
+    }
+
+    if (reducedMotionMedia.matches) {
+      disconnectAutoplay();
+      renderFrame(AUTOPLAY_STATIC_TIME, AUTOPLAY_STATIC_TIME);
+      return;
+    }
+
+    renderAutoplayFrame();
+    connectAutoplay();
+  };
+
+  applyMode();
+
+  autoplayMedia.addEventListener('change', applyMode);
+  reducedMotionMedia.addEventListener('change', applyMode);
+
+  window.addEventListener('pagehide', () => {
+    stopLoop();
+    disconnectAutoplay();
   });
 }

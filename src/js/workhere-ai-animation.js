@@ -6,7 +6,11 @@ const UI_WIDTH = 1232;
 const UI_HEIGHT = 959;
 const SCREEN_START = 7;
 const SCREEN_END = 10.8333333333333;
+const SCENE_DURATION = SCREEN_END - SCREEN_START;
 const CURSOR_HIT_OFFSET = [-1.2, 4.9];
+const AUTOPLAY_MEDIA_QUERY = '(max-width: 743.98px)';
+const REDUCED_MOTION_MEDIA_QUERY = '(prefers-reduced-motion: reduce)';
+const AUTOPLAY_ROOT_MARGIN = '-25% 0px -25% 0px';
 
 const cursorPositionKeyframes = [
   {time: 7.03333333333333, value: [1635.7894744873, 1256.84210205078]},
@@ -165,21 +169,129 @@ const initScene = (stage) => {
     return;
   }
 
+  const autoplayMedia = window.matchMedia(AUTOPLAY_MEDIA_QUERY);
+  const reducedMotionMedia = window.matchMedia(REDUCED_MOTION_MEDIA_QUERY);
+
+  let animationFrame = null;
+  let autoplayObserver = null;
+  let autoplayStartedAt = 0;
+  let isAutoplayRunning = false;
   let previousProgress = -1;
 
-  const tick = () => {
-    const progress = getProgress(stage);
-
-    if (Math.abs(progress - previousProgress) > 0.0001) {
-      applySceneProgress(media, progress);
-      previousProgress = progress;
+  const renderProgress = (progress) => {
+    if (Math.abs(progress - previousProgress) <= 0.0001) {
+      return;
     }
 
-    requestAnimationFrame(tick);
+    applySceneProgress(media, progress);
+    previousProgress = progress;
   };
 
-  applySceneProgress(media, getProgress(stage));
-  requestAnimationFrame(tick);
+  const stopLoop = () => {
+    if (animationFrame) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+  };
+
+  const startLoop = (renderTick) => {
+    stopLoop();
+
+    const loop = () => {
+      renderTick();
+      animationFrame = window.requestAnimationFrame(loop);
+    };
+
+    loop();
+  };
+
+  const renderScrollFrame = () => {
+    renderProgress(getProgress(stage));
+  };
+
+  const renderAutoplayFrame = () => {
+    const elapsed = (window.performance.now() - autoplayStartedAt) / 1000;
+    const progress = clamp(elapsed / SCENE_DURATION);
+
+    renderProgress(progress);
+
+    if (progress >= 1) {
+      stopLoop();
+    }
+  };
+
+  const startAutoplay = () => {
+    if (isAutoplayRunning) {
+      return;
+    }
+
+    isAutoplayRunning = true;
+    autoplayStartedAt = window.performance.now();
+    startLoop(renderAutoplayFrame);
+  };
+
+  const resetAutoplay = () => {
+    isAutoplayRunning = false;
+    stopLoop();
+    renderProgress(0);
+  };
+
+  const connectAutoplay = () => {
+    if (autoplayObserver) {
+      return;
+    }
+
+    autoplayObserver = new window.IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAutoplay();
+          return;
+        }
+
+        resetAutoplay();
+      });
+    }, {rootMargin: AUTOPLAY_ROOT_MARGIN});
+
+    autoplayObserver.observe(stage);
+  };
+
+  const disconnectAutoplay = () => {
+    if (autoplayObserver) {
+      autoplayObserver.disconnect();
+      autoplayObserver = null;
+    }
+
+    isAutoplayRunning = false;
+  };
+
+  const applyMode = () => {
+    stopLoop();
+
+    if (!autoplayMedia.matches) {
+      disconnectAutoplay();
+      startLoop(renderScrollFrame);
+      return;
+    }
+
+    if (reducedMotionMedia.matches) {
+      disconnectAutoplay();
+      renderProgress(1);
+      return;
+    }
+
+    renderProgress(0);
+    connectAutoplay();
+  };
+
+  applyMode();
+
+  autoplayMedia.addEventListener('change', applyMode);
+  reducedMotionMedia.addEventListener('change', applyMode);
+
+  window.addEventListener('pagehide', () => {
+    stopLoop();
+    disconnectAutoplay();
+  });
 };
 
 export const initWorkhereAiAnimation = () => {
