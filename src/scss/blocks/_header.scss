@@ -45,6 +45,23 @@
       display: none;
     }
 
+    @include xs-block{
+      display: flex;
+      padding: 6px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 7px;
+      background: linear-gradient(107deg, #339F61 -24.89%, #1890FF 116.72%);
+
+      color: var(--color-white);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
     @include hover {
       color: var(--color-blue);
     }
@@ -56,7 +73,7 @@
     }
   }
 
-  &__burger-btn{
+  &__burger-btn {
     display: none;
     width: 24px;
     height: 24px;
@@ -65,7 +82,7 @@
     background: transparent;
     cursor: pointer;
 
-    @include md-block{
+    @include md-block {
       display: flex;
       align-items: center;
       justify-content: center;

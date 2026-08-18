@@ -25,7 +25,7 @@
       flex-direction: column;
       align-items: center;
     }
-    @include xs-block{
+    @include xs-block {
       max-width: 100%;
 
     }
@@ -43,8 +43,9 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 14px;
-    @include xs-block{
-      font-size: 14px;
+    @include xs-block {
+      font-size: 22px;
+      line-height: 1.2;
     }
   }
 
@@ -59,7 +60,7 @@
     @include xlg-block {
       font-size: 65px;
     }
-    @include xs-block{
+    @include xs-block {
       font-size: 34px;
     }
   }
@@ -74,9 +75,9 @@
     color: #000;
     font-family: var(--font-display);
     font-size: 24px;
-    line-height: 32.5px;
-    @include xs-block{
-      font-size: 14px;
+    line-height: 1.42;
+    @include xs-block {
+      font-size: 18px;
     }
 
     span {
@@ -93,17 +94,25 @@
     width: max-content;
     gap: 15.45px;
     margin-top: 30px;
-    @include xs-block{
+    @include xs-block {
       width: 100%;
-        flex-direction: column;
+      flex-direction: column;
     }
   }
 
   &__action {
 
-    *{
-      @include xs-block{
+    * {
+      @include xs-block {
         width: 100%;
+      }
+    }
+
+    .button{
+      &--lg{
+        @include xs-block{
+          font-size: 20px;
+        }
       }
     }
 
@@ -115,19 +124,20 @@
     width: max-content;
     gap: 37px;
     margin-top: 30px;
-    @include xs-block{
+    @include xs-block {
       width: 100%;
-      display:grid;
-      grid-template-columns: repeat(3,auto);
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 34px;
     }
   }
 
   &__stat {
-    @include xs-block{
-      width: auto!important;
+    @include xs-block {
+      width: auto !important;
       text-align: left;
     }
+
     &:nth-child(1) {
       width: 80px;
     }
@@ -145,8 +155,9 @@
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 600;
-      @include xs-block{
-        font-size: 16px;
+      @include xs-block {
+        font-size: 38px;
+        color: var(--color-blue);
       }
     }
 
@@ -156,6 +167,10 @@
       font-family: var(--font-display);
       font-size: 14px;
       line-height: 20px;
+      @include xs-block{
+        font-size: 24px;
+        line-height: 1;
+      }
     }
   }
 
@@ -163,7 +178,7 @@
     position: relative;
     padding-top: 106px;
     max-width: 100%;
-    @include xs-block{
+    @include xs-block {
       padding-top: 80px;
     }
   }
