@@ -4,16 +4,29 @@
 // Название города и число вакансий берутся из разметки пина в index.html
 // (data-geography-city / data-geography-count), здесь их дублировать не нужно.
 // Ключ объекта = значение атрибута data-geography-pin у пина.
+//
+// Картинки подключаем импортом, а не строкой пути: строку Vite не обрабатывает,
+// и в собранном виде файла по такому адресу нет. Инлайн мелких аватарок
+// в base64 отключён в vite.config.js: они нужны только при открытии всплывашки,
+// а из бандла их пришлось бы качать всем и без кеширования.
+import person1 from '../assets/figma/geography/avatars/person-1.webp';
+import person2 from '../assets/figma/geography/avatars/person-2.webp';
+import person3 from '../assets/figma/geography/avatars/person-3.webp';
+import person4 from '../assets/figma/geography/avatars/person-4.webp';
+import person5 from '../assets/figma/geography/avatars/person-5.webp';
+import person6 from '../assets/figma/geography/avatars/person-6.webp';
+import person7 from '../assets/figma/geography/avatars/person-7.webp';
+import person8 from '../assets/figma/geography/avatars/person-8.webp';
 
 const AVATARS = {
-  a1: '/src/assets/figma/geography/avatars/person-1.webp',
-  a2: '/src/assets/figma/geography/avatars/person-2.webp',
-  a3: '/src/assets/figma/geography/avatars/person-3.webp',
-  a4: '/src/assets/figma/geography/avatars/person-4.webp',
-  a5: '/src/assets/figma/geography/avatars/person-5.webp',
-  a6: '/src/assets/figma/geography/avatars/person-6.webp',
-  a7: '/src/assets/figma/geography/avatars/person-7.webp',
-  a8: '/src/assets/figma/geography/avatars/person-8.webp',
+  a1: person1,
+  a2: person2,
+  a3: person3,
+  a4: person4,
+  a5: person5,
+  a6: person6,
+  a7: person7,
+  a8: person8,
 };
 
 const VACANCIES = {

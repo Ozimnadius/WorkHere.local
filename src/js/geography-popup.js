@@ -3,10 +3,12 @@ import {Navigation} from 'swiper/modules';
 
 import {VACANCIES_BY_CITY, pluralizeVacancies} from './geography-data.js';
 
-const ICON_PLUS = '/src/assets/figma/geography/icon-plus-circle.svg';
-const ICON_TAIL = '/src/assets/figma/geography/pin-tail.svg';
-const ICON_PREV = '/src/assets/figma/geography/chevron-left.svg';
-const ICON_NEXT = '/src/assets/figma/geography/chevron-right.svg';
+// Иконки импортом, а не строкой пути: строку Vite не обрабатывает, и в собранном
+// виде файла по такому адресу нет.
+import ICON_PLUS from '../assets/figma/geography/icon-plus-circle.svg';
+import ICON_TAIL from '../assets/figma/geography/pin-tail.svg';
+import ICON_PREV from '../assets/figma/geography/chevron-left.svg';
+import ICON_NEXT from '../assets/figma/geography/chevron-right.svg';
 
 // Ниже этой ширины карта тянется, поэтому привязанный к пину попап уезжал бы
 // вместе с картой — показываем модалку по центру экрана. Граница совпадает
