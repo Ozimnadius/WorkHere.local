@@ -162,6 +162,22 @@
     }
   }
 
+  &__geography {
+    margin-top: 40px;
+    padding-top: 80px;
+    padding-bottom: 90px;
+
+    @include sm-block {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @include xs-block {
+      margin-top: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
   &__api-power {
     margin-top: 40px;
     @include xs-block {

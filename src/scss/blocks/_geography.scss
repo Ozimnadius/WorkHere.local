@@ -1,0 +1,429 @@
+@use "../helpers/index" as *;
+
+.geography {
+  position: relative;
+
+  // Карта уходит в край экрана, поэтому боковые отступы держит только шапка.
+  &__header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-inline: 40px;
+
+    @include xs-block {
+      gap: 20px;
+      padding-inline: 20px;
+    }
+  }
+
+  &__title {
+    max-width: 1476px;
+    margin: 0;
+    color: #0031a1;
+    font-family: var(--font-display);
+    font-size: 76px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+
+    @include xs-block {
+      font-size: 24px;
+    }
+  }
+
+  &__lead {
+    max-width: 1165px;
+    margin: 0;
+    color: #000;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.42;
+    text-align: center;
+
+    @include sm-block {
+      max-width: 620px;
+    }
+    @include xs-block {
+      max-width: 340px;
+      font-size: 16px;
+    }
+  }
+
+  // Сцена — окно просмотра карты. Высоту ей задаёт сам холст, поэтому карта
+  // никогда не обрезается по вертикали: холст шире окна только по горизонтали,
+  // там и появляется панорама.
+  // Ниже 1400 карту перестаём сжимать: иначе расстояния между пинами схлопываются
+  // быстрее, чем плашки, и они начинают наезжать друг на друга.
+  &__stage {
+    position: relative;
+    margin-top: -57px;
+
+    @include lg-block {
+      margin-top: -75px;
+    }
+    // На мобильном холст выше окна: сверху и снизу у карты пустое море, из-за
+    // него блок разъезжался. Окно подрезаем, а недостающее догоняется протяжкой
+    // по вертикали — ничего не теряется.
+    @include xs-block {
+      height: 420px;
+      margin-top: 0;
+    }
+  }
+
+  &__viewport {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    // Выше мобильного холст ровно по окну, вертикально скроллить нечего: auto
+    // здесь ловил бы колесо мыши над картой и прокручивал её вместо страницы.
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.is-grabbing {
+      cursor: grabbing;
+    }
+
+    @include xs-block {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+    }
+  }
+
+  &__canvas {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 1920 / 1024;
+
+    @include lg-block {
+      width: 1500px;
+    }
+    // Пин здесь мельче, поэтому холст можно сузить без наложений — блок ниже,
+    // а карты в кадре больше.
+    @include sm-block {
+      width: 1200px;
+    }
+  }
+
+  &__map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  &__pins {
+    position: absolute;
+    inset: 0;
+  }
+
+  // Бокс пина равен кружку, плашка лежит абсолютом. Так кружок всегда стоит
+  // ровно на городе, в какую бы сторону ни раскрывалась плашка, и всплывашке
+  // не нужно знать про развороты — она цепляется за бокс пина.
+  &__pin {
+    position: absolute;
+    left: var(--pin-x);
+    top: var(--pin-y);
+    width: 58px;
+    height: 66px;
+    padding: 0;
+
+    // На планшете и мобильном пин уменьшается вместе с картой: иначе холст
+    // приходится держать широким, чтобы плашки не наезжали, и блок вырастает.
+    @include sm-block {
+      width: 46px;
+      height: 53px;
+    }
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    @include hover {
+      z-index: 3;
+
+      .geography__pin-badge {
+        box-shadow: 0 10px 24px rgba(64, 123, 255, 0.4);
+      }
+    }
+
+    &.is-open {
+      z-index: 4;
+    }
+  }
+
+  &__pin-marker {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: var(--pin-delay, 0s);
+  }
+
+  &__pin-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #407bff;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1;
+    transition: box-shadow 0.2s ease;
+
+    @include sm-block {
+      width: 46px;
+      height: 46px;
+      font-size: 23px;
+    }
+  }
+
+  &__pin-tail {
+    display: block;
+    width: 16px;
+    height: 11px;
+    margin-top: -1px;
+
+    @include sm-block {
+      width: 13px;
+      height: 9px;
+    }
+  }
+
+  &__pin-plate {
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    left: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px 19px 10px 24px;
+    border-radius: 0 40px 40px 0;
+
+    @include sm-block {
+      top: 3px;
+      left: 35px;
+      gap: 2px;
+      padding: 6px 15px 8px 19px;
+      border-radius: 0 32px 32px 0;
+    }
+    background: var(--color-white);
+    white-space: nowrap;
+    text-align: left;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.45s ease, opacity 0.2s ease;
+    transition-delay: calc(var(--pin-delay, 0s) + 0.25s);
+  }
+
+  // Сторону раскрытия плашки выбирает geography.js: он замеряет боксы и
+  // разворачивает только те пины, что иначе наехали бы на соседа. В разметке
+  // ничего не зашито — при смене городов раскладка пересчитается сама.
+  &__pin--plate-left {
+    .geography__pin-plate {
+      left: auto;
+      right: 44px;
+      padding: 8px 24px 10px 19px;
+      border-radius: 40px 0 0 40px;
+      text-align: right;
+      clip-path: inset(0 0 0 100%);
+
+      @include sm-block {
+        right: 35px;
+        padding: 6px 19px 8px 15px;
+        border-radius: 32px 0 0 32px;
+      }
+    }
+  }
+
+  &__pin-city {
+    color: #000;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include sm-block {
+      font-size: 13px;
+    }
+  }
+
+  &__pin-count {
+    color: #407bff;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+
+    @include sm-block {
+      font-size: 11px;
+    }
+  }
+
+  // «Грибочки после дождя»: пины вырастают из земли, следом из-под пина
+  // выезжает плашка. Разброс задержек раздаёт JS через --pin-delay.
+  &__pins.is-active {
+    .geography__pin-marker {
+      transform: scale(1);
+    }
+
+    .geography__pin-plate {
+      opacity: 1;
+      clip-path: inset(0);
+    }
+
+    // Пока попап раскрыт из пина, собственная плашка пина не нужна — её место
+    // занимает шапка попапа. В режиме модалки (<1200) плашка остаётся на карте.
+    .geography__pin.is-open .geography__pin-plate {
+      opacity: 0;
+    }
+
+    @include lg-block {
+      .geography__pin.is-open .geography__pin-plate {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Промо-ряды (маскот, плашка, кнопка). Выше 1400 лежат поверх карты, как в
+  // макете 1920. Ниже карта становится низкой, промо-блок фиксированной ширины
+  // начал бы наезжать на пины — поэтому он встаёт в поток над картой,
+  // как в макетах 768 и 375.
+  // Центрирование живёт на обёртке: сами элементы несут ui-animation,
+  // а она перезаписывает transform.
+  &__row {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+
+    @include lg-block {
+      position: static;
+    }
+
+    // top отсчитывается от .geography (ряды лежат рядом со сценой, не внутри):
+    // 217 = 220 (верх сцены) - 3, 412 = 220 + 192.
+    &--mascot {
+      z-index: 1;
+      top: 217px;
+      transform: translateX(-48px);
+
+      @include xlg-block {
+        transform: translateX(-40px);
+      }
+      @include lg-block {
+        margin-top: -30px;
+        transform: none;
+      }
+      @include xs-block {
+        margin-top: 14px;
+      }
+    }
+
+    &--features {
+      top: 412px;
+
+      @include lg-block {
+        margin-top: -85px;
+      }
+      @include xs-block {
+        margin-top: -28px;
+      }
+    }
+
+    // Кнопка живёт внутри сцены и держится на постоянном отступе под нижним
+    // пином: 71.35% — его позиция по карте, 101px — плашка пина плюс зазор.
+    &--cta {
+      z-index: 3;
+      position: absolute;
+      top: calc(71.35% + 101px);
+
+      @include sm-block {
+        top: calc(71.35% + 85px);
+      }
+    }
+  }
+
+  &__mascot {
+    width: 548px;
+    height: auto;
+
+    @include xlg-block {
+      width: 454px;
+    }
+    @include lg-block {
+      width: 420px;
+    }
+    @include xs-block {
+      width: 232px;
+    }
+  }
+
+  &__features {
+    width: 676px;
+    height: auto;
+    border-radius: 999px;
+    box-shadow: 0 18px 40px rgba(64, 108, 204, 0.55);
+
+    @include xlg-block {
+      width: 560px;
+    }
+    @include lg-block {
+      width: 668px;
+    }
+    @include xs-block {
+      width: 356px;
+      box-shadow: 0 10px 22px rgba(64, 108, 204, 0.55);
+    }
+  }
+
+  &__cta {
+    pointer-events: auto;
+  }
+
+  &__cta-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+
+    @include xs-block {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geography {
+    &__pin-marker,
+    &__pin-plate {
+      transition-duration: 0.01ms;
+      transition-delay: 0s;
+    }
+  }
+}

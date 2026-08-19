@@ -1,0 +1,455 @@
+@use "../helpers/index" as *;
+
+// Всплывашка города. Два режима:
+// --anchored (>=1200) — раскрывается из пина, бейдж попапа ложится ровно на пин;
+// --modal (<1200)     — карточка по центру секции с затемнением фона.
+.geo-popup {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  pointer-events: none;
+
+  &[hidden] {
+    display: none;
+  }
+
+  // Затемнение только в режиме модалки: при раскрытии из пина карта
+  // остаётся светлой, как на видео и в макете.
+  &__scrim {
+    position: absolute;
+    display: none;
+    inset: 0;
+    background: rgba(16, 21, 37, 0.28);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  &__panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 477px;
+    padding: 13px 0 26px 36px;
+    border-radius: 0 33px 33px 33px;
+    background: rgba(255, 255, 255, 0.2);
+    // Подложка из макета полупрозрачная, поэтому размываем то, что под ней:
+    // иначе сквозь панель читаются плашки соседних пинов.
+    backdrop-filter: blur(10px);
+    box-shadow: 11px 20px 36px rgba(0, 0, 0, 0.25);
+    pointer-events: auto;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transform-origin: 0 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  &.is-open {
+    .geo-popup__scrim {
+      opacity: 1;
+    }
+
+    .geo-popup__panel {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  // Без position: relative — маркер должен позиционироваться от панели,
+  // иначе паддинги шапки сдвигают бейдж мимо пина.
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 5px;
+    padding-right: 20px;
+  }
+
+  &__marker {
+    position: absolute;
+    left: -29px;
+    top: -4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #407bff;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__tail {
+    display: block;
+    width: 16px;
+    height: 11px;
+    margin-top: -1px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  &__city {
+    color: #000;
+    font-weight: 500;
+  }
+
+  &__count {
+    color: #407bff;
+    font-weight: 400;
+  }
+
+  &__close {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(16, 21, 37, 0.08);
+    color: #5f6775;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    @include tr;
+
+    @include hover {
+      background: rgba(16, 21, 37, 0.16);
+      color: #101525;
+    }
+  }
+
+  &__slider {
+    --offset: 36px;
+    width: calc(100% + var(--offset));
+    margin-left: calc(-1 * var(--offset));
+    padding-left: var(--offset);
+    padding-right: var(--offset);
+    overflow: hidden;
+    @include lg-block {
+      --offset: 16px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: 370px;
+    height: auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background: var(--color-white);
+  }
+
+  &__card-title {
+    margin: 0;
+    color: #000;
+    font-family: var(--font-main);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__card-salary {
+    margin: 0;
+    color: #000;
+    font-family: var(--font-main);
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__applicants {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  &__applicants-label {
+    margin: 0;
+    color: #407bff;
+    font-family: var(--font-main);
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__avatars {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__avatar {
+    flex: 0 0 auto;
+    width: 66px;
+    height: 66px;
+
+    &:not(:first-child) {
+      margin-left: -15px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 4px solid var(--color-white);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__avatar-rest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: #407bff;
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-right: 20px;
+  }
+
+  &__add {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 20px 11px 16px;
+    border-radius: 999px;
+    background: linear-gradient(99deg, #407bff 0%, #269979 66%);
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    @include tr;
+
+    @include hover {
+      box-shadow: 0 12px 26px rgba(64, 123, 255, 0.35);
+    }
+  }
+
+  &__add-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0 auto;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-white);
+    cursor: pointer;
+    @include tr;
+
+    @include hover {
+      box-shadow: 0 8px 18px rgba(0, 56, 183, 0.18);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    img {
+      display: block;
+      width: 12px;
+      height: 19px;
+    }
+  }
+
+  // Режим модалки — центр секции, затемнение, крестик, компактные размеры.
+  &--modal {
+    position: fixed;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .geo-popup__scrim {
+      display: block;
+    }
+
+    .geo-popup__panel {
+      position: relative;
+      width: min(460px, calc(100% - 30px));
+      padding: 16px 0 20px 16px;
+      border-radius: 24px;
+      background: #f2f3f5;
+      transform: translateY(24px);
+    }
+
+    .geo-popup__head {
+      padding-top: 0;
+      padding-right: 16px;
+    }
+
+    .geo-popup__marker {
+      position: static;
+      margin-right: 8px;
+    }
+
+    .geo-popup__badge {
+      width: 46px;
+      height: 46px;
+      font-size: 23px;
+    }
+
+    .geo-popup__tail {
+      width: 13px;
+      height: 9px;
+    }
+
+    .geo-popup__title {
+      font-size: 20px;
+    }
+
+    .geo-popup__close {
+      display: flex;
+    }
+
+    .geo-popup__slide {
+      width: 264px;
+    }
+
+    .geo-popup__card {
+      gap: 12px;
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    .geo-popup__card-title {
+      font-size: 20px;
+    }
+
+    .geo-popup__card-salary,
+    .geo-popup__applicants-label {
+      font-size: 16px;
+    }
+
+    .geo-popup__avatar {
+      width: 50px;
+      height: 50px;
+
+      &:not(:first-child) {
+        margin-left: -12px;
+      }
+
+      img {
+        border-width: 3px;
+      }
+    }
+
+    .geo-popup__avatar-rest {
+      min-width: 38px;
+      height: 38px;
+      font-size: 18px;
+    }
+
+    .geo-popup__footer {
+      padding-right: 16px;
+    }
+
+    .geo-popup__add {
+      gap: 8px;
+      padding: 9px 16px 9px 12px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .geo-popup__add-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .geo-popup__arrow {
+      width: 32px;
+      height: 32px;
+
+      img {
+        width: 10px;
+        height: 16px;
+      }
+    }
+
+    &.is-open .geo-popup__panel {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geo-popup {
+    &__scrim,
+    &__panel {
+      transition-duration: 0.01ms;
+    }
+  }
+}
