@@ -45,49 +45,85 @@ const measurePins = (pins) => pins.map((pin) => {
     pin,
     left: pin.offsetLeft,
     top: pin.offsetTop,
-    height: pin.offsetHeight,
     badge: pin.offsetWidth,
-    offset: plate.offsetLeft,
-    width: plate.offsetWidth,
+    badgeHeight: pin.offsetHeight,
+    plateOffset: plate.offsetLeft,
+    plateTop: pin.offsetTop + plate.offsetTop,
+    plateWidth: plate.offsetWidth,
+    plateHeight: plate.offsetHeight,
     flipped: false,
   };
 });
 
-const boxOf = (item) => (item.flipped
-  ? {left: item.left + item.badge - item.offset - item.width, right: item.left + item.badge}
-  : {left: item.left, right: item.left + item.offset + item.width});
+// Кружок и плашка меряются порознь: плашка ниже и короче кружка, и если взять
+// их одним боксом, соседи «конфликтуют» там, где на экране просвет.
+const circleRect = (item) => ({
+  left: item.left,
+  right: item.left + item.badge,
+  top: item.top,
+  bottom: item.top + item.badgeHeight,
+});
 
-const overlaps = (a, b) => {
-  const boxA = boxOf(a);
-  const boxB = boxOf(b);
+const plateRect = (item) => {
+  const right = item.flipped
+    ? item.left + item.badge - item.plateOffset
+    : item.left + item.plateOffset + item.plateWidth;
 
-  return boxA.left < boxB.right
-    && boxB.left < boxA.right
-    && a.top < b.top + b.height
-    && b.top < a.top + a.height;
+  return {
+    left: right - item.plateWidth,
+    right,
+    top: item.plateTop,
+    bottom: item.plateTop + item.plateHeight,
+  };
 };
 
-// Пересечения весомее, чем выход за край карты: наезд читается как ошибка,
-// а срезанная у края плашка — нет, карту можно потянуть.
+const intersection = (a, b) => {
+  const width = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+  const height = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+
+  return width > 0 && height > 0 ? width * height : 0;
+};
+
+// Кружки стоят на своих городах и разойтись не могут, поэтому их пересечение
+// между собой не считаем: двигать всё равно нечего. Считаем только то, что
+// лечится разворотом, — наезд плашки на чужую плашку или на чужой кружок.
+const overlapArea = (a, b) => {
+  const plateA = plateRect(a);
+  const plateB = plateRect(b);
+
+  return intersection(plateA, plateB)
+    + intersection(plateA, circleRect(b))
+    + intersection(plateB, circleRect(a));
+};
+
+const outsideArea = (item, canvasWidth) => {
+  const plate = plateRect(item);
+  const cut = Math.max(0, -plate.left) + Math.max(0, plate.right - canvasWidth);
+
+  return cut * item.plateHeight;
+};
+
+// Считаем не количество бед, а их размер. Соседние города иногда стоят так
+// близко, что совсем развести плашки нельзя: при счёте по штукам разворот,
+// который уменьшает наезд в разы, не улучшал оценку, и раскладка оставалась
+// худшей из возможных. Площадь же видит разницу между «краем задел» и
+// «накрыл целиком».
+// Срезанная краем карты плашка весомее наезда: наезд читается как слоистость,
+// а обрезанный текст — как ошибка.
+const OUTSIDE_WEIGHT = 2;
+
 const scoreLayout = (items, canvasWidth) => {
-  let conflicts = 0;
-  let outside = 0;
+  let score = 0;
 
   for (let i = 0; i < items.length; i += 1) {
-    const box = boxOf(items[i]);
-
-    if (box.left < 0 || box.right > canvasWidth) {
-      outside += 1;
-    }
+    score += outsideArea(items[i], canvasWidth) * OUTSIDE_WEIGHT;
 
     for (let j = i + 1; j < items.length; j += 1) {
-      if (overlaps(items[i], items[j])) {
-        conflicts += 1;
-      }
+      score += overlapArea(items[i], items[j]);
     }
   }
 
-  return conflicts * 100 + outside;
+  return score;
 };
 
 const layoutPins = (pins, canvas) => {
@@ -126,25 +162,65 @@ const layoutPins = (pins, canvas) => {
   items.forEach((item) => item.pin.classList.toggle(FLIP_CLASS, item.flipped));
 };
 
-// Холст выше окна только на мобильном. Наводим стартовый кадр на сами пины,
-// а не на середину холста: у карты сверху и снизу пустое море, и от его размера
-// зависит, куда попадёт центр. Привязка к пинам не зависит от набора городов.
-const focusPins = (viewport, pins) => {
-  const extra = viewport.scrollHeight - viewport.clientHeight;
+// Отступ от края окна, когда пины в него не помещаются: иначе крайний из них
+// прилипает к границе и выглядит обрезанным.
+const FOCUS_EDGE = 16;
 
-  if (extra <= 0 || !pins.length) {
+// Наводим стартовый кадр на сами пины, а не на середину холста: вокруг карты
+// пустые поля, и от их размера зависит, куда попадёт центр. По горизонтали это
+// важнее всего — у карт разных стран поля разные, и кадр с краю холста мог
+// открываться на пустом месте. Привязка к пинам не зависит от набора городов.
+const focusAxis = (band, windowSize, extra) => {
+  if (extra <= 0) {
+    return 0;
+  }
+
+  const size = band.max - band.min;
+  const target = size >= windowSize
+    ? band.min - FOCUS_EDGE
+    : band.min - (windowSize - size) / 2;
+
+  return Math.round(Math.min(Math.max(target, 0), extra));
+};
+
+const focusPins = (viewport, pins) => {
+  if (!pins.length) {
     return;
   }
 
-  const tops = pins.map((pin) => pin.offsetTop);
-  const bottoms = pins.map((pin) => pin.offsetTop + pin.offsetHeight);
-  const top = Math.min(...tops);
-  const band = Math.max(...bottoms) - top;
-  const target = band >= viewport.clientHeight
-    ? top
-    : top - (viewport.clientHeight - band) / 2;
+  // Плашка может быть развёрнута влево, поэтому границу берём по ней, а не по
+  // одному кружку: иначе крайний город уедет за кадр вместе с подписью.
+  const spans = pins.map((pin) => {
+    const plate = pin.querySelector('.geography__pin-plate');
+    const plateLeft = pin.offsetLeft + plate.offsetLeft;
 
-  viewport.scrollTop = Math.round(Math.min(Math.max(target, 0), extra));
+    return {
+      left: Math.min(pin.offsetLeft, plateLeft),
+      right: Math.max(pin.offsetLeft + pin.offsetWidth, plateLeft + plate.offsetWidth),
+      top: pin.offsetTop,
+      bottom: pin.offsetTop + pin.offsetHeight,
+    };
+  });
+
+  const across = {
+    min: Math.min(...spans.map((span) => span.left)),
+    max: Math.max(...spans.map((span) => span.right)),
+  };
+  const down = {
+    min: Math.min(...spans.map((span) => span.top)),
+    max: Math.max(...spans.map((span) => span.bottom)),
+  };
+
+  viewport.scrollLeft = focusAxis(
+    across,
+    viewport.clientWidth,
+    viewport.scrollWidth - viewport.clientWidth,
+  );
+  viewport.scrollTop = focusAxis(
+    down,
+    viewport.clientHeight,
+    viewport.scrollHeight - viewport.clientHeight,
+  );
 };
 
 const setupPinLayout = (pins, canvas) => {

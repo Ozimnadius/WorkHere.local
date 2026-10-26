@@ -4,9 +4,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "dev": "vite --host 0.0.0.0 --mode ru",
+    "dev:ru": "vite --host 0.0.0.0 --mode ru",
+    "dev:kz": "vite --host 0.0.0.0 --mode kz --port 5174",
+    "dev:uz": "vite --host 0.0.0.0 --mode uz --port 5175",
+    "build": "vite build --mode ru",
+    "build:ru": "vite build --mode ru",
+    "build:kz": "vite build --mode kz",
+    "build:uz": "vite build --mode uz",
+    "build:all": "npm run build:ru && npm run build:kz && npm run build:uz",
+    "preview": "vite preview --host 0.0.0.0 --mode ru"
   },
   "devDependencies": {
     "sass": "^1.77.8",

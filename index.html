@@ -2333,7 +2333,9 @@
     <section class="page__geography"
              id="geography"
     >
-      <div class="geography">
+      <div class="geography"
+           style="%GEOGRAPHY_LAYOUT%"
+      >
         <div class="geography__header">
           <h2 class="geography__title ui-animation ui-animation--fade-up"
               data-progress-activate
@@ -2373,15 +2375,17 @@
           >
         </div>
 
-        <div class="geography__stage">
+        <div class="geography__stage"
+             style="--map-ratio: %GEOGRAPHY_MAP_RATIO%"
+        >
           <div class="geography__viewport"
                data-geography-viewport
           >
             <div class="geography__canvas">
               <img class="geography__map ui-animation ui-animation--scale-in"
-                   src="/src/assets/figma/geography/map-russia.svg"
-                   width="1920"
-                   height="1024"
+                   src="%GEOGRAPHY_MAP%"
+                   width="%GEOGRAPHY_MAP_WIDTH%"
+                   height="%GEOGRAPHY_MAP_HEIGHT%"
                    alt=""
                    aria-hidden="true"
                    loading="lazy"
@@ -2393,286 +2397,7 @@
                    data-progress-activate
                    data-progress-activate-start="0.75"
               >
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 13.3153%; --pin-y: 24.769%;"
-                        data-geography-pin="spb"
-                        data-geography-city="Санкт - Петербург"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Санкт - Петербург, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Санкт - Петербург</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 10.3985%; --pin-y: 39.6127%;"
-                        data-geography-pin="moscow"
-                        data-geography-city="Москва"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Москва, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Москва</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 26.6059%; --pin-y: 45.7667%;"
-                        data-geography-pin="perm"
-                        data-geography-city="Пермь"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Пермь, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Пермь</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 17.1354%; --pin-y: 51.4122%;"
-                        data-geography-pin="kazan"
-                        data-geography-city="Казань"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Казань, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Казань</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 4.8299%; --pin-y: 59.8994%;"
-                        data-geography-pin="rostov"
-                        data-geography-city="Ростов на дону"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Ростов на дону, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Ростов на дону</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 28.2486%; --pin-y: 58.9148%;"
-                        data-geography-pin="ekb"
-                        data-geography-city="Екатеринбург"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Екатеринбург, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Екатеринбург</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 52.3395%; --pin-y: 43.0795%;"
-                        data-geography-pin="surgut"
-                        data-geography-city="Сургут"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Сургут, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Сургут</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 72.8646%; --pin-y: 48.2569%;"
-                        data-geography-pin="yakutsk"
-                        data-geography-city="Якутск"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Якутск, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Якутск</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 49.0104%; --pin-y: 65.0768%;"
-                        data-geography-pin="krasnoyarsk"
-                        data-geography-city="Красноярск"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Красноярск, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Красноярск</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
-                <button class="geography__pin"
-                        type="button"
-                        style="--pin-x: 38.9645%; --pin-y: 71.351%;"
-                        data-geography-pin="novosibirsk"
-                        data-geography-city="Новосибирск"
-                        data-geography-count="4"
-                        aria-expanded="false"
-                        aria-label="Новосибирск, 4 вакансии"
-                >
-                  <span class="geography__pin-marker">
-                    <span class="geography__pin-badge"
-                          aria-hidden="true"
-                    >4</span>
-                    <img class="geography__pin-tail"
-                         src="/src/assets/figma/geography/pin-tail.svg"
-                         width="16"
-                         height="11"
-                         alt=""
-                         aria-hidden="true"
-                    >
-                  </span>
-                  <span class="geography__pin-plate"
-                        aria-hidden="true"
-                  >
-                    <span class="geography__pin-city">Новосибирск</span>
-                    <span class="geography__pin-count">4 вакансии</span>
-                  </span>
-                </button>
+                <!--geography-pins-->
               </div>
             </div>
           </div>
