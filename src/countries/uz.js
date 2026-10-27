@@ -115,7 +115,7 @@ export default {
     {
       id: 'tashkent',
       name: 'Ташкент',
-      x: 58.1771,
+      x: 64.0062,
       y: 52.2841,
       count: 21,
       vacancies: [
